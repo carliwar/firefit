@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Plan integral de 6 semanas: entrenamiento Upper/Lower 4 días + nutrición en definición (2400 kcal, 170 g proteína, 24 opciones de comida)." />
+<title>Plan de Entrenamiento y Nutrición · Ciclo 6 Semanas · U/L 4 días</title>
+<style>
+  :root {
+    --primary: #1F2A44; --muted: #6B7280; --text: #1F2937;
+    --bg: #FAFAFA; --card: #FFFFFF; --border: #E5E7EB; --row-alt: #F9FAFB;
+    --hiper: #3B82F6; --hiper-soft: #DBEAFE;
+    --fuerza: #F97316; --fuerza-soft: #FFEDD5;
+    --desc: #10B981; --desc-soft: #D1FAE5;
+    --nutri: #047857; --nutri-soft: #D1FAE5; --nutri-accent: #F59E0B;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; margin: 0; padding: 0; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+  .cover { background: linear-gradient(135deg, #1F2A44 0%, #2D3B5F 100%); color: white; padding: 64px 40px; border-radius: 16px; text-align: center; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(31, 42, 68, 0.15); }
+  .cover h1 { font-size: 2.6rem; margin: 0 0 8px; letter-spacing: 1px; }
+  .cover .subtitle { font-size: 1.2rem; opacity: 0.85; margin-bottom: 32px; font-weight: 300; }
+  .cover .meta { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.95rem; opacity: 0.9; }
+  .cycle-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .cycle-card { background: var(--card); border-radius: 12px; padding: 20px; border: 1px solid var(--border); border-top: 4px solid var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-decoration: none; color: inherit; display: block; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .cycle-card:hover, .cycle-card:focus { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); outline: none; }
+  .cycle-card.hiper { border-top-color: var(--hiper); }
+  .cycle-card.fuerza { border-top-color: var(--fuerza); }
+  .cycle-card.desc { border-top-color: var(--desc); }
+  .cycle-card .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; }
+  .cycle-card .title { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .cycle-card .desc-text { font-size: 0.92rem; }
+  .cycle-card .go { font-size: 0.78rem; color: var(--muted); margin-top: 10px; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+  .block-details { margin-bottom: 56px; }
+  .block-header { padding: 24px 28px; border-radius: 12px; color: white; margin-bottom: 24px; }
+  .block-header.hiper { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+  .block-header.fuerza { background: linear-gradient(135deg, #F97316, #EA580C); }
+  .block-header.desc { background: linear-gradient(135deg, #10B981, #059669); }
+  .block-details > summary.block-header { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; margin-bottom: 0; }
+  .block-details > summary.block-header::-webkit-details-marker { display: none; }
+  .block-details[open] > summary.block-header { margin-bottom: 24px; }
+  .block-heading { flex: 1; }
+  .block-chevron { flex: 0 0 auto; font-size: 1.35rem; transition: transform 0.2s ease; }
+  .block-details:not([open]) .block-chevron { transform: rotate(-90deg); }
+  .block-header h2 { margin: 0 0 6px; font-size: 1.8rem; }
+  .block-header .block-meta { opacity: 0.95; font-size: 0.95rem; }
+  .day { background: var(--card); border-radius: 12px; margin-bottom: 24px; border: 1px solid var(--border); overflow: visible; box-shadow: 0 1px 4px rgba(0,0,0,0.03); position: relative; }
+  .day h3 { margin: 0; padding: 16px 24px; font-size: 1.15rem; background: var(--row-alt); border-bottom: 1px solid var(--border); color: var(--primary); display: flex; align-items: center; gap: 10px; position: relative; border-radius: 12px 12px 0 0; }
+  .day h3 .accent { width: 6px; height: 22px; border-radius: 3px; background: var(--primary); }
+  .day h3 .small-label { color: var(--muted); font-weight: 400; font-size: 0.85rem; margin-left: 4px; }
+  .day h3 .info-btn { margin-left: auto; background: transparent; border: 1px solid var(--border); color: var(--muted); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: inherit; padding: 0; font-style: italic; }
+  .day h3 .info-btn:hover, .day h3 .info-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+  .day h3 .warmup-btn { margin-left: auto; background: transparent; border: 1px solid var(--border); color: var(--muted); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: inherit; padding: 0; }
+  .day h3 .warmup-btn:hover, .day h3 .warmup-btn.active { background: #F97316; color: white; border-color: #F97316; }
+  .day h3 .warmup-btn svg { width: 14px; height: 14px; }
+  .day h3 .warmup-btn ~ .info-btn { margin-left: 0; }
+  .day h3 .collapse-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; flex-shrink: 0; font-family: inherit; padding: 0; transition: transform 0.25s ease; }
+  .day h3 .collapse-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+  .day h3 .collapse-btn svg { width: 14px; height: 14px; }
+  .day.collapsed h3 .collapse-btn { transform: rotate(-90deg); }
+  .day.collapsed .table-wrap { display: none; }
+  .day.collapsed h3 { border-bottom: none; border-radius: 12px; }
+  .day.hiper h3 .accent { background: var(--hiper); }
+  .day.fuerza h3 .accent { background: var(--fuerza); }
+  .day.desc h3 .accent { background: var(--desc); }
+  .day.hiper h3 .info-btn:hover, .day.hiper h3 .info-btn.active { background: var(--hiper); border-color: var(--hiper); }
+  .day.fuerza h3 .info-btn:hover, .day.fuerza h3 .info-btn.active { background: var(--fuerza); border-color: var(--fuerza); }
+  .day.desc h3 .info-btn:hover, .day.desc h3 .info-btn.active { background: var(--desc); border-color: var(--desc); }
+  .tooltip-box { display: none; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 0 0 12px 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 760px; }
+  thead th { text-align: left; padding: 12px 14px; font-weight: 600; color: white; background: var(--primary); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+  .day.hiper thead th { background: var(--hiper); }
+  .day.fuerza thead th { background: var(--fuerza); }
+  .day.desc thead th { background: var(--desc); }
+  thead th:last-child { border-right: none; }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr { cursor: pointer; transition: background 0.1s ease; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--row-alt); }
+  tbody tr:hover { background: #EFF6FF; }
+  .day.fuerza tbody tr:hover { background: #FFF7ED; }
+  .day.desc tbody tr:hover { background: #ECFDF5; }
+  td.num { font-weight: 700; color: var(--muted); width: 32px; text-align: center; }
+  td.exercise { font-weight: 600; }
+  td.muted { color: var(--muted); font-style: italic; }
+  td.aprox { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.82rem; color: var(--muted); }
+  td.sets { font-weight: 600; color: var(--primary); white-space: nowrap; }
+  td.rest { white-space: nowrap; color: var(--muted); }
+  .notes { background: var(--card); border-radius: 12px; padding: 20px 24px; margin-top: 16px; border-left: 4px solid var(--primary); }
+  .notes.hiper { border-left-color: var(--hiper); background: var(--hiper-soft); }
+  .notes.fuerza { border-left-color: var(--fuerza); background: var(--fuerza-soft); }
+  .notes.desc { border-left-color: var(--desc); background: var(--desc-soft); }
+  .notes h4 { margin: 0 0 10px; color: var(--primary); font-size: 1.05rem; }
+  .notes ul { margin: 0; padding-left: 22px; }
+  .notes li { margin-bottom: 6px; font-size: 0.92rem; }
+  .week-dist { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 32px; }
+  .day-pill { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 8px; text-align: center; font-size: 0.85rem; }
+  .day-pill .dow { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .day-pill .activity { font-weight: 700; color: var(--primary); }
+  .day-pill.upper { background: #EFF6FF; border-color: #BFDBFE; }
+  .day-pill.lower { background: #FFF7ED; border-color: #FED7AA; }
+  .day-pill.futbol { background: #ECFDF5; border-color: #A7F3D0; }
+  .day-pill.off { background: #F3F4F6; color: var(--muted); }
+  .ab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .ab-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; }
+  .ab-card .ab-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  .ab-card .ab-title { font-weight: 700; color: var(--primary); margin: 4px 0; font-size: 1.05rem; }
+  .ab-card .ab-desc { font-size: 0.88rem; }
+  h2.section-title { font-size: 1.4rem; color: var(--primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .split-details { margin-bottom: 32px; }
+  .split-summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; font-size: 1.4rem; color: var(--primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); font-weight: 700; }
+  .split-summary::-webkit-details-marker { display: none; }
+  .split-details[open] > .split-summary { margin-bottom: 16px; }
+  .split-chevron { font-size: 1.2rem; transition: transform 0.2s ease; }
+  .split-details:not([open]) .split-chevron { transform: rotate(-90deg); }
+  .reminders { background: linear-gradient(135deg, #FEFCE8 0%, #FEF3C7 100%); border-radius: 12px; padding: 24px 28px; border-left: 4px solid #EAB308; margin-top: 40px; }
+  .reminders h2 { margin: 0 0 12px; color: var(--primary); }
+  .reminders ul { margin: 0; padding-left: 22px; }
+  .reminders li { margin-bottom: 8px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); z-index: 1000; padding: 20px; overflow-y: auto; align-items: flex-start; justify-content: center; }
+  .modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
+  .modal { background: white; border-radius: 16px; max-width: 560px; width: 100%; padding: 28px 28px 24px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin: auto; }
+  .modal-close { position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 1.8rem; cursor: pointer; color: var(--muted); line-height: 1; padding: 4px 10px; border-radius: 6px; font-family: inherit; }
+  .modal-close:hover { background: var(--row-alt); color: var(--text); }
+  .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.06); border: none; font-size: 2rem; cursor: pointer; color: var(--primary); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1; transition: background 0.15s; }
+  .modal-nav:hover { background: rgba(0,0,0,0.12); }
+  .modal-prev { left: -44px; }
+  .modal-next { right: -44px; }
+  .modal-counter { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 12px; letter-spacing: 0.5px; }
+  @media (max-width: 700px) {
+    .modal-prev { left: 6px; top: auto; bottom: 10px; transform: none; }
+    .modal-next { right: 6px; top: auto; bottom: 10px; transform: none; }
+  }
+  .modal h3 { margin: 0 0 6px; color: var(--primary); padding-right: 40px; font-size: 1.35rem; }
+  .modal .modal-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 18px; font-style: italic; }
+  .modal-field { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .modal-field:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .modal-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
+  .modal-value { font-size: 0.98rem; color: var(--text); }
+  .modal-value.aprox { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88rem; }
+  .modal-value ul { margin: 0; padding-left: 22px; }
+  .modal-value ul li { margin-bottom: 8px; line-height: 1.5; }
+  .modal-value ul li:last-child { margin-bottom: 0; }
+  .modal-videos { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+  .modal-video-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; background: #FF0000; color: white; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.15s ease, transform 0.15s ease; line-height: 1.2; }
+  .modal-video-btn:hover { background: #CC0000; transform: translateY(-1px); }
+  .modal-video-btn.alt { background: #4B5563; }
+  .modal-video-btn.alt:hover { background: #374151; }
+  .modal-video-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .modal-video-btn .vid-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; }
+  .modal-video-btn .vid-label { font-size: 0.7rem; opacity: 0.85; font-weight: 400; }
+  .modal-video-btn .vid-name { font-weight: 600; font-size: 0.85rem; }
+  .warmup-exercise { border-top: 2px solid var(--border); padding-top: 18px; margin-top: 18px; }
+  .warmup-exercise:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+  .warmup-exercise-header { font-weight: 700; color: var(--primary); font-size: 1.05rem; margin-bottom: 12px; }
+  .warmup-exercise-header .plyo-tag { display: inline-block; background: #F97316; color: white; font-size: 0.65rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; vertical-align: middle; }
+  .warmup-next-hint { margin-top: 22px; padding: 12px 14px; background: rgba(249, 115, 22, 0.08); border-left: 3px solid #F97316; border-radius: 6px; font-size: 0.85rem; color: var(--muted); text-align: center; }
+  .warmup-next-hint strong { color: var(--primary); }
+
+  /* Bloque de notas-clave por sección: oculto en vista principal, accesible vía botón 🅘 (modal) */
+  .notes.hiper, .notes.fuerza, .notes.desc { display: none; }
+
+  /* Match-mode toggle (switch ⚽) en días de pierna */
+  .day h3 .match-toggle { position: relative; width: 52px; height: 26px; border-radius: 13px; background: #E5E7EB; border: 1px solid var(--border); cursor: pointer; padding: 0; transition: background 0.2s ease; flex-shrink: 0; font-family: inherit; }
+  .day h3 .match-toggle .knob { position: absolute; top: 1px; left: 1px; width: 22px; height: 22px; border-radius: 50%; background: white; display: flex; align-items: center; justify-content: center; font-size: 13px; line-height: 1; transition: transform 0.2s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.25); }
+  .day h3 .match-toggle.active { background: var(--fuerza); border-color: var(--fuerza); }
+  .day h3 .match-toggle.active .knob { transform: translateX(26px); }
+  .day h3 .warmup-btn ~ .match-toggle { margin-left: 0; }
+  .day.match-mode { box-shadow: 0 1px 4px rgba(249, 115, 22, 0.25), 0 0 0 2px rgba(249, 115, 22, 0.15); }
+  .day.match-mode h3 { background: #FFF7ED; }
+  .day.collapsed .match-notes-block { display: none; }
+
+  /* Bloque de notas modo-partido (visible solo cuando el switch está ON) */
+  .match-notes-block { padding: 18px 22px; margin: 0; background: var(--fuerza-soft); border-top: 1px solid var(--border); border-left: 4px solid var(--fuerza); border-radius: 0 0 12px 12px; }
+  .match-notes-block h4 { margin: 0 0 10px; color: var(--primary); font-size: 1rem; display: flex; align-items: center; gap: 8px; }
+  .match-notes-block h4 .match-icon { font-size: 1.15rem; }
+  .match-notes-block ul { margin: 0; padding-left: 22px; }
+  .match-notes-block li { margin-bottom: 6px; font-size: 0.9rem; line-height: 1.5; }
+  .day.match-mode .table-wrap { border-radius: 0; }
+
+  /* FAB */
+  .fab { position: fixed; bottom: 24px; right: 24px; padding: 0 18px; height: 48px; border-radius: 24px; background: var(--primary); color: white; border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-size: 0.9rem; font-weight: 600; display: none; align-items: center; gap: 6px; z-index: 500; font-family: inherit; transition: transform 0.15s ease; }
+  .fab.show { display: inline-flex; animation: fabIn 0.25s ease; }
+  .fab:hover { transform: translateY(-2px); }
+  @keyframes fabIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Tooltip backdrop (mobile centered tooltip) */
+
+  @media print {
+    body { background: white; }
+    .container { padding: 0; max-width: 100%; }
+    .cover { box-shadow: none; page-break-after: always; }
+    .block { page-break-inside: avoid; }
+    .day { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+    tbody tr:hover { background: inherit; }
+    .info-btn, .fab, .modal-overlay, .match-toggle, .warmup-btn, .collapse-btn { display: none !important; }
+    .tabs { display: none !important; }
+    .tab-panel { display: block !important; }
+    .table-wrap { overflow: visible; }
+    table { min-width: 0; }
+    .match-notes-block { page-break-inside: avoid; }
+  }
+  @media (max-width: 720px) {
+    .container { padding: 20px 14px 80px; }
+    .cover { padding: 40px 24px; }
+    .cover h1 { font-size: 1.8rem; }
+    .cover .meta { gap: 12px; flex-direction: column; }
+    .week-dist { grid-template-columns: repeat(2, 1fr); }
+    .block-header { padding: 18px 20px; }
+    .block-header h2 { font-size: 1.4rem; }
+    .day h3 { padding: 14px 16px; font-size: 1rem; flex-wrap: wrap; }
+    .day h3 .small-label { display: block; flex-basis: 100%; margin: 4px 0 0 16px; order: 3; }
+    .day h3 .warmup-btn { order: 2; }
+    .day h3 .info-btn { order: 2; }
+    .day h3 .collapse-btn { display: inline-flex; order: 4; }
+    table { font-size: 0.82rem; min-width: 640px; }
+    thead th, tbody td { padding: 9px 10px; }
+    .modal { padding: 22px 20px; border-radius: 12px; }
+    .modal h3 { font-size: 1.15rem; }
+    .fab { bottom: 16px; right: 16px; }
+  }
+
+  /* Tracker */
+  .tracker-bar { position: sticky; top: 0; z-index: 900; background: var(--card); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .tracker-bar .tracker-block { font-weight: 700; font-size: 0.9rem; }
+  .tracker-bar .tracker-block.hiper { color: var(--hiper); }
+  .tracker-bar .tracker-block.fuerza { color: var(--fuerza); }
+  .tracker-bar .tracker-block.desc { color: var(--desc); }
+  .tracker-bar .tracker-week { font-size: 0.85rem; color: var(--muted); }
+  .tracker-dots { display: flex; gap: 6px; align-items: center; }
+  .tracker-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border); background: transparent; transition: background 0.2s, border-color 0.2s; }
+  .tracker-dot.filled { background: var(--hiper); border-color: var(--hiper); }
+  .tracker-bar.fuerza .tracker-dot.filled { background: var(--fuerza); border-color: var(--fuerza); }
+  .tracker-bar.desc .tracker-dot.filled { background: var(--desc); border-color: var(--desc); }
+  .tracker-skip { margin-left: auto; background: transparent; border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-family: inherit; transition: background 0.15s, color 0.15s; }
+  .tracker-skip:hover { background: var(--row-alt); color: var(--text); }
+  .tracker-complete-msg { width: 100%; text-align: center; font-size: 0.85rem; color: var(--desc); font-weight: 600; padding: 4px 0 0; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+  .day-complete-btn { display: block; width: 100%; padding: 12px 20px; border: none; background: var(--row-alt); border-top: 1px solid var(--border); border-radius: 0 0 12px 12px; font-family: inherit; font-size: 0.9rem; color: var(--muted); cursor: pointer; transition: background 0.15s, color 0.15s; text-align: center; }
+  .day-complete-btn:hover { background: #DBEAFE; color: var(--hiper); }
+  .day-complete-btn.done { background: #D1FAE5; color: #059669; cursor: default; }
+  .day-complete-btn.done:hover { background: #D1FAE5; color: #059669; }
+
+  /* Tabs sticky (Entrenamiento / Nutrición) */
+  .tabs { position: sticky; top: 47px; z-index: 890; background: var(--card); border-bottom: 1px solid var(--border); display: flex; justify-content: center; padding: 0 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+  .tabs-inner { display: flex; gap: 4px; max-width: 1180px; width: 100%; }
+  .tab { flex: 1 1 auto; background: transparent; border: none; padding: 14px 24px; font-family: inherit; font-size: 0.95rem; font-weight: 600; color: var(--muted); cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s, background 0.15s; text-align: center; min-height: 44px; }
+  .tab:hover { color: var(--text); background: var(--row-alt); }
+  .tab[aria-selected="true"] { color: var(--primary); border-bottom-color: var(--primary); }
+  .tab:focus-visible { outline: 2px solid var(--hiper); outline-offset: -4px; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Nutrición — Hero + dashboard + macros */
+  .nutri-cover { background: linear-gradient(135deg, #047857 0%, #059669 100%); color: white; padding: 64px 40px; border-radius: 16px; text-align: center; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(4, 120, 87, 0.15); }
+  .nutri-cover h1 { font-size: 2.6rem; margin: 0 0 8px; letter-spacing: 1px; }
+  .nutri-cover .subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 24px; font-weight: 300; }
+  .nutri-cover .meta { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.95rem; opacity: 0.95; }
+
+  .nutri-section-title { font-size: 1.35rem; font-weight: 700; color: var(--primary); margin: 40px 0 16px; display: flex; align-items: center; gap: 10px; }
+  .nutri-section-title .badge { background: var(--nutri-soft); color: var(--nutri); font-size: 0.72rem; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+
+  .goal-table-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow-x: auto; }
+  .goal-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .goal-table th { text-align: left; padding: 10px 12px; background: var(--nutri-soft); color: var(--nutri); font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.6px; }
+  .goal-table th:first-child { border-radius: 8px 0 0 0; }
+  .goal-table th:last-child { border-radius: 0 8px 0 0; }
+  .goal-table td { padding: 11px 12px; border-top: 1px solid var(--border); color: var(--text); vertical-align: middle; }
+  .goal-table td:first-child { font-weight: 600; color: var(--primary); white-space: nowrap; }
+  .goal-table .col-actual, .goal-table .col-meta { font-weight: 600; }
+  .goal-table .col-meta { color: var(--nutri); }
+  .goal-table .delta-goal { color: var(--nutri); font-weight: 700; font-size: 0.85rem; white-space: nowrap; }
+  .goal-table .delta-hold { color: var(--muted); font-weight: 600; font-size: 0.85rem; }
+  .goal-table .delta-info { color: var(--muted); font-size: 0.82rem; }
+  .goal-note { font-size: 0.8rem; color: var(--muted); margin: 14px 0 0; line-height: 1.55; }
+
+  .nutri-progress-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); margin: 8px 0 24px; }
+  .nutri-progress-header { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .nutri-progress-title { font-size: 1rem; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 8px; }
+  .nutri-progress-count { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+  .nutri-progress-count strong { color: var(--nutri); font-size: 1.25rem; font-weight: 700; margin-right: 2px; }
+  .nutri-progress-bar-outer { background: var(--nutri-soft); border-radius: 999px; height: 14px; overflow: hidden; position: relative; }
+  .nutri-progress-bar-inner { background: linear-gradient(90deg, var(--nutri) 0%, #10B981 100%); height: 100%; border-radius: 999px; width: 0%; transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+  .nutri-progress-bar-inner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.28) 50%, transparent 100%); }
+  .nutri-progress-footer { font-size: 0.85rem; color: var(--muted); margin-top: 10px; text-align: center; }
+  .nutri-progress-footer strong { color: var(--nutri); }
+  .nutri-progress-card.complete .nutri-progress-bar-inner { background: linear-gradient(90deg, #059669 0%, #34D399 100%); }
+  .nutri-progress-card.complete .nutri-progress-count strong { color: #059669; }
+
+  .nutri-dashboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 12px; }
+  .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .stat-card .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); font-weight: 700; margin-bottom: 8px; }
+  .stat-card .stat-value { font-size: 1.7rem; font-weight: 700; color: var(--nutri); margin-bottom: 4px; line-height: 1.1; }
+  .stat-card .stat-value small { font-size: 0.95rem; font-weight: 500; color: var(--muted); }
+  .stat-card .stat-detail { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+  .stat-card .stat-arrow { color: var(--nutri-accent); font-weight: 700; }
+
+  .day-mode-toggle { display: inline-flex; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 4px; margin: 0 0 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+  .day-mode-toggle button { background: transparent; border: none; padding: 10px 18px; font-family: inherit; font-size: 0.9rem; font-weight: 600; color: var(--muted); cursor: pointer; border-radius: 7px; transition: background 0.15s, color 0.15s; }
+  .day-mode-toggle button:hover { color: var(--text); }
+  .day-mode-toggle button[aria-pressed="true"] { background: var(--nutri); color: white; }
+
+  .macros-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 12px; }
+  .macro-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); position: relative; overflow: hidden; }
+  .macro-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--macro-color, var(--nutri)); }
+  .macro-card.protein { --macro-color: #DC2626; }
+  .macro-card.fat { --macro-color: #F59E0B; }
+  .macro-card.carb { --macro-color: #2563EB; }
+  .macro-card .macro-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 700; margin-bottom: 8px; }
+  .macro-card .macro-emoji { font-size: 1.15rem; margin-right: 6px; }
+  .macro-card .macro-grams { font-size: 1.9rem; font-weight: 700; color: var(--primary); }
+  .macro-card .macro-grams-unit { font-size: 0.95rem; color: var(--muted); font-weight: 500; }
+  .macro-card .macro-kcal { font-size: 0.88rem; color: var(--text); margin-top: 4px; }
+  .macro-card .macro-pct { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+  .macros-total { background: var(--nutri-soft); border-radius: 10px; padding: 14px 20px; text-align: center; font-weight: 600; color: var(--nutri); margin-bottom: 8px; font-size: 0.95rem; }
+  .macros-total strong { font-size: 1.1rem; }
+  .rest-day-note { background: #FEF3C7; border-left: 3px solid var(--nutri-accent); padding: 12px 16px; border-radius: 6px; font-size: 0.88rem; color: #78350F; margin-bottom: 20px; display: none; }
+  .rest-day-note.visible { display: block; }
+
+  body.hide-boosts .boost-hint { display: none !important; }
+
+  /* Meal slots */
+  .meal-section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .meal-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; flex-wrap: wrap; }
+  .meal-time { font-size: 1rem; font-weight: 700; color: var(--nutri); background: var(--nutri-soft); padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+  .meal-name { font-size: 1.15rem; font-weight: 700; color: var(--primary); flex: 1 1 auto; }
+  .meal-target { font-size: 0.82rem; color: var(--muted); font-weight: 500; width: 100%; margin-top: 4px; }
+  .meal-target strong { color: var(--text); }
+  .meal-options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 18px; }
+  .meal-option { background: var(--row-alt); border: 1px solid var(--border); border-radius: 10px; padding: 16px; position: relative; }
+  .meal-option.current { border-color: var(--nutri); background: var(--nutri-soft); }
+  .badge-current { position: absolute; top: -8px; right: 12px; background: var(--nutri); color: white; font-size: 0.62rem; font-weight: 700; padding: 3px 10px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .meal-option-name { font-weight: 700; color: var(--primary); font-size: 0.98rem; margin-bottom: 10px; }
+  .meal-ingredients { list-style: none; padding: 0; margin: 0 0 12px; font-size: 0.85rem; color: var(--text); }
+  .meal-ingredients li { padding: 2px 0; }
+  .meal-ingredients li::before { content: "\2022  "; color: var(--nutri); font-weight: 700; }
+  .meal-macros { display: flex; gap: 6px; flex-wrap: wrap; font-size: 0.72rem; }
+  .meal-macros .macro-pill { background: var(--card); border: 1px solid var(--border); padding: 3px 8px; border-radius: 10px; font-weight: 600; color: var(--muted); }
+  .meal-macros .macro-pill.kcal { background: var(--primary); color: white; border-color: var(--primary); }
+  .meal-macros .macro-pill.p { color: #DC2626; border-color: #FCA5A5; }
+  .meal-macros .macro-pill.f { color: #F59E0B; border-color: #FCD34D; }
+  .meal-macros .macro-pill.c { color: #2563EB; border-color: #93C5FD; }
+  .meal-chevron { display: none; margin-left: auto; font-size: 1.1rem; color: var(--nutri); transition: transform 0.2s ease; align-self: center; line-height: 1; }
+
+  /* Nutrition reference sections */
+  .nutri-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .nutri-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .nutri-card h3 { margin: 0 0 12px; color: var(--primary); font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+  .nutri-card ul { padding-left: 20px; margin: 0; font-size: 0.9rem; line-height: 1.65; color: var(--text); }
+  .nutri-card li { margin-bottom: 6px; }
+  .nutri-card li strong { color: var(--primary); }
+  .nutri-card p { font-size: 0.9rem; margin: 0 0 8px; color: var(--text); }
+  .nutri-card p:last-child { margin-bottom: 0; }
+
+  .foods-macro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .foods-macro-column { background: var(--card); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .foods-macro-column .col-header { padding: 12px 16px; color: white; font-weight: 700; text-align: center; letter-spacing: 0.5px; }
+  .foods-macro-column .col-header small { display: block; opacity: 0.85; font-weight: 500; font-size: 0.72rem; margin-top: 2px; }
+  .foods-macro-column.protein .col-header { background: #DC2626; }
+  .foods-macro-column.fat .col-header { background: #F59E0B; }
+  .foods-macro-column.carb .col-header { background: #2563EB; }
+  .foods-macro-column table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .foods-macro-column td { padding: 8px 14px; border-top: 1px solid var(--border); }
+  .foods-macro-column tr:first-child td { border-top: none; }
+  .foods-macro-column .qty { color: var(--muted); text-align: right; white-space: nowrap; font-weight: 600; }
+
+  /* Superseries */
+  tr.ss-start td { border-bottom: none; }
+  tr.ss-start td:first-child, tr.ss-end td:first-child { border-left: 3.5px solid var(--hiper); }
+  .day.fuerza tr.ss-start td:first-child, .day.fuerza tr.ss-end td:first-child { border-left-color: var(--fuerza); }
+  tr.ss-start, tr.ss-end { background: rgba(59,130,246,0.04) !important; }
+  .day.fuerza tr.ss-start, .day.fuerza tr.ss-end { background: rgba(249,115,22,0.04) !important; }
+  tr.ss-start:hover, tr.ss-end:hover { background: rgba(59,130,246,0.09) !important; }
+  .day.fuerza tr.ss-start:hover, .day.fuerza tr.ss-end:hover { background: rgba(249,115,22,0.09) !important; }
+  .ss-badge { display: inline-block; font-size: 0.6rem; font-weight: 700; background: var(--hiper); color: white; padding: 1px 4px; border-radius: 3px; vertical-align: middle; margin-left: 4px; letter-spacing: 0.3px; }
+  .day.fuerza .ss-badge { background: var(--fuerza); }
+  .ss-arrow { color: var(--hiper); font-weight: 700; font-size: 0.82rem; }
+  .day.fuerza .ss-arrow { color: var(--fuerza); }
+  .modal-ss-badge { display: inline-block; font-size: 0.72rem; font-weight: 600; background: var(--hiper); color: white; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; }
+
+  @media (max-width: 720px) {
+    .tracker-bar { padding: 8px 14px; gap: 8px; }
+    .tracker-bar .tracker-block { font-size: 0.82rem; }
+    .tracker-bar .tracker-week { font-size: 0.78rem; }
+    .tracker-dot { width: 12px; height: 12px; }
+    .tabs { top: 41px; padding: 0 10px; }
+    .tab { padding: 12px 8px; font-size: 0.9rem; }
+    .nutri-cover { padding: 40px 24px; }
+    .nutri-cover h1 { font-size: 1.8rem; }
+    .nutri-cover .meta { gap: 12px; flex-direction: column; }
+    .goal-table-wrap { padding: 14px; }
+    .goal-table { font-size: 0.8rem; }
+    .goal-table th, .goal-table td { padding: 8px 8px; }
+    .goal-table th { font-size: 0.66rem; letter-spacing: 0.4px; }
+    .goal-table td:first-child { white-space: normal; }
+    .nutri-dashboard { grid-template-columns: repeat(2, 1fr); }
+    .macros-grid { grid-template-columns: 1fr; }
+    .nutri-section-title { font-size: 1.15rem; }
+    .meal-options { grid-template-columns: 1fr; }
+    .meal-section { padding: 18px; }
+    .meal-name { font-size: 1.05rem; }
+    .meal-header { cursor: pointer; user-select: none; align-items: center; }
+    .meal-chevron { display: inline-block; }
+    .meal-section.collapsed { padding-bottom: 18px; }
+    .meal-section.collapsed .meal-target,
+    .meal-section.collapsed .meal-options { display: none; }
+    .meal-section.collapsed .meal-chevron { transform: rotate(-90deg); }
+    .nutri-cards-grid { grid-template-columns: 1fr; }
+    .foods-macro-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Tracker Bar -->
+<div class="tracker-bar hiper" id="tracker-bar">
+  <span class="tracker-block hiper" id="tracker-block-label">🟦 Hiper</span>
+  <span class="tracker-week" id="tracker-week-label">Sem 1/3</span>
+  <div class="tracker-dots" id="tracker-dots">
+    <div class="tracker-dot" data-day="0"></div>
+    <div class="tracker-dot" data-day="1"></div>
+    <div class="tracker-dot" data-day="2"></div>
+    <div class="tracker-dot" data-day="3"></div>
+  </div>
+  <button class="tracker-skip" id="tracker-skip">Saltar semana →</button>
+</div>
+
+<!-- Tabs navigation -->
+<nav class="tabs" role="tablist" aria-label="Secciones del plan">
+  <div class="tabs-inner">
+    <button class="tab" role="tab" id="tab-btn-entrenamiento" aria-selected="true" aria-controls="tab-entrenamiento" data-tab="entrenamiento">🏋️ Entrenamiento</button>
+    <button class="tab" role="tab" id="tab-btn-nutricion" aria-selected="false" aria-controls="tab-nutricion" data-tab="nutricion" tabindex="-1">🍽️ Nutrición</button>
+  </div>
+</nav>
+
+<div class="container" id="top">
+  <div id="tab-entrenamiento" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-entrenamiento">
+  <div class="cover">
+    <h1>PLAN DE ENTRENAMIENTO Y NUTRICIÓN</h1>
+    <div class="subtitle">Ciclo de 6 Semanas · Upper / Lower (4 días) + Fase de definición</div>
+    <div class="meta">
+      <span>🎯 Recomposición corporal sostenida</span>
+      <span>⚽ Fútbol 2x / semana</span>
+      <span>📅 4 días de gimnasio</span>
+    </div>
+    <div style="margin-top: 24px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+      <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;">🏋️ Entrenamiento</span>
+      <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;">🍽️ Nutrición</span>
+    </div>
+  </div>
+
+  <div class="cycle-summary">
+    <a href="#hipertrofia" class="cycle-card hiper"><div class="label">Semanas 1 – 3</div><div class="title">🟦 Hipertrofia</div><div class="desc-text">1 aprox + 2 efectivas × 6-10 reps · RIR 1-2</div><div class="go">Ver bloque →</div></a>
+    <a href="#fuerza" class="cycle-card fuerza"><div class="label">Semanas 4 – 5</div><div class="title">🟧 Fuerza</div><div class="desc-text">2-3 aprox + 3 efectivas × 4-6 reps · RIR 1-2</div><div class="go">Ver bloque →</div></a>
+    <a href="#descarga" class="cycle-card desc"><div class="label">Semana 6</div><div class="title">🟩 Descarga</div><div class="desc-text">2 × 8-10 reps al 60-65% · RIR 3-4</div><div class="go">Ver bloque →</div></a>
+  </div>
+
+  <h2 class="section-title" id="distribucion">📅 Distribución semanal</h2>
+  <div class="week-dist">
+    <div class="day-pill upper"><div class="dow">Lun</div><div class="activity">Upper A</div></div>
+    <div class="day-pill lower"><div class="dow">Mar</div><div class="activity">Lower A</div></div>
+    <div class="day-pill off"><div class="dow">Mié</div><div class="activity">Descanso</div></div>
+    <div class="day-pill upper"><div class="dow">Jue</div><div class="activity">Upper B</div></div>
+    <div class="day-pill lower"><div class="dow">Vie</div><div class="activity">Lower B</div></div>
+  </div>
+  <p style="color: var(--muted); font-size: 0.9rem; font-style: italic;">Miércoles queda como descanso entre Lower A y Upper B.</p>
+
+  <details class="split-details" id="logica-ab">
+    <summary class="split-summary"><span>🔀 Lógica de la división A / B</span><span class="split-chevron" aria-hidden="true">⌄</span></summary>
+  <div class="ab-grid">
+    <div class="ab-card"><div class="ab-label">Upper A</div><div class="ab-title">Horizontal + Fuerza</div><div class="ab-desc">Press banca, remo Pendlay, press militar</div></div>
+    <div class="ab-card"><div class="ab-label">Upper B</div><div class="ab-title">Vertical + Variación</div><div class="ab-desc">Press inclinado, dominadas/jalón, hombro mancuernas</div></div>
+    <div class="ab-card"><div class="ab-label">Lower A</div><div class="ab-title">Dominante cuádriceps</div><div class="ab-desc">Sentadilla trasera, prensa, extensión</div></div>
+    <div class="ab-card"><div class="ab-label">Lower B</div><div class="ab-title">Dominante cadera / femoral</div><div class="ab-desc">Peso muerto rumano, hip thrust, búlgaras</div></div>
+  </div>
+  </details>
+
+  <details class="block block-details" id="hipertrofia">
+    <summary class="block-header hiper"><div class="block-heading"><h2>🟦 Bloque 1 — Hipertrofia</h2><div class="block-meta">Semanas 1 – 3 · 1 aprox + 2 efectivas × 6-10 reps · RIR 1-2</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="block-content">
+
+    <div class="day hiper">
+      <h3><span class="accent"></span>Día 1 — UPPER A <span class="small-label">(horizontal / fuerza)</span><button class="info-btn" data-tooltip="tt-hiper-1" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-hiper-1"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li><li>Respeta 48h entre Lower y partido.</li><li>Déficit 200-300 kcal · proteína 1.8-2.2 g/kg.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Press banca plano con barra</td><td class="muted">Press banca con mancuernas</td><td>Pectoral, deltoide ant., tríceps</td><td class="aprox">1 × 6 al 50% + 1 × 3 al 75%</td><td class="sets">2 × 6-8</td><td class="rest">2-3 min</td><td>Codos ~75°, bajada controlada</td></tr>
+          <tr><td class="num">2</td><td class="exercise">T-row máquina (chest-supported)</td><td class="muted">T-bar row landmine</td><td>Dorsal, romboides, trapecio medio</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Pecho apoyado, ROM completo, RIR 1-2</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Press militar de pie con barra</td><td class="muted">Press hombro con mancuernas sentado</td><td>Deltoide ant./medio, tríceps</td><td class="aprox">1 × 6 al 50% + 1 × 3 al 75%</td><td class="sets">2 × 6-8</td><td class="rest">2-3 min</td><td>Core firme, glúteos apretados</td></tr>
+          <tr class="ss-start"><td class="num">4</td><td class="exercise">Remo en polea baja agarre estrecho</td><td class="muted">Remo con mancuerna a una mano</td><td>Dorsal medio, romboides</td><td class="aprox">—</td><td class="sets">2 × 10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codo al ombligo</td></tr>
+          <tr class="ss-end"><td class="num">5</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td>Deltoide medio</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Codo ligeramente flexionado</td></tr>
+          <tr class="ss-start"><td class="num">6</td><td class="exercise">Curl con barra Z</td><td class="muted">Curl con mancuernas</td><td>Bíceps braquial</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codos fijos, sin balanceo</td></tr>
+          <tr class="ss-end"><td class="num">7</td><td class="exercise">Fondos en paralelas</td><td class="muted">Press francés con barra Z</td><td>Tríceps, pectoral inferior</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Torso vertical = más tríceps</td></tr>
+          <tr><td class="num">8</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td>Deltoide post., manguito</td><td class="aprox">—</td><td class="sets">2 × 12</td><td class="rest">60-90 s</td><td>Salud del hombro</td></tr>
+          <tr class="ss-start"><td class="num">9</td><td class="exercise">Curl inclinado con mancuernas</td><td class="muted">Curl spider en banco inclinado</td><td>Bíceps (cabeza larga)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Brazos detrás del torso, estiramiento máximo</td></tr>
+          <tr class="ss-end"><td class="num">10</td><td class="exercise">Extensión overhead con cuerda en polea</td><td class="muted">Press francés con mancuernas (overhead)</td><td>Tríceps (cabeza larga)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Codos pegados a la cabeza, estiramiento profundo</td></tr>
+          <tr><td class="num">11</td><td class="exercise">Hanging leg raise (piernas colgado)</td><td class="muted">Captain's chair knee raise</td><td>Core (recto abdominal, flexores cadera)</td><td class="aprox">—</td><td class="sets">2 × 8-12</td><td class="rest">60-90 s</td><td>Sin balanceo, control en bajada</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day hiper">
+      <h3><span class="accent"></span>Día 2 — LOWER A <span class="small-label">(dominante cuádriceps)</span><button class="info-btn" data-tooltip="tt-hiper-2" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-hiper-2"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li><li>Respeta 48h entre Lower y partido.</li><li>Déficit 200-300 kcal · proteína 1.8-2.2 g/kg.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Sentadilla trasera con barra</td><td class="muted">Hack squat en máquina</td><td>Cuádriceps, glúteo, core</td><td class="aprox">1 × 8 al 50% + 1 × 5 al 70%</td><td class="sets">2 × 6-8</td><td class="rest">2-3 min</td><td>Hasta paralelo o más</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Prensa de piernas (pies medios)</td><td class="muted">Búlgara con mancuernas</td><td>Cuádriceps, glúteo</td><td class="aprox">1 × 10 al 60%</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Recorrido completo</td></tr>
+          <tr class="ss-start"><td class="num">3</td><td class="exercise">Extensión de cuádriceps</td><td class="muted">Sentadilla sissy</td><td>Cuádriceps (recto femoral)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Contracción 1 s arriba</td></tr>
+          <tr class="ss-end"><td class="num">4</td><td class="exercise">Curl femoral tumbado</td><td class="muted">Curl femoral sentado</td><td>Isquiosurales</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Excéntrica 2-3 s</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Aductores en máquina</td><td class="muted">Sentadilla sumo con mancuerna</td><td>Aductores</td><td class="aprox">—</td><td class="sets">2 × 12</td><td class="rest">60-90 s</td><td>Rango completo</td></tr>
+          <tr><td class="num">6</td><td class="exercise">Elevación de gemelos de pie</td><td class="muted">Gemelos en prensa</td><td>Gastrocnemio</td><td class="aprox">—</td><td class="sets">3 × 12-15</td><td class="rest">60 s</td><td>Pausa arriba y abajo</td></tr>
+          <tr><td class="num">7</td><td class="exercise">Plancha frontal</td><td class="muted">Dead bug</td><td>Core (transverso, recto)</td><td class="aprox">—</td><td class="sets">2 × 45-60 s</td><td class="rest">60 s</td><td>Cadera neutra</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day hiper">
+      <h3><span class="accent"></span>Día 4 — UPPER B <span class="small-label">(vertical / variación)</span><button class="info-btn" data-tooltip="tt-hiper-4" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-hiper-4"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li><li>Respeta 48h entre Lower y partido.</li><li>Déficit 200-300 kcal · proteína 1.8-2.2 g/kg.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Press inclinado con mancuernas (30°)</td><td class="muted">Press inclinado con barra</td><td>Pectoral clavicular, deltoide ant.</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 6-10</td><td class="rest">2-3 min</td><td>No bloquear codos arriba</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Dominadas (asistidas si hace falta)</td><td class="muted">Jalón al pecho agarre prono</td><td>Dorsal ancho, bíceps, romboides</td><td class="aprox">1 × 5 sin lastre</td><td class="sets">2 × 6-10</td><td class="rest">2-3 min</td><td>Sin balanceo</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press Arnold</td><td>Deltoide ant./medio</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Bajada controlada</td></tr>
+          <tr class="ss-start"><td class="num">4</td><td class="exercise">Jalón al pecho agarre supino</td><td class="muted">Pull-over en polea</td><td>Dorsal ancho, bíceps</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Agarre supino = más bíceps</td></tr>
+          <tr class="ss-end"><td class="num">5</td><td class="exercise">Aperturas en polea (cruce)</td><td class="muted">Pec deck</td><td>Pectoral (estiramiento)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Foco en estiramiento</td></tr>
+          <tr class="ss-start"><td class="num">6</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea con cuerda</td><td>Braquial, braquiorradial</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Tempo controlado</td></tr>
+          <tr class="ss-end"><td class="num">7</td><td class="exercise">Extensión tríceps en polea (cuerda)</td><td class="muted">Press francés en polea baja</td><td>Tríceps</td><td class="aprox">—</td><td class="sets">2 × 10</td><td class="rest">90 s</td><td>Codos pegados al torso</td></tr>
+          <tr><td class="num">8</td><td class="exercise">Pájaros con mancuernas (inclinado)</td><td class="muted">Reverse pec deck</td><td>Deltoide posterior</td><td class="aprox">—</td><td class="sets">2 × 12</td><td class="rest">60-90 s</td><td>Sin trapecio</td></tr>
+          <tr class="ss-start"><td class="num">9</td><td class="exercise">Cable rope hammer curl (polea con cuerda)</td><td class="muted">Curl Zottman con mancuernas</td><td>Braquial, braquiorradial, antebrazo</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Tensión constante, codos fijos</td></tr>
+          <tr class="ss-end"><td class="num">10</td><td class="exercise">Pushdown unilateral en polea (cuerda)</td><td class="muted">Patada de tríceps con mancuerna</td><td>Tríceps (cabeza lateral)</td><td class="aprox">—</td><td class="sets">2 × 10-12/lado</td><td class="rest">60-90 s</td><td>Unilateral, contracción máxima abajo</td></tr>
+          <tr><td class="num">11</td><td class="exercise">Ab wheel rollout (rueda abdominal)</td><td class="muted">Cable crunch arrodillado</td><td>Core (anti-extensión, recto abdominal)</td><td class="aprox">—</td><td class="sets">2 × 6-10</td><td class="rest">90 s</td><td>Cadera neutra, no arquear lumbar</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day hiper">
+      <h3><span class="accent"></span>Día 5 — LOWER B <span class="small-label">(dominante cadera / femoral)</span><button class="info-btn" data-tooltip="tt-hiper-5" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-hiper-5"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li><li>Respeta 48h entre Lower y partido.</li><li>Déficit 200-300 kcal · proteína 1.8-2.2 g/kg.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Peso muerto rumano con barra</td><td class="muted">RDL con mancuernas</td><td>Femoral, glúteo, erectores</td><td class="aprox">1 × 8 al 50% + 1 × 5 al 70%</td><td class="sets">2 × 6-8</td><td class="rest">2-3 min</td><td>Cadera atrás, espalda neutra</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Hip thrust con barra</td><td class="muted">Hip thrust en máquina</td><td>Glúteo mayor</td><td class="aprox">1 × 10 al 60%</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Bloqueo arriba 1 s, mentón al pecho</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Búlgara con mancuernas</td><td class="muted">Zancadas caminando</td><td>Cuádriceps, glúteo, estabilizadores</td><td class="aprox">—</td><td class="sets">2 × 8-10/pierna</td><td class="rest">90 s</td><td>Pie trasero elevado</td></tr>
+          <tr class="ss-start"><td class="num">4</td><td class="exercise">Curl femoral sentado</td><td class="muted">Curl femoral tumbado</td><td>Isquiosurales</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Sin rebote</td></tr>
+          <tr class="ss-end"><td class="num">5</td><td class="exercise">Abducción de cadera en máquina</td><td class="muted">Patada de glúteo en polea</td><td>Glúteo medio</td><td class="aprox">—</td><td class="sets">2 × 12-15</td><td class="rest">60-90 s</td><td>Pausa en contracción</td></tr>
+          <tr><td class="num">6</td><td class="exercise">Elevación de gemelos sentado</td><td class="muted">Gemelos burro</td><td>Sóleo</td><td class="aprox">—</td><td class="sets">3 × 12-15</td><td class="rest">60 s</td><td>Sentado = foco en sóleo</td></tr>
+          <tr><td class="num">7</td><td class="exercise">Wood chop en polea</td><td class="muted">Pallof press</td><td>Core (oblicuos)</td><td class="aprox">—</td><td class="sets">2 × 10/lado</td><td class="rest">60 s</td><td>Rotación desde tronco</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="notes hiper">
+      <h4>📝 Notas clave — Hipertrofia</h4>
+      <ul>
+        <li>RIR 1-2 en series efectivas. La última rep debe ser dura pero limpia.</li>
+        <li>La aproximación NO cuenta como serie efectiva. Solo prepara SNC y técnica.</li>
+        <li>Progresión semana a semana: +1 rep o +2.5 kg en el ejercicio principal. En semana 3, si topas en 10 reps, sube peso y vuelve a 6-8.</li>
+        <li>Calentamiento general: 5-8 min cardio ligero + movilidad específica antes del primer ejercicio.</li>
+        <li>Respeta 48h entre Lower y partido de fútbol.</li>
+        <li>Nutrición: déficit ligero (200-300 kcal), proteína 1.8-2.2 g/kg, carbos altos en Lower y partidos.</li>
+      </ul>
+    </div>
+    </div>
+  </details>
+
+  <details class="block block-details" id="fuerza">
+    <summary class="block-header fuerza"><div class="block-heading"><h2>🟧 Bloque 2 — Fuerza</h2><div class="block-meta">Semanas 4 – 5 · 2-3 aprox + 3 efectivas × 4-6 reps · RIR 1-2 · Aproximaciones progresivas obligatorias</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="block-content">
+
+    <div class="day fuerza">
+      <h3><span class="accent"></span>Día 1 — UPPER A<button class="info-btn" data-tooltip="tt-fuerza-1" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-fuerza-1"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas obligatorias en compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Calentamiento de hombro/manguito antes de presses.</li><li>Si partido competitivo, reduce intensidad o salta.</li><li>Spotter o seguros en banca y sentadilla pesada.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Press banca plano con barra</td><td class="muted">Press banca con mancuernas</td><td>Pectoral, deltoide ant., tríceps</td><td class="aprox">Vacío × 8 → 40% × 5 → 60% × 3 → 80% × 2</td><td class="sets">3 × 4-5</td><td class="rest">3-5 min</td><td>Pausa breve en el pecho. Spotter obligatorio.</td></tr>
+          <tr><td class="num">2</td><td class="exercise">T-row máquina (chest-supported)</td><td class="muted">Remo en máquina con apoyo de pecho</td><td>Dorsal, romboides, trapecio</td><td class="aprox">40% × 6 → 70% × 3</td><td class="sets">3 × 4-5</td><td class="rest">3 min</td><td>Pecho apoyado, RIR 1-2, ROM completo</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Press militar de pie con barra</td><td class="muted">Press hombro con mancuernas</td><td>Deltoide, tríceps</td><td class="aprox">Vacío × 6 → 50% × 4 → 75% × 2</td><td class="sets">3 × 4-5</td><td class="rest">3 min</td><td>Core ultra firme</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Remo con mancuerna a una mano</td><td class="muted">Remo en máquina unilateral</td><td>Dorsal, romboides</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6/lado</td><td class="rest">2 min</td><td>Carga pesada, codo pegado al torso</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Press cerrado con barra</td><td class="muted">Press francés con barra Z</td><td>Tríceps, pectoral interno</td><td class="aprox">1 × 6 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2 min</td><td>Manos a la anchura de hombros</td></tr>
+          <tr class="ss-start"><td class="num">6</td><td class="exercise">Curl con barra Z</td><td class="muted">Curl con barra recta</td><td>Bíceps</td><td class="aprox">—</td><td class="sets">3 × 5-6</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Técnica impecable</td></tr>
+          <tr class="ss-end"><td class="num">7</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td>Deltoide post., manguito</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">60-90 s</td><td>Mantener salud del hombro</td></tr>
+          <tr><td class="num">8</td><td class="exercise">Hanging leg raise (piernas colgado)</td><td class="muted">Hanging knee raise lastrado</td><td>Core (recto abdominal, flexores cadera)</td><td class="aprox">—</td><td class="sets">2 × 6-8</td><td class="rest">60-90 s</td><td>Lastra si llegas a 8 reps limpias</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day fuerza">
+      <h3><span class="accent"></span>Día 2 — LOWER A<button class="info-btn" data-tooltip="tt-fuerza-2" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-fuerza-2"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas obligatorias en compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Calentamiento de hombro/manguito antes de presses.</li><li>Si partido competitivo, reduce intensidad o salta.</li><li>Spotter o seguros en banca y sentadilla pesada.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Sentadilla trasera con barra</td><td class="muted">Hack squat</td><td>Cuádriceps, glúteo, core</td><td class="aprox">Vacío × 8 → 40% × 5 → 60% × 3 → 80% × 2</td><td class="sets">3 × 4-5</td><td class="rest">3-5 min</td><td>Profundidad consistente, sin rebotar</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Prensa de piernas (pies medios)</td><td class="muted">Búlgara lastrada</td><td>Cuádriceps, glúteo</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2-3 min</td><td>Control en bajada</td></tr>
+          <tr class="ss-start"><td class="num">3</td><td class="exercise">Curl femoral tumbado</td><td class="muted">Curl femoral sentado</td><td>Isquiosurales</td><td class="aprox">—</td><td class="sets">2 × 8</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Carga moderada</td></tr>
+          <tr class="ss-end"><td class="num">4</td><td class="exercise">Extensión de cuádriceps</td><td class="muted">Sentadilla sissy</td><td>Cuádriceps</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Contracción 1 s arriba</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Elevación de gemelos de pie</td><td class="muted">Gemelos en prensa</td><td>Gastrocnemio</td><td class="aprox">—</td><td class="sets">3 × 8-10</td><td class="rest">90 s</td><td>Pausa arriba y abajo</td></tr>
+          <tr><td class="num">6</td><td class="exercise">Plancha lastrada</td><td class="muted">Dead bug</td><td>Core</td><td class="aprox">—</td><td class="sets">2 × 30-45 s</td><td class="rest">60 s</td><td>Disco en espalda baja</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day fuerza">
+      <h3><span class="accent"></span>Día 4 — UPPER B<button class="info-btn" data-tooltip="tt-fuerza-4" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-fuerza-4"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas obligatorias en compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Calentamiento de hombro/manguito antes de presses.</li><li>Si partido competitivo, reduce intensidad o salta.</li><li>Spotter o seguros en banca y sentadilla pesada.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Press inclinado con barra (30°)</td><td class="muted">Press inclinado con mancuernas</td><td>Pectoral clavicular, deltoide ant.</td><td class="aprox">Vacío × 6 → 50% × 4 → 75% × 2</td><td class="sets">3 × 4-5</td><td class="rest">3-5 min</td><td>Pausa breve en el pecho</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Dominadas lastradas</td><td class="muted">Jalón pesado al pecho</td><td>Dorsal, bíceps</td><td class="aprox">1 × 5 sin lastre → 1 × 3 con 50% lastre</td><td class="sets">3 × 3-5</td><td class="rest">3 min</td><td>Lastre en cinturón</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press Arnold</td><td>Deltoide</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2-3 min</td><td>Bajada controlada</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Remo en polea baja agarre estrecho</td><td class="muted">Remo en máquina (neutro)</td><td>Dorsal medio, romboides</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2 min</td><td>Aprieta escápulas al final</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea</td><td>Braquial, antebrazo</td><td class="aprox">—</td><td class="sets">3 × 6</td><td class="rest">90 s</td><td>Tempo controlado, carga pesada</td></tr>
+          <tr><td class="num">6</td><td class="exercise">Press francés con barra Z</td><td class="muted">Extensión tríceps en polea</td><td>Tríceps</td><td class="aprox">—</td><td class="sets">3 × 5-6</td><td class="rest">2 min</td><td>Carga pesada, codos fijos</td></tr>
+          <tr class="ss-start"><td class="num">7</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td>Deltoide medio</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Salud articular</td></tr>
+          <tr class="ss-end"><td class="num">8</td><td class="exercise">Ab wheel rollout (rueda abdominal)</td><td class="muted">Cable crunch arrodillado</td><td>Core (anti-extensión)</td><td class="aprox">—</td><td class="sets">2 × 6-8</td><td class="rest">90 s</td><td>Sin arquear lumbar, control total</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day fuerza">
+      <h3><span class="accent"></span>Día 5 — LOWER B<button class="info-btn" data-tooltip="tt-fuerza-5" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-fuerza-5"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas obligatorias en compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Calentamiento de hombro/manguito antes de presses.</li><li>Si partido competitivo, reduce intensidad o salta.</li><li>Spotter o seguros en banca y sentadilla pesada.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Peso muerto convencional</td><td class="muted">Peso muerto trap-bar</td><td>Cadena posterior completa</td><td class="aprox">Vacío × 6 → 40% × 5 → 60% × 3 → 80% × 1</td><td class="sets">3 × 3-5</td><td class="rest">3-5 min</td><td>Si hay partido 24h, cambia a trap-bar o rumano</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Hip thrust con barra</td><td class="muted">Hip thrust en máquina</td><td>Glúteo mayor</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2-3 min</td><td>Bloqueo arriba 1 s</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Búlgara con mancuernas</td><td class="muted">Zancadas con mancuernas</td><td>Cuádriceps, glúteo</td><td class="aprox">1 × 8 con peso ligero</td><td class="sets">3 × 5-6/pierna</td><td class="rest">2 min</td><td>Pasos largos, control de rodilla</td></tr>
+          <tr class="ss-start"><td class="num">4</td><td class="exercise">Curl femoral sentado</td><td class="muted">Curl femoral tumbado</td><td>Isquiosurales</td><td class="aprox">—</td><td class="sets">2 × 8</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Carga moderada</td></tr>
+          <tr class="ss-end"><td class="num">5</td><td class="exercise">Abducción de cadera en máquina</td><td class="muted">Patada de glúteo en polea</td><td>Glúteo medio</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest">60-90 s</td><td>Pausa en contracción</td></tr>
+          <tr><td class="num">6</td><td class="exercise">Elevación de gemelos sentado</td><td class="muted">Gemelos burro</td><td>Sóleo</td><td class="aprox">—</td><td class="sets">3 × 8-10</td><td class="rest">60 s</td><td>Sentado = foco en sóleo</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="notes fuerza">
+      <h4>📝 Notas clave — Fuerza</h4>
+      <ul>
+        <li>RIR 1-2 en series efectivas. Si fallas reps, baja peso 5-10% en la siguiente serie.</li>
+        <li>Aproximaciones progresivas obligatorias en compuestos pesados.</li>
+        <li>Tempo: excéntrica controlada (~2 s), concéntrica explosiva.</li>
+        <li>Calentamiento específico de hombro/manguito antes de press banca y militar.</li>
+        <li>Semana más demandante para CNS. Si el partido es competitivo, reduce intensidad o sáltatelo.</li>
+        <li>Si hay partido al día siguiente del Lower B, sustituye peso muerto convencional por rumano o trap-bar.</li>
+        <li>Nutrición: mantén carbohidratos altos los días de gym. Hidratación + electrolitos.</li>
+        <li>Seguridad: spotter o seguros en series pesadas de banca y sentadilla.</li>
+      </ul>
+    </div>
+    </div>
+  </details>
+
+  <details class="block block-details" id="descarga">
+    <summary class="block-header desc"><div class="block-heading"><h2>🟩 Bloque 3 — Descarga</h2><div class="block-meta">Semana 6 · 2 × 8-10 reps al 60-65% del peso habitual · RIR 3-4 · Sin aproximaciones formales</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="block-content">
+
+    <div class="day desc">
+      <h3><span class="accent"></span>Día 1 — UPPER A<button class="info-btn" data-tooltip="tt-desc-1" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-desc-1"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>NO progreses. Esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos 60-90 s.</li><li>Aprovecha para dormir 8+ h, movilidad, foam roller.</li><li>Si tienes molestias, esta semana es la oportunidad.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Press banca con mancuernas</td><td class="muted">Press en máquina</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>60-65% del peso habitual</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Remo en máquina (neutro)</td><td class="muted">Remo en polea baja</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Carga moderada</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press en máquina</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Ligero</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Curl con mancuernas alternado</td><td class="muted">Curl en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Foco en contracción</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Extensión tríceps en polea (cuerda)</td><td class="muted">Patada de tríceps</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Sin fatigar</td></tr>
+          <tr><td class="num">6</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Salud articular</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day desc">
+      <h3><span class="accent"></span>Día 2 — LOWER A<button class="info-btn" data-tooltip="tt-desc-2" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-desc-2"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>NO progreses. Esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos 60-90 s.</li><li>Aprovecha para dormir 8+ h, movilidad, foam roller.</li><li>Si tienes molestias, esta semana es la oportunidad.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Prensa de piernas</td><td class="muted">Goblet squat ligero</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Carga moderada, sin tope</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Extensión de cuádriceps</td><td class="muted">Sentadilla sissy</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Ligero</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Curl femoral tumbado</td><td class="muted">Curl femoral sentado</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Ligero</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Aductores en máquina</td><td class="muted">Sentadilla sumo ligera</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Suave</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Elevación de gemelos</td><td class="muted">Gemelos en prensa</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Calidad sobre carga</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day desc">
+      <h3><span class="accent"></span>Día 4 — UPPER B<button class="info-btn" data-tooltip="tt-desc-4" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-desc-4"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>NO progreses. Esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos 60-90 s.</li><li>Aprovecha para dormir 8+ h, movilidad, foam roller.</li><li>Si tienes molestias, esta semana es la oportunidad.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Press inclinado con mancuernas</td><td class="muted">Press inclinado en máquina</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Carga ligera</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Jalón al pecho prono</td><td class="muted">Dominadas sin lastre</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Sin lastre, sensación</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Peso muy ligero</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Suave</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Press francés con mancuernas</td><td class="muted">Extensión overhead</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Sin fatigar</td></tr>
+          <tr><td class="num">6</td><td class="exercise">Pájaros con mancuernas</td><td class="muted">Reverse pec deck</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Salud articular</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day desc">
+      <h3><span class="accent"></span>Día 5 — LOWER B<button class="info-btn" data-tooltip="tt-desc-5" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-desc-5"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>NO progreses. Esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos 60-90 s.</li><li>Aprovecha para dormir 8+ h, movilidad, foam roller.</li><li>Si tienes molestias, esta semana es la oportunidad.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Peso muerto rumano con mancuernas</td><td class="muted">Peso muerto trap-bar ligero</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Foco en patrón motor</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Hip thrust con barra</td><td class="muted">Hip thrust en máquina</td><td class="sets">2 × 10</td><td class="rest">90 s</td><td>Carga moderada</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Búlgara con peso corporal</td><td class="muted">Zancadas con mancuernas ligeras</td><td class="sets">2 × 10/pierna</td><td class="rest">60 s</td><td>Suave</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Curl femoral sentado</td><td class="muted">Curl femoral tumbado</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Ligero</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Elevación de gemelos sentado</td><td class="muted">Gemelos burro</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Suave</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="notes desc">
+      <h4>📝 Notas clave — Descarga</h4>
+      <ul>
+        <li>RIR 3-4. Si terminas sin sentir esfuerzo, perfecto. Ese es el objetivo.</li>
+        <li>NO progreses: esta semana es para recuperar, no romper récords.</li>
+        <li>Cargas al 60-65% del peso habitual.</li>
+        <li>Descansos cortos: 60-90 s. Mantener flujo, no acumular fatiga.</li>
+        <li>Semana ideal para más fútbol o trabajo técnico si hay torneo cerca.</li>
+        <li>Aprovecha para: dormir 8+ h, movilidad, foam roller.</li>
+        <li>Si tienes molestias acumuladas, esta semana es la oportunidad para que bajen.</li>
+        <li>Nutrición: déficit ligero, NO agresivo.</li>
+      </ul>
+    </div>
+    </div>
+  </details>
+
+  <div class="reminders" id="recordatorios">
+    <h2>🎯 Recordatorios generales del ciclo</h2>
+    <ul>
+      <li><strong>Sobrecarga progresiva trackeada:</strong> registra cargas y reps cada sesión.</li>
+      <li><strong>Aproximaciones:</strong> NO cuentan como series efectivas. Suben en peso y bajan en reps.</li>
+      <li><strong>Recomp = paciencia:</strong> déficit 200-300 kcal, proteína 1.8-2.2 g/kg, sueño 7-9h.</li>
+      <li><strong>Fútbol cuenta como entreno:</strong> reduce intensidad de Lower esa semana si es competitivo.</li>
+      <li><strong>Fatiga acumulada:</strong> si tienes sueño malo, dolores o falta de motivación 3+ días, adelanta la descarga.</li>
+      <li><strong>Calentamiento siempre:</strong> 5-8 min cardio ligero + movilidad + aproximaciones.</li>
+      <li><strong>Hidratación:</strong> 35-40 ml por kg, más electrolitos los días de partido.</li>
+      <li><strong>Frecuencia muscular:</strong> 2x/semana (Upper A + B; Lower A + B).</li>
+    </ul>
+  </div>
+
+  <footer>Plan de Entrenamiento · Ciclo 6 Semanas · Upper / Lower 4 días · Toca una fila para ver el detalle del ejercicio</footer>
+  </div><!-- /#tab-entrenamiento -->
+
+  <div id="tab-nutricion" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-nutricion">
+    <div class="nutri-cover">
+      <h1>PLAN DE NUTRICIÓN</h1>
+      <div class="subtitle">Fase de definición · 10 semanas</div>
+      <div class="meta">
+        <span>🎯 Perder ~3.5 kg de grasa</span>
+        <span>💪 Mantener 65 kg de masa magra</span>
+        <span>🍽️ 6 comidas al día</span>
+      </div>
+    </div>
+
+    <div class="nutri-progress-card" id="nutri-progress-card">
+      <div class="nutri-progress-header">
+        <span class="nutri-progress-title">📈 Progreso del ciclo</span>
+        <span class="nutri-progress-count"><strong id="nutri-progress-weeks">0</strong>/ <span id="nutri-progress-target">10</span> semanas</span>
+      </div>
+      <div class="nutri-progress-bar-outer">
+        <div class="nutri-progress-bar-inner" id="nutri-progress-bar" style="width: 0%;"></div>
+      </div>
+      <div class="nutri-progress-footer" id="nutri-progress-footer">
+        <span id="nutri-progress-percent">0%</span> hacia la meta · quedan <strong id="nutri-progress-weeks-left">10</strong> semanas
+      </div>
+    </div>
+
+    <h2 class="nutri-section-title">🎯 Cifras y meta <span class="badge">Ciclo · 10 semanas</span></h2>
+    <div class="goal-table-wrap">
+      <table class="goal-table">
+        <thead>
+          <tr>
+            <th>Métrica</th>
+            <th>Actual (hoy)</th>
+            <th>Meta (semana 10)</th>
+            <th>Cambio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Peso corporal</td>
+            <td class="col-actual">79.6 kg</td>
+            <td class="col-meta">76.0 kg</td>
+            <td class="delta-goal">−3.6 kg</td>
+          </tr>
+          <tr>
+            <td>Grasa corporal</td>
+            <td class="col-actual">~19 %</td>
+            <td class="col-meta">14–15 %</td>
+            <td class="delta-goal">−4 pp · ~3.5 kg</td>
+          </tr>
+          <tr>
+            <td>Masa magra</td>
+            <td class="col-actual">~65 kg</td>
+            <td class="col-meta">~65 kg</td>
+            <td class="delta-hold">preservar</td>
+          </tr>
+          <tr>
+            <td>TDEE estimado</td>
+            <td class="col-actual">~2750 kcal</td>
+            <td class="col-meta">~2680 kcal</td>
+            <td class="delta-info">baja al bajar peso</td>
+          </tr>
+          <tr>
+            <td>Kcal día entreno</td>
+            <td colspan="2"><strong>2400 kcal</strong> · déficit −350</td>
+            <td class="delta-info">4×/semana</td>
+          </tr>
+          <tr>
+            <td>Kcal día descanso</td>
+            <td colspan="2"><strong>2260 kcal</strong> · déficit −490</td>
+            <td class="delta-info">3×/semana</td>
+          </tr>
+          <tr>
+            <td>Proteína diaria</td>
+            <td colspan="2"><strong>170 g</strong> (2.14 g/kg — rango alto)</td>
+            <td class="delta-hold">no negociable</td>
+          </tr>
+          <tr>
+            <td>Ritmo esperado</td>
+            <td colspan="2">~0.35 kg de grasa por semana</td>
+            <td class="delta-goal">sostenible</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="goal-note"><em>Estimaciones con TDEE 2750 y peso base 79.6 kg. Si el peso se estanca &gt; 10 días o tu actividad real cambia, recalibramos kcal.</em></p>
+    </div>
+
+    <h2 class="nutri-section-title">📊 Dashboard <span class="badge">Punto de partida</span></h2>
+    <div class="nutri-dashboard">
+      <div class="stat-card">
+        <div class="stat-label">Peso actual</div>
+        <div class="stat-value">79.6 <small>kg</small></div>
+        <div class="stat-detail"><span class="stat-arrow">→</span> meta 76 kg</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Grasa corporal</div>
+        <div class="stat-value">19 <small>%</small></div>
+        <div class="stat-detail"><span class="stat-arrow">→</span> meta 14–15 %</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Déficit diario</div>
+        <div class="stat-value">−350 <small>kcal</small></div>
+        <div class="stat-detail">de un TDEE ~2750</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Ritmo esperado</div>
+        <div class="stat-value">0.35 <small>kg/sem</small></div>
+        <div class="stat-detail">grasa, no músculo</div>
+      </div>
+    </div>
+
+    <h2 class="nutri-section-title">🎯 Macros diarios <span class="badge" id="day-mode-badge">Día entreno</span></h2>
+    <div class="day-mode-toggle" role="group" aria-label="Tipo de día">
+      <button data-mode="entreno" aria-pressed="true">🏋️ Día entreno</button>
+      <button data-mode="descanso" aria-pressed="false">😴 Día descanso</button>
+    </div>
+
+    <div class="macros-grid">
+      <div class="macro-card protein">
+        <div class="macro-label"><span class="macro-emoji">🍗</span>Proteína</div>
+        <div><span class="macro-grams">170</span><span class="macro-grams-unit"> g</span></div>
+        <div class="macro-kcal">680 kcal · 28 %</div>
+        <div class="macro-pct">2.1 g por kg — no negociable</div>
+      </div>
+      <div class="macro-card fat">
+        <div class="macro-label"><span class="macro-emoji">🥑</span>Grasa</div>
+        <div><span class="macro-grams">70</span><span class="macro-grams-unit"> g</span></div>
+        <div class="macro-kcal">630 kcal · 26 %</div>
+        <div class="macro-pct">0.9 g por kg — hormonas OK</div>
+      </div>
+      <div class="macro-card carb">
+        <div class="macro-label"><span class="macro-emoji">🍚</span>Carbohidratos</div>
+        <div><span class="macro-grams" id="carb-grams">270</span><span class="macro-grams-unit"> g</span></div>
+        <div class="macro-kcal" id="carb-kcal">1080 kcal · 45 %</div>
+        <div class="macro-pct">energía para entrenar</div>
+      </div>
+    </div>
+
+    <div class="macros-total"><strong id="total-kcal">2400 kcal/día</strong> · 170 P / 70 F / <span id="total-carbs">270</span> C · fibra 30–40 g · agua 3–4 L</div>
+
+    <div class="rest-day-note" id="rest-day-note">
+      <strong>Día descanso:</strong> omite la comida de 5:30 (pre-entreno) y los 4 boosts marcados <em>Días entreno</em>. Come solo la base de las 5 comidas restantes. Proteína no negociable.
+    </div>
+
+    <h2 class="nutri-section-title">🍽️ Menú diario <span class="badge">6 comidas · 4 opciones</span></h2>
+    <p style="color: var(--muted); font-size: 0.9rem; margin: -8px 0 20px;">Cada comida tiene 4 opciones equivalentes en macros (±10 %). La <strong style="color: var(--nutri);">opción marcada</strong> refleja lo que ya comes; las otras 3 son variedad para que no te canses.</p>
+
+    <!-- 5:30 · Pre-entreno -->
+    <div class="meal-section boost-hint">
+      <div class="meal-header">
+        <span class="meal-time">5:30</span>
+        <span class="meal-name">☀️ Pre-entreno</span>
+      </div>
+      <div class="meal-target">Objetivo: <strong>~170 kcal</strong> · 3 P / 1 F / 40 C · rápido, carbo simple</div>
+      <div class="meal-options">
+        <div class="meal-option current">
+          <span class="badge-current">Tu opción</span>
+          <div class="meal-option-name">Pan con queso + café</div>
+          <ul class="meal-ingredients">
+            <li>1 tajada pan de tienda (30 g)</li>
+            <li>1 rebanada gruesa de queso de mesa (~30 g)</li>
+            <li>Café solo</li>
+            <li class="boost-hint"><em>Días entreno: + 1 cdita miel al café (15 g)</em></li>
+            <li class="boost-hint"><em>Solo los días que entrenas</em></li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">175 kcal</span><span class="macro-pill p">10 P</span><span class="macro-pill f">7 F</span><span class="macro-pill c">16 C</span></div>
+          <div class="boost-hint" style="font-size: 0.72rem; color: var(--muted); margin-top: 6px;"><em>Con boost entreno: 220 kcal · 10 P · 7 F · 28 C</em></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Tostada con miel</div>
+          <ul class="meal-ingredients">
+            <li>1 rebanada pan integral (40 g)</li>
+            <li>1 cda miel (20 g)</li>
+            <li>Café solo o té</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">165 kcal</span><span class="macro-pill p">4 P</span><span class="macro-pill f">1 F</span><span class="macro-pill c">34 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Avena rápida</div>
+          <ul class="meal-ingredients">
+            <li>30 g avena en hojuelas (Quaker)</li>
+            <li>200 ml agua caliente + canela</li>
+            <li>1 cdita miel (7 g)</li>
+            <li>Café solo</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">160 kcal</span><span class="macro-pill p">5 P</span><span class="macro-pill f">2 F</span><span class="macro-pill c">30 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">On-the-go (viaje)</div>
+          <ul class="meal-ingredients">
+            <li>5 dátiles medjool (40 g)</li>
+            <li>Café con 100 ml leche desnatada</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">175 kcal</span><span class="macro-pill p">4 P</span><span class="macro-pill f">1 F</span><span class="macro-pill c">38 C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9:30 · Desayuno post-entreno -->
+    <div class="meal-section">
+      <div class="meal-header">
+        <span class="meal-time">9:30</span>
+        <span class="meal-name">🍳 Desayuno post-entreno</span>
+      </div>
+      <div class="meal-target">Objetivo: <strong>~600 kcal</strong> · 45 P / 15 F / 65 C · comida sólida, proteína alta</div>
+      <div class="meal-options">
+        <div class="meal-option current">
+          <span class="badge-current">Tu opción</span>
+          <div class="meal-option-name">Huevos con tocino + pan + leche</div>
+          <ul class="meal-ingredients">
+            <li>4 claras + 1 huevo entero (cocinados con ~5 g aceite o mantequilla)</li>
+            <li>10 g tocino</li>
+            <li>1 tajada pan de tienda (30 g)</li>
+            <li>150 ml leche semidescremada + café</li>
+            <li>1 cda azúcar morena (10 g)</li>
+            <li><em>Días de fútbol / hiking: adelántala</em></li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">450 kcal</span><span class="macro-pill p">38 P</span><span class="macro-pill f">19 F</span><span class="macro-pill c">35 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Avena proteica bowl</div>
+          <ul class="meal-ingredients">
+            <li>80 g avena en hojuelas (Quaker)</li>
+            <li>30 g proteína en polvo (whey)</li>
+            <li>200 ml leche desnatada</li>
+            <li>1 plátano (100 g) + 15 g mantequilla de maní</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">615 kcal</span><span class="macro-pill p">48 P</span><span class="macro-pill f">14 F</span><span class="macro-pill c">68 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Wrap huevos + aguacate</div>
+          <ul class="meal-ingredients">
+            <li>2 wraps integrales (60 g c/u)</li>
+            <li>4 claras + 2 huevos enteros</li>
+            <li>50 g aguacate + tomate/lechuga</li>
+            <li>Café solo</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">585 kcal</span><span class="macro-pill p">44 P</span><span class="macro-pill f">18 F</span><span class="macro-pill c">55 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Panqueques proteicos</div>
+          <ul class="meal-ingredients">
+            <li>60 g avena molida + 3 claras + 1 huevo</li>
+            <li>30 g proteína en polvo</li>
+            <li>100 g frutos rojos + 1 cda miel</li>
+            <li>Café solo</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">590 kcal</span><span class="macro-pill p">50 P</span><span class="macro-pill f">10 F</span><span class="macro-pill c">62 C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11:00 · Media mañana -->
+    <div class="meal-section">
+      <div class="meal-header">
+        <span class="meal-time">11:00</span>
+        <span class="meal-name">🥤 Media mañana</span>
+      </div>
+      <div class="meal-target">Objetivo: <strong>~450 kcal</strong> · 30 P / 12 F / 50 C · sostiene hasta almuerzo</div>
+      <div class="meal-options">
+        <div class="meal-option current">
+          <span class="badge-current">Tu opción</span>
+          <div class="meal-option-name">Bowl de yogures + cereal + fruta</div>
+          <ul class="meal-ingredients">
+            <li>150 g yogur griego bajo en grasa</li>
+            <li>50 g yogur natural endulzado con miel</li>
+            <li>50 g cereal Kellogg's sin azúcar (Special K / Fitness) <em class="boost-hint">— 65 g días entreno</em></li>
+            <li>1 banano (120 g) <em>o</em> 100 g fresas</li>
+            <li>10 g semillas de chía <em>o</em> 15 g pasas</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">475 kcal</span><span class="macro-pill p">25 P</span><span class="macro-pill f">7 F</span><span class="macro-pill c">80 C</span></div>
+          <div class="boost-hint" style="font-size: 0.72rem; color: var(--muted); margin-top: 6px;"><em>Con boost entreno: 530 kcal · 27 P · 8 F · 91 C</em></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Yogur + granola</div>
+          <ul class="meal-ingredients">
+            <li>300 g yogur griego 0 %</li>
+            <li>50 g granola casera (avena/miel/nueces)</li>
+            <li>100 g fresas o arándanos</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">440 kcal</span><span class="macro-pill p">30 P</span><span class="macro-pill f">10 F</span><span class="macro-pill c">55 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Sándwich de atún</div>
+          <ul class="meal-ingredients">
+            <li>2 rebanadas pan integral (80 g)</li>
+            <li>1 lata atún al natural (80 g escurrido)</li>
+            <li>20 g queso fresco + tomate/lechuga</li>
+            <li>1 manzana (150 g)</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">450 kcal</span><span class="macro-pill p">35 P</span><span class="macro-pill f">10 F</span><span class="macro-pill c">55 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Bowl requesón + fruta</div>
+          <ul class="meal-ingredients">
+            <li>200 g requesón (o cottage)</li>
+            <li>40 g avena en hojuelas (Quaker)</li>
+            <li>100 g arándanos + 15 g nueces</li>
+            <li>1 cdita miel</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">455 kcal</span><span class="macro-pill p">32 P</span><span class="macro-pill f">15 F</span><span class="macro-pill c">45 C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13:30 · Almuerzo -->
+    <div class="meal-section">
+      <div class="meal-header">
+        <span class="meal-time">13:30</span>
+        <span class="meal-name">🍚 Almuerzo</span>
+      </div>
+      <div class="meal-target">Objetivo: <strong>~500 kcal</strong> · 45 P / 15 F / 45 C · plato completo, verdura obligatoria</div>
+      <div class="meal-options">
+        <div class="meal-option current">
+          <span class="badge-current">Tu opción</span>
+          <div class="meal-option-name">Proteína + arroz o papa + ensalada</div>
+          <ul class="meal-ingredients">
+            <li>125–150 g de pollo, carne o pescado a la plancha</li>
+            <li>100 g arroz blanco cocido <em>o</em> 120 g papas en air fryer <em class="boost-hint">— 140 g arroz / 160 g papas días entreno</em></li>
+            <li>Ensalada de tomate y pepinillo (~200 g) + 10 g aceite oliva</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">425 kcal</span><span class="macro-pill p">40 P</span><span class="macro-pill f">14 F</span><span class="macro-pill c">32 C</span></div>
+          <div class="boost-hint" style="font-size: 0.72rem; color: var(--muted); margin-top: 6px;"><em>Con boost entreno: 470 kcal · 41 P · 14 F · 43 C</em></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Bowl mediterráneo</div>
+          <ul class="meal-ingredients">
+            <li>150 g quinoa cocida</li>
+            <li>150 g pavo o pollo a la plancha</li>
+            <li>30 g queso feta + 100 g pepino/tomate</li>
+            <li>10 g aceitunas + 5 g aceite oliva</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">505 kcal</span><span class="macro-pill p">42 P</span><span class="macro-pill f">18 F</span><span class="macro-pill c">42 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Salmón + arroz + brócoli</div>
+          <ul class="meal-ingredients">
+            <li>130 g salmón al horno</li>
+            <li>150 g arroz basmati cocido</li>
+            <li>200 g brócoli al vapor</li>
+            <li>Limón + hierbas (sin aceite extra)</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">515 kcal</span><span class="macro-pill p">40 P</span><span class="macro-pill f">20 F</span><span class="macro-pill c">45 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Vegetariano — lentejas + tofu</div>
+          <ul class="meal-ingredients">
+            <li>200 g lentejas cocidas</li>
+            <li>150 g tofu firme a la plancha</li>
+            <li>100 g verdura asada (calabacín/pimiento)</li>
+            <li>10 g nueces + limón</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">495 kcal</span><span class="macro-pill p">38 P</span><span class="macro-pill f">16 F</span><span class="macro-pill c">48 C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17:00 · Merienda -->
+    <div class="meal-section">
+      <div class="meal-header">
+        <span class="meal-time">17:00</span>
+        <span class="meal-name">🍎 Merienda</span>
+      </div>
+      <div class="meal-target">Objetivo: <strong>~280 kcal</strong> · 22 P / 8 F / 25 C · aguanta hasta la cena</div>
+      <div class="meal-options">
+        <div class="meal-option current">
+          <span class="badge-current">Tu opción</span>
+          <div class="meal-option-name">Chochos + atún + maíz tostado</div>
+          <ul class="meal-ingredients">
+            <li>135 g chochos cocidos (promedio 120–150 g)</li>
+            <li>50 g atún en agua (escurrido)</li>
+            <li>20 g maíz tostado</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">305 kcal</span><span class="macro-pill p">30 P</span><span class="macro-pill f">8 F</span><span class="macro-pill c">31 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Requesón + tostada con miel</div>
+          <ul class="meal-ingredients">
+            <li>100 g requesón (o cottage)</li>
+            <li>1 rebanada pan integral (40 g)</li>
+            <li>1 cdita miel + canela</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">265 kcal</span><span class="macro-pill p">20 P</span><span class="macro-pill f">5 F</span><span class="macro-pill c">32 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Batido rápido</div>
+          <ul class="meal-ingredients">
+            <li>30 g whey + 200 ml leche desnatada</li>
+            <li>100 g fresa (o 1 plátano pequeño)</li>
+            <li>10 g mantequilla de maní</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">285 kcal</span><span class="macro-pill p">32 P</span><span class="macro-pill f">8 F</span><span class="macro-pill c">20 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Manzana + huevos duros</div>
+          <ul class="meal-ingredients">
+            <li>2 huevos duros</li>
+            <li>1 manzana grande (200 g)</li>
+            <li>10 g nueces</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">280 kcal</span><span class="macro-pill p">18 P</span><span class="macro-pill f">14 F</span><span class="macro-pill c">28 C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20:30 · Cena -->
+    <div class="meal-section">
+      <div class="meal-header">
+        <span class="meal-time">20:30</span>
+        <span class="meal-name">🌙 Cena</span>
+      </div>
+      <div class="meal-target">Objetivo: <strong>~410 kcal</strong> · 28 P / 15 F / 45 C · más ligera, digestión fácil</div>
+      <div class="meal-options">
+        <div class="meal-option current">
+          <span class="badge-current">Tu opción</span>
+          <div class="meal-option-name">Proteína + arroz o papa + ensalada (mismo que almuerzo)</div>
+          <ul class="meal-ingredients">
+            <li>125–150 g de pollo, carne o pescado a la plancha</li>
+            <li>100 g arroz blanco cocido <em>o</em> 120 g papas en air fryer <em class="boost-hint">— 140 g arroz / 160 g papas días entreno</em></li>
+            <li>Ensalada de tomate y pepinillo (~200 g) + 10 g aceite oliva</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">455 kcal</span><span class="macro-pill p">41 P</span><span class="macro-pill f">18 F</span><span class="macro-pill c">32 C</span></div>
+          <div class="boost-hint" style="font-size: 0.72rem; color: var(--muted); margin-top: 6px;"><em>Con boost entreno: 500 kcal · 42 P · 18 F · 43 C</em></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Tortilla + tostada + ensalada</div>
+          <ul class="meal-ingredients">
+            <li>2 huevos + 2 claras revueltos con 100 g setas/pimiento</li>
+            <li>1 rebanada pan integral (40 g) + 100 g patata cocida</li>
+            <li>150 g ensalada verde + 5 g aceite</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">420 kcal</span><span class="macro-pill p">26 P</span><span class="macro-pill f">17 F</span><span class="macro-pill c">40 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Wok pollo + arroz + verdura</div>
+          <ul class="meal-ingredients">
+            <li>130 g pechuga de pollo</li>
+            <li>150 g arroz basmati cocido</li>
+            <li>200 g verdura salteada (pimiento/brócoli/zanahoria)</li>
+            <li>5 g aceite sésamo + salsa soja baja en sal</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">430 kcal</span><span class="macro-pill p">32 P</span><span class="macro-pill f">10 F</span><span class="macro-pill c">50 C</span></div>
+        </div>
+        <div class="meal-option">
+          <div class="meal-option-name">Bowl asiático con tofu</div>
+          <ul class="meal-ingredients">
+            <li>150 g tofu firme marinado (soja + jengibre)</li>
+            <li>150 g arroz basmati cocido</li>
+            <li>200 g verdura wok</li>
+            <li>5 g aceite sésamo + semillas</li>
+          </ul>
+          <div class="meal-macros"><span class="macro-pill kcal">415 kcal</span><span class="macro-pill p">22 P</span><span class="macro-pill f">15 F</span><span class="macro-pill c">48 C</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="macros-total" style="margin-top: 24px;">
+      <strong>Total del día · tu opción optimizada</strong><br />
+      <span style="display:inline-block; margin-top:6px;">🏋️ <strong>Día entreno</strong> (base + 4 boosts, con pre-entreno): <strong>~2475 kcal · 187 P · 74 F · 271 C</strong> → objetivo 2400 / 170 / 70 / 270 ✅</span><br />
+      <span style="display:inline-block; margin-top:2px;">🛌 <strong>Día descanso</strong> (sin pre-entreno, solo base): <strong>~2110 kcal · 174 P · 66 F · 210 C</strong> → déficit más marcado, proteína intacta ✅</span><br />
+      <span style="font-size: 0.82rem; font-weight: 500; opacity: 0.85; display:block; margin-top:8px;">El pre-entreno de 5:30 y los <em>4 boosts</em> de carbo (miel al café, +15g cereal, +40g arroz almuerzo, +40g arroz cena) se activan solo los días que entrenas fuerza/hipertrofia. En día descanso arrancas directamente con el desayuno de 9:30.</span>
+    </div>
+
+    <h2 class="nutri-section-title">📖 Alimentos por macro <span class="badge">Referencia rápida</span></h2>
+    <p style="color: var(--muted); font-size: 0.9rem; margin: -8px 0 12px;">Cantidades aproximadas para cubrir una porción estándar del macro indicado. Útil para intercambios entre opciones.</p>
+    <div class="foods-macro-grid">
+      <div class="foods-macro-column protein">
+        <div class="col-header">🍗 Proteínas<small>por 20 g de proteína</small></div>
+        <table>
+          <tr><td>Pechuga de pollo</td><td class="qty">90 g</td></tr>
+          <tr><td>Ternera magra</td><td class="qty">100 g</td></tr>
+          <tr><td>Salmón</td><td class="qty">100 g</td></tr>
+          <tr><td>Merluza / corvina</td><td class="qty">100 g</td></tr>
+          <tr><td>Atún al natural</td><td class="qty">90 g (1 lata)</td></tr>
+          <tr><td>Huevo entero</td><td class="qty">3 unidades</td></tr>
+          <tr><td>Claras de huevo</td><td class="qty">6 claras</td></tr>
+          <tr><td>Yogur griego 0 %</td><td class="qty">180 g</td></tr>
+          <tr><td>Requesón / cottage</td><td class="qty">150 g</td></tr>
+          <tr><td>Whey (proteína)</td><td class="qty">25 g (1 scoop)</td></tr>
+          <tr><td>Tofu firme</td><td class="qty">180 g</td></tr>
+          <tr><td>Lentejas cocidas</td><td class="qty">220 g</td></tr>
+        </table>
+      </div>
+      <div class="foods-macro-column carb">
+        <div class="col-header">🍚 Carbos<small>por 30 g de carbo</small></div>
+        <table>
+          <tr><td>Arroz cocido</td><td class="qty">110 g</td></tr>
+          <tr><td>Pasta cocida</td><td class="qty">120 g</td></tr>
+          <tr><td>Patata cocida</td><td class="qty">180 g</td></tr>
+          <tr><td>Boniato cocido</td><td class="qty">130 g</td></tr>
+          <tr><td>Plátano verde / bolón</td><td class="qty">100 g</td></tr>
+          <tr><td>Plátano maduro</td><td class="qty">150 g (1 mediano)</td></tr>
+          <tr><td>Pan integral</td><td class="qty">60 g</td></tr>
+          <tr><td>Avena en hojuelas</td><td class="qty">45 g</td></tr>
+          <tr><td>Quinoa cocida</td><td class="qty">140 g</td></tr>
+          <tr><td>Legumbres cocidas</td><td class="qty">150 g</td></tr>
+          <tr><td>Dátiles medjool</td><td class="qty">45 g (5 uds)</td></tr>
+          <tr><td>Miel</td><td class="qty">40 g (2 cdas)</td></tr>
+        </table>
+      </div>
+      <div class="foods-macro-column fat">
+        <div class="col-header">🥑 Grasas<small>por 10 g de grasa</small></div>
+        <table>
+          <tr><td>Aceite oliva virgen</td><td class="qty">10 g (1 cda)</td></tr>
+          <tr><td>Aguacate</td><td class="qty">55 g (1/3 unidad)</td></tr>
+          <tr><td>Almendras</td><td class="qty">18 g</td></tr>
+          <tr><td>Nueces</td><td class="qty">15 g</td></tr>
+          <tr><td>Mantequilla de maní</td><td class="qty">15 g</td></tr>
+          <tr><td>Aceite sésamo</td><td class="qty">10 g</td></tr>
+          <tr><td>Semillas chía / lino</td><td class="qty">30 g</td></tr>
+          <tr><td>Aceitunas</td><td class="qty">65 g</td></tr>
+          <tr><td>Queso feta</td><td class="qty">50 g</td></tr>
+          <tr><td>Salmón (aporta 6 g F)</td><td class="qty">60 g</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="nutri-section-title">🔍 Ajustes, suplementos y flexibilidad</h2>
+    <div class="nutri-cards-grid">
+      <div class="nutri-card">
+        <h3>📉 Reglas de ajuste semanal</h3>
+        <ul>
+          <li><strong>Pesaje diario</strong> en ayunas, calcula el promedio de 7 días (no mires el día aislado).</li>
+          <li>Baja <strong>0.2–0.5 kg/sem</strong> → ritmo perfecto, mantén macros.</li>
+          <li>Baja <strong>&gt;0.5 kg/sem</strong> por 2 semanas → sube 100 kcal (30 g carbo) para no quemar músculo.</li>
+          <li>Baja <strong>&lt;0.2 kg/sem</strong> tras 2 semanas → baja 100 kcal (30 g carbo) o suma 20 min de caminata.</li>
+          <li>Mide <strong>cintura</strong> quincenal: si baja aunque el peso no lo haga, va bien.</li>
+          <li>Déficit máximo <strong>500 kcal/día</strong>. Más = riesgo de perder músculo y bajar testó.</li>
+        </ul>
+      </div>
+      <div class="nutri-card">
+        <h3>💊 Suplementos</h3>
+        <ul>
+          <li><strong>Creatina monohidrato:</strong> 5 g/día, cualquier momento, todos los días (incluso de descanso).</li>
+          <li><strong>Vitamina D3:</strong> 2000 UI/día con la comida más grasa.</li>
+          <li><strong>Omega 3 (EPA+DHA):</strong> 1–2 g/día si no comes pescado azul 3×/sem.</li>
+          <li><strong>Whey:</strong> úsala si te cuesta llegar a los 170 g de proteína, no es obligatoria.</li>
+          <li><strong>Multivitamínico:</strong> opcional, útil si tu dieta es poco variada.</li>
+          <li><em>Nada de pre-entreno pesado a las 6 am — café solo es suficiente.</em></li>
+        </ul>
+      </div>
+      <div class="nutri-card">
+        <h3>🍻 Comida libre, alcohol y día descanso</h3>
+        <ul>
+          <li><strong>1 comida libre/sem</strong> (sábado noche recomendado). Come lo que quieras, pero pon <strong>≥30 g proteína</strong> en el plato.</li>
+          <li><strong>Alcohol:</strong> máx 2 unidades/sem. Prefiere vino tinto o destilado con soda — evita cerveza y cócteles azucarados.</li>
+          <li><strong>No compenses</strong> al día siguiente. Sin ayunos ni cardio extra: solo vuelves a la rutina.</li>
+          <li><strong>Sábado (descanso):</strong> usa el toggle de arriba (−50 g arroz/patata en una comida).</li>
+          <li><strong>Hidratación:</strong> 3–4 L de agua/día. En días de fútbol o hiking, suma electrolitos.</li>
+          <li><strong>Si te saltas una comida</strong> (viaje, reunión): no la "recuperes" — solo sigue con la siguiente.</li>
+        </ul>
+      </div>
+    </div>
+
+    <footer style="margin-top: 40px;">Plan de Nutrición · Fase definición · 10 semanas · revisa el progreso semanalmente y ajusta con las reglas de arriba</footer>
+  </div><!-- /#tab-nutricion -->
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Cerrar">&times;</button>
+    <button class="modal-nav modal-prev" aria-label="Anterior">&lsaquo;</button>
+    <button class="modal-nav modal-next" aria-label="Siguiente">&rsaquo;</button>
+    <div id="modal-body"></div>
+    <div class="modal-counter" id="modal-counter"></div>
+  </div>
+</div>
+
+<!-- FAB volver al índice -->
+<button class="fab" id="fab" aria-label="Volver al índice"><span>↑</span> <span>Índice</span></button>
+
+<script>
+(function() {
+  var modal = document.getElementById('modal');
+  var modalBody = document.getElementById('modal-body');
+  var modalClose = modal.querySelector('.modal-close');
+  var modalPrev = modal.querySelector('.modal-prev');
+  var modalNext = modal.querySelector('.modal-next');
+  var modalCounter = document.getElementById('modal-counter');
+  var currentRow = null;
+  var currentRows = [];
+  var currentDay = null;
+  var currentWarmupType = null;
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, function(c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  var YT_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2c-.3-1-1.1-1.8-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6c-1 .3-1.8 1.1-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1.1 1.8 2.1 2.1 1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6c1-.3 1.8-1.1 2.1-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>';
+  var FLAME_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>';
+  var BALL_ICON = '\u26BD'; // ⚽
+
+  // Rutina alternativa para días de pierna cuando hay partido el mismo día.
+  // Volumen reducido (~25-30%), sin fallo, máquinas sobre libres, sin peso muerto pesado ni búlgaras.
+  var MATCH_LOWER_EXERCISES = [
+    { exercise: 'Prensa 45° (pies medios)', alt: 'Hack squat ligero', musculos: 'Cuádriceps, glúteo', aprox: '1 × 10 al 50%', sets: '3 × 8 (RIR 3)', descanso: '90 s', notas: '60-70% del peso habitual. Sin fallo.' },
+    { exercise: 'Hip thrust en máquina', alt: 'Glute bridge con barra ligera', musculos: 'Glúteo mayor', aprox: '—', sets: '3 × 10', descanso: '90 s', notas: 'Carga moderada, RIR 3. Sin bloqueo máximo.' },
+    { exercise: 'Extensión de cuádriceps', alt: 'Sentadilla goblet ligera', musculos: 'Cuádriceps', aprox: '—', sets: '2 × 12', descanso: '60 s', notas: 'Bombeo controlado, sin fallo.' },
+    { exercise: 'Curl femoral tumbado', alt: 'Curl femoral sentado', musculos: 'Isquiosurales', aprox: '—', sets: '2 × 12', descanso: '60 s', notas: 'Cuidado con los isquios. Técnica perfecta, sin tirones.' },
+    { exercise: 'Elevación de gemelos de pie', alt: 'Gemelos en prensa', musculos: 'Gastrocnemio', aprox: '—', sets: '2 × 15', descanso: '45 s', notas: 'Ligero, calidad sobre carga.' }
+  ];
+
+  var MATCH_NOTES_HTML = '<h4><span class="match-icon">⚽</span>Modo Partido — ajustes y recomendaciones del día</h4>' +
+    '<ul>' +
+    '<li><strong>⏰ Mínimo 5h</strong> entre el final del gym y el inicio del partido (ej: gym 4 PM, partido 9 PM).</li>' +
+    '<li><strong>🍽️ Comida sólida</strong> 30 min post-gym: carbos + proteína magra, grasa baja (arroz/pasta + pollo + verdura).</li>' +
+    '<li><strong>🍌 Snack rápido</strong> 1-1.5h pre-partido: plátano, dátiles o tostada con miel.</li>' +
+    '<li><strong>💧 Hidratación con electrolitos</strong> antes y durante el partido.</li>' +
+    '<li><strong>🔥 Calentamiento serio</strong> pre-partido: trote 5 min + movilidad cadera + sprints progresivos al 60-70-80-90%.</li>' +
+    '<li><strong>⚠️ Riesgo isquiotibiales:</strong> si notas tirantez en el calentamiento, modera los sprints. No fuerces.</li>' +
+    '<li><strong>🎯 Hoy NO PRs.</strong> RIR 2-3 en todo. Prioriza máquinas sobre libres.</li>' +
+    '<li><strong>🚫 Saltado hoy:</strong> sentadilla con barra, peso muerto pesado, búlgaras, trabajo unilateral pesado.</li>' +
+    '</ul>';
+
+  var WARMUPS = {
+    'upper-a': {
+      title: '🔥 Calentamiento — UPPER A',
+      subtitle: 'Realizar antes del entrenamiento · ~6-8 min',
+      exercises: [
+        { name: 'Cardio ligero (cinta o bici)', sets: '1 × 5 min', rest: '—', notes: 'Ritmo conversacional. Subir pulso, sudor ligero.' },
+        { name: 'Movilidad escapular dinámica', sets: '1 × 10 reps', rest: '30 s', notes: 'Rotaciones de hombro adelante y atrás, rango completo.' },
+        { name: 'Rotación externa con banda elástica', sets: '2 × 12/lado', rest: '30 s', notes: 'Activación manguito rotador. Codo pegado al torso, movimiento controlado.' },
+        { name: 'Push-up plus (flexión con protracción)', sets: '1 × 10', rest: '30 s', notes: 'Activación pectoral y serrato anterior. Empuja al final como si separaras los omóplatos.' },
+        { name: 'Band pull-apart', sets: '1 × 15', rest: '30 s', notes: 'Activación dorsal y deltoide posterior. Banda al frente, separar brazos.' }
+      ]
+    },
+    'upper-b': {
+      title: '🔥 Calentamiento — UPPER B',
+      subtitle: 'Realizar antes del entrenamiento · ~6-8 min',
+      exercises: [
+        { name: 'Cardio ligero (cinta o elíptica)', sets: '1 × 5 min', rest: '—', notes: 'Ritmo conversacional. Subir pulso, sudor ligero.' },
+        { name: 'Pasada de palo (shoulder dislocates)', sets: '1 × 10', rest: '30 s', notes: 'Con palo o banda. Pasar de adelante a atrás, brazos rectos, sin dolor.' },
+        { name: 'Rotación externa con banda elástica', sets: '2 × 12/lado', rest: '30 s', notes: 'Manguito rotador. Codo a 90° pegado al torso.' },
+        { name: 'Scapular pull-up (colgado de barra)', sets: '1 × 8', rest: '30 s', notes: 'Activación dorsal y escapular. Solo retracción, sin flexión de codo.' },
+        { name: 'Face pull con banda', sets: '1 × 15', rest: '30 s', notes: 'Activación deltoide posterior y manguito.' }
+      ]
+    },
+    'lower-a': {
+      title: '🔥 Calentamiento — LOWER A (incluye pliometría)',
+      subtitle: 'Realizar antes del entrenamiento · ~10-12 min',
+      exercises: [
+        { name: 'Cardio ligero (bici estática)', sets: '1 × 5 min', rest: '—', notes: 'Ritmo conversacional. Subir pulso, sudor ligero.' },
+        { name: "World's greatest stretch", sets: '1 × 6/lado', rest: '30 s', notes: 'Movilidad de cadera, tobillo y columna torácica. Zancada + rotación.' },
+        { name: 'Sentadilla con peso corporal', sets: '1 × 15', rest: '30 s', notes: 'Activación cuádriceps/glúteo. Profundidad completa, tempo controlado.' },
+        { name: 'Glute bridge', sets: '1 × 12', rest: '30 s', notes: 'Activación glute mayor. Pausa arriba 1 segundo, exprimir.' },
+        { name: 'Box jump', sets: '3 × 3-5', rest: '90 s', notes: 'Pliometría. Caja 40-50 cm. Aterrizaje silencioso, calidad sobre cantidad. Bajar caminando, no saltando.', plyo: true },
+        { name: 'Broad jump (salto horizontal)', sets: '2 × 3', rest: '90 s', notes: 'Pliometría. Salto horizontal a máxima distancia. Aterrizaje estable, sin perder el equilibrio.', plyo: true }
+      ]
+    },
+    'lower-b': {
+      title: '🔥 Calentamiento — LOWER B',
+      subtitle: 'Realizar antes del entrenamiento · ~6-8 min',
+      exercises: [
+        { name: 'Cardio ligero (cinta o bici)', sets: '1 × 5 min', rest: '—', notes: 'Ritmo conversacional. Subir pulso.' },
+        { name: "World's greatest stretch", sets: '1 × 6/lado', rest: '30 s', notes: 'Movilidad de cadera, tobillo y columna torácica.' },
+        { name: 'Peso muerto rumano con barra vacía', sets: '1 × 10', rest: '30 s', notes: 'Patrón de bisagra de cadera. Espalda neutra, cadera atrás.' },
+        { name: 'Glute bridge con banda en rodillas', sets: '1 × 15', rest: '30 s', notes: 'Activación glúteo medio. Empujar rodillas contra la banda en cada rep.' },
+        { name: 'Bird dog', sets: '1 × 10/lado', rest: '30 s', notes: 'Core y estabilidad lumbo-pélvica. Mantener cadera cuadrada al suelo.' }
+      ]
+    }
+  };
+
+  function dayType(text) {
+    var t = text.toUpperCase();
+    if (t.indexOf('UPPER A') >= 0) return 'upper-a';
+    if (t.indexOf('UPPER B') >= 0) return 'upper-b';
+    if (t.indexOf('LOWER A') >= 0) return 'lower-a';
+    if (t.indexOf('LOWER B') >= 0) return 'lower-b';
+    return null;
+  }
+
+  function ytSearchUrl(query) {
+    return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(query + ' tutorial técnica');
+  }
+
+  function videoButton(name, isAlt) {
+    var label = isAlt ? 'Alternativa' : 'Principal';
+    var cls = isAlt ? 'modal-video-btn alt' : 'modal-video-btn';
+    return '<a class="' + cls + '" href="' + ytSearchUrl(name) + '" target="_blank" rel="noopener noreferrer">' + YT_ICON + '<span class="vid-text"><span class="vid-label">' + label + ' · YouTube</span><span class="vid-name">' + escapeHtml(name) + '</span></span></a>';
+  }
+
+  function openModal(row) {
+    var cells = row.querySelectorAll('td');
+    var headers = row.closest('table').querySelectorAll('thead th');
+    if (cells.length === 0) return;
+    currentDay = row.closest('.day');
+    currentWarmupType = null;
+    var exerciseName = cells[1] ? cells[1].textContent.trim() : 'Ejercicio';
+    var altName = cells[2] ? cells[2].textContent.trim() : '';
+    var num = cells[0] ? cells[0].textContent.trim() : '';
+    var html = '';
+    // Superset badge
+    if (row.classList.contains('ss-start')) {
+      html += '<div class="modal-ss-badge">🔗 Superserie (1 de 2) — sin pausa, ir al siguiente</div>';
+    } else if (row.classList.contains('ss-end')) {
+      html += '<div class="modal-ss-badge">🔗 Superserie (2 de 2) — descanso entre rondas</div>';
+    }
+    html += '<h3 id="modal-title">' + (num ? num + '. ' : '') + escapeHtml(exerciseName) + '</h3>';
+    html += '<div class="modal-sub">Toca fuera del recuadro o cierra para volver</div>';
+    var videos = '';
+    if (exerciseName) videos += videoButton(exerciseName, false);
+    if (altName && altName !== '—') videos += videoButton(altName, true);
+    if (videos) {
+      html += '<div class="modal-field"><div class="modal-label">Tutoriales</div><div class="modal-videos">' + videos + '</div></div>';
+    }
+    for (var i = 2; i < cells.length; i++) {
+      var label = headers[i] ? headers[i].textContent.trim() : '';
+      var value = cells[i].textContent.trim();
+      if (!value || value === '—') continue;
+      var isAprox = cells[i].classList.contains('aprox');
+      html += '<div class="modal-field">';
+      html += '<div class="modal-label">' + escapeHtml(label) + '</div>';
+      html += '<div class="modal-value' + (isAprox ? ' aprox' : '') + '">' + escapeHtml(value) + '</div>';
+      html += '</div>';
+    }
+    modalBody.innerHTML = html;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    updateModalNav();
+  }
+
+  function dayHasWarmup(day) {
+    if (!day) return false;
+    var h3 = day.querySelector('h3');
+    if (!h3) return false;
+    var t = dayType(h3.textContent);
+    return !!(t && WARMUPS[t]);
+  }
+
+  function updateModalNav() {
+    // Warmup shown: prev hidden (nothing before), next visible if there are exercises.
+    if (currentWarmupType) {
+      modalPrev.style.display = 'none';
+      if (currentRows.length > 0) {
+        modalNext.style.display = '';
+        modalCounter.style.display = '';
+        modalCounter.textContent = '🔥 Cal. · 1 / ' + (currentRows.length + 1);
+      } else {
+        modalNext.style.display = 'none';
+        modalCounter.style.display = 'none';
+      }
+      return;
+    }
+    if (!currentRow || currentRows.length === 0) {
+      modalPrev.style.display = 'none';
+      modalNext.style.display = 'none';
+      modalCounter.style.display = 'none';
+      return;
+    }
+    var idx = currentRows.indexOf(currentRow);
+    var hasWarmup = dayHasWarmup(currentDay);
+    // Prev goes back to warmup when we're on exercise 1 and the day has one.
+    modalPrev.style.display = (idx > 0 || (idx === 0 && hasWarmup)) ? '' : 'none';
+    modalNext.style.display = idx < currentRows.length - 1 ? '' : 'none';
+    if (currentRows.length <= 1 && !hasWarmup) {
+      modalCounter.style.display = 'none';
+      return;
+    }
+    modalCounter.style.display = '';
+    if (hasWarmup) {
+      modalCounter.textContent = (idx + 2) + ' / ' + (currentRows.length + 1);
+    } else {
+      modalCounter.textContent = (idx + 1) + ' / ' + currentRows.length;
+    }
+  }
+
+  function navigateModal(dir) {
+    // From warmup, forward opens the first exercise of the day.
+    if (currentWarmupType) {
+      if (dir === 1 && currentRows.length > 0) {
+        var first = currentRows[0];
+        currentWarmupType = null;
+        currentRow = first;
+        openModal(first);
+      }
+      return;
+    }
+    if (!currentRow || currentRows.length === 0) return;
+    var idx = currentRows.indexOf(currentRow);
+    // From exercise 1, back goes to the warmup if the day has one.
+    if (dir === -1 && idx === 0 && dayHasWarmup(currentDay)) {
+      var h3 = currentDay.querySelector('h3');
+      var t = dayType(h3.textContent);
+      openWarmupModal(t, currentDay);
+      return;
+    }
+    var nextIdx = idx + dir;
+    if (nextIdx < 0 || nextIdx >= currentRows.length) return;
+    currentRow = currentRows[nextIdx];
+    openModal(currentRow);
+  }
+
+  modalPrev.addEventListener('click', function(e) { e.stopPropagation(); navigateModal(-1); });
+  modalNext.addEventListener('click', function(e) { e.stopPropagation(); navigateModal(1); });
+
+  // Swipe detection
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var touchEndX = 0;
+  var touchEndY = 0;
+  var SWIPE_THRESHOLD = 50;
+
+  modal.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  modal.addEventListener('touchend', function(e) {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    var dx = touchEndX - touchStartX;
+    var dy = touchEndY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+      if (dx < 0) navigateModal(1);  // swipe left = next
+      else navigateModal(-1);         // swipe right = prev
+    }
+  }, { passive: true });
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    currentRow = null;
+    currentDay = null;
+    currentWarmupType = null;
+  }
+
+  function openNotesModal(tipId) {
+    var tip = document.getElementById(tipId);
+    if (!tip) return;
+    var heading = tip.querySelector('h5');
+    var list = tip.querySelector('ul');
+    var title = heading ? heading.textContent.trim() : 'Notas';
+    var html = '<h3 id="modal-title">' + escapeHtml(title) + '</h3>';
+    html += '<div class="modal-sub">Toca fuera del recuadro o cierra para volver</div>';
+    if (list) {
+      html += '<div class="modal-field"><div class="modal-value">' + list.outerHTML + '</div></div>';
+    }
+    modalBody.innerHTML = html;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openWarmupModal(type, day) {
+    var data = WARMUPS[type];
+    if (!data) return;
+    currentDay = day || null;
+    currentWarmupType = type;
+    currentRow = null;
+    currentRows = day ? Array.prototype.slice.call(day.querySelectorAll('tbody tr')) : [];
+    var html = '<h3 id="modal-title">' + escapeHtml(data.title) + '</h3>';
+    html += '<div class="modal-sub">' + escapeHtml(data.subtitle) + '</div>';
+    data.exercises.forEach(function(ex, i) {
+      html += '<div class="warmup-exercise">';
+      html += '<div class="warmup-exercise-header">' + (i + 1) + '. ' + escapeHtml(ex.name);
+      if (ex.plyo) html += '<span class="plyo-tag">Pliometría</span>';
+      html += '</div>';
+      html += '<div class="modal-field"><div class="modal-label">Tutorial</div><div class="modal-videos">' + videoButton(ex.name, false) + '</div></div>';
+      html += '<div class="modal-field"><div class="modal-label">Series × Reps</div><div class="modal-value">' + escapeHtml(ex.sets) + '</div></div>';
+      html += '<div class="modal-field"><div class="modal-label">Descanso</div><div class="modal-value">' + escapeHtml(ex.rest) + '</div></div>';
+      if (ex.notes) html += '<div class="modal-field"><div class="modal-label">Notas</div><div class="modal-value">' + escapeHtml(ex.notes) + '</div></div>';
+      html += '</div>';
+    });
+    if (currentRows.length > 0) {
+      html += '<div class="warmup-next-hint">→ Desliza (o pulsa <strong>›</strong>) para ir al primer ejercicio</div>';
+    }
+    modalBody.innerHTML = html;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    updateModalNav();
+  }
+
+  document.querySelectorAll('.day tbody tr').forEach(function(row) {
+    row.addEventListener('click', function() {
+      var tbody = row.closest('tbody');
+      currentRows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+      currentRow = row;
+      openModal(row);
+    });
+  });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+    if (modal.classList.contains('open')) {
+      if (e.key === 'ArrowLeft') navigateModal(-1);
+      if (e.key === 'ArrowRight') navigateModal(1);
+    }
+  });
+
+  document.querySelectorAll('.info-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openNotesModal(btn.dataset.tooltip);
+    });
+  });
+
+  // Collapse/expand de cada día (solo mobile) + botón de calentamiento
+  var CHEVRON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+  var isMobile = window.matchMedia('(max-width: 720px)');
+
+  // ---- Match Mode (switch ⚽ por día de pierna) ----
+
+  function buildAltRowsHtml(table) {
+    // Lee los headers para saber qué columnas tiene la tabla del día y arma las filas alt acordes.
+    var headers = Array.prototype.map.call(table.querySelectorAll('thead th'), function(th) {
+      return th.textContent.trim().toLowerCase();
+    });
+    function cellFor(header, ex, idx) {
+      if (header === '#') return '<td class="num">' + (idx + 1) + '</td>';
+      if (header.indexOf('ejercicio') === 0) return '<td class="exercise">' + ex.exercise + '</td>';
+      if (header.indexOf('alternativa') === 0) return '<td class="muted">' + ex.alt + '</td>';
+      if (header.indexOf('músculo') === 0 || header.indexOf('musculo') === 0) return '<td>' + ex.musculos + '</td>';
+      if (header.indexOf('aproxim') === 0) return '<td class="aprox">' + ex.aprox + '</td>';
+      if (header.indexOf('series') === 0) return '<td class="sets">' + ex.sets + '</td>';
+      if (header.indexOf('descanso') === 0) return '<td class="rest">' + ex.descanso + '</td>';
+      if (header.indexOf('notas') === 0) return '<td>' + ex.notas + '</td>';
+      return '<td></td>';
+    }
+    return MATCH_LOWER_EXERCISES.map(function(ex, idx) {
+      return '<tr>' + headers.map(function(h) { return cellFor(h, ex, idx); }).join('') + '</tr>';
+    }).join('');
+  }
+
+  function storageKey(day) {
+    // Clave estable por día: tipo + texto del h3 + posición ordinal entre días del mismo tipo.
+    var h3 = day.querySelector('h3');
+    var type = dayType(h3.textContent);
+    var allOfType = Array.prototype.filter.call(document.querySelectorAll('.day'), function(d) {
+      return dayType(d.querySelector('h3').textContent) === type;
+    });
+    var idx = allOfType.indexOf(day);
+    return 'matchMode:' + type + ':' + idx;
+  }
+
+  function setMatchMode(day, on, persist) {
+    var tbody = day.querySelector('tbody');
+    if (!tbody) return;
+    var table = tbody.closest('table');
+    var toggle = day.querySelector('.match-toggle');
+
+    if (on) {
+      if (!day.dataset.originalTbody) day.dataset.originalTbody = tbody.innerHTML;
+      tbody.innerHTML = buildAltRowsHtml(table);
+      // Reenganchar listener de click en filas (las nuevas no tienen)
+      tbody.querySelectorAll('tr').forEach(function(row) {
+        row.addEventListener('click', function() {
+          currentRows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+          currentRow = row;
+          openModal(row);
+        });
+      });
+      day.classList.add('match-mode');
+      if (toggle) { toggle.classList.add('active'); toggle.setAttribute('aria-pressed', 'true'); }
+      if (!day.querySelector('.match-notes-block')) {
+        var notes = document.createElement('div');
+        notes.className = 'match-notes-block';
+        notes.innerHTML = MATCH_NOTES_HTML;
+        day.appendChild(notes);
+      }
+      if (persist) localStorage.setItem(storageKey(day), '1');
+    } else {
+      if (day.dataset.originalTbody) {
+        tbody.innerHTML = day.dataset.originalTbody;
+        delete day.dataset.originalTbody;
+        tbody.querySelectorAll('tr').forEach(function(row) {
+          row.addEventListener('click', function() {
+            currentRows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+            currentRow = row;
+            openModal(row);
+          });
+        });
+      }
+      day.classList.remove('match-mode');
+      if (toggle) { toggle.classList.remove('active'); toggle.setAttribute('aria-pressed', 'false'); }
+      var existing = day.querySelector('.match-notes-block');
+      if (existing) existing.parentNode.removeChild(existing);
+      if (persist) localStorage.removeItem(storageKey(day));
+    }
+  }
+
+  document.querySelectorAll('.day').forEach(function(day) {
+    var h3 = day.querySelector('h3');
+    if (!h3) return;
+
+    var type = dayType(h3.textContent);
+    var infoBtn = h3.querySelector('.info-btn');
+
+    if (type && WARMUPS[type]) {
+      var wbtn = document.createElement('button');
+      wbtn.className = 'warmup-btn';
+      wbtn.setAttribute('aria-label', 'Calentamiento');
+      wbtn.innerHTML = FLAME_ICON;
+      wbtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        openWarmupModal(type, day);
+      });
+      if (infoBtn) h3.insertBefore(wbtn, infoBtn);
+      else h3.appendChild(wbtn);
+    }
+
+    if (type === 'lower-a' || type === 'lower-b') {
+      var toggle = document.createElement('button');
+      toggle.className = 'match-toggle';
+      toggle.setAttribute('aria-label', 'Modo partido de fútbol');
+      toggle.setAttribute('aria-pressed', 'false');
+      toggle.title = 'Modo partido: ajusta la rutina si juegas fútbol hoy';
+      toggle.innerHTML = '<span class="knob">' + BALL_ICON + '</span>';
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var isOn = day.classList.contains('match-mode');
+        setMatchMode(day, !isOn, true);
+      });
+      if (infoBtn) h3.insertBefore(toggle, infoBtn);
+      else h3.appendChild(toggle);
+
+      // Restaurar estado desde localStorage
+      try {
+        if (localStorage.getItem(storageKey(day)) === '1') {
+          setMatchMode(day, true, false);
+        }
+      } catch (err) { /* localStorage no disponible: ignorar */ }
+    }
+
+    var cbtn = document.createElement('button');
+    cbtn.className = 'collapse-btn';
+    cbtn.setAttribute('aria-label', 'Expandir / colapsar');
+    cbtn.innerHTML = CHEVRON_ICON;
+    cbtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      day.classList.toggle('collapsed');
+    });
+    h3.appendChild(cbtn);
+  });
+
+  function applyMobileCollapse() {
+    if (isMobile.matches) {
+      document.querySelectorAll('.day').forEach(function(d) { d.classList.add('collapsed'); });
+    } else {
+      document.querySelectorAll('.day').forEach(function(d) { d.classList.remove('collapsed'); });
+    }
+  }
+  applyMobileCollapse();
+  if (isMobile.addEventListener) isMobile.addEventListener('change', applyMobileCollapse);
+
+  var fab = document.getElementById('fab');
+  fab.addEventListener('click', function() {
+    var nutriPanel = document.getElementById('tab-nutricion');
+    var target = (nutriPanel && nutriPanel.classList.contains('active'))
+      ? nutriPanel
+      : document.getElementById('distribucion');
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 600) fab.classList.add('show');
+    else fab.classList.remove('show');
+  });
+
+  // ===== TRACKER DE PROGRESO =====
+  var CYCLE = [
+    { block: 'hiper', label: '🟦 Hiper', weeks: 3 },
+    { block: 'fuerza', label: '🟧 Fuerza', weeks: 2 },
+    { block: 'desc', label: '🟩 Descarga', weeks: 1 }
+  ];
+  var DAYS_PER_WEEK = 4;
+  var DAY_NAMES = ['Upper A', 'Lower A', 'Upper B', 'Lower B'];
+  var STORAGE_KEY = 'plan6w:tracker';
+  var NUTRI_TARGET_WEEKS = 10;
+
+  var trackerBar = document.getElementById('tracker-bar');
+  var trackerBlockLabel = document.getElementById('tracker-block-label');
+  var trackerWeekLabel = document.getElementById('tracker-week-label');
+  var trackerDots = document.getElementById('tracker-dots');
+  var trackerSkip = document.getElementById('tracker-skip');
+
+  function loadTracker() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || null; } catch(e) { return null; }
+  }
+
+  function saveTracker(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+
+  function defaultState() {
+    return { blockIdx: 0, weekInBlock: 0, daysCompleted: [false, false, false, false], cycleComplete: false, totalWeeksCompleted: 0 };
+  }
+
+  var trackerState = loadTracker() || defaultState();
+  if (typeof trackerState.totalWeeksCompleted !== 'number') trackerState.totalWeeksCompleted = 0;
+
+  function currentBlockInfo() {
+    return CYCLE[trackerState.blockIdx] || CYCLE[0];
+  }
+
+  function totalWeeksInBlock() {
+    return currentBlockInfo().weeks;
+  }
+
+  function expandCurrentBlock() {
+    var blockId = currentBlockInfo().block === 'hiper' ? 'hipertrofia' : (currentBlockInfo().block === 'fuerza' ? 'fuerza' : 'descarga');
+    document.querySelectorAll('.block-details').forEach(function(block) {
+      block.open = block.id === blockId;
+    });
+  }
+  expandCurrentBlock();
+
+  document.querySelectorAll('.cycle-card').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target && target.tagName === 'DETAILS') target.open = true;
+    });
+  });
+
+  function renderTracker() {
+    var info = currentBlockInfo();
+    // Update bar class for dot color
+    trackerBar.className = 'tracker-bar ' + info.block;
+    // Block label
+    trackerBlockLabel.textContent = info.label;
+    trackerBlockLabel.className = 'tracker-block ' + info.block;
+    // Week label
+    if (trackerState.cycleComplete) {
+      trackerWeekLabel.textContent = '';
+    } else {
+      trackerWeekLabel.textContent = 'Sem ' + (trackerState.weekInBlock + 1) + '/' + info.weeks;
+    }
+    // Dots
+    var dots = trackerDots.querySelectorAll('.tracker-dot');
+    for (var i = 0; i < dots.length; i++) {
+      if (trackerState.daysCompleted[i]) dots[i].classList.add('filled');
+      else dots[i].classList.remove('filled');
+    }
+    // Skip btn
+    if (trackerState.cycleComplete) {
+      trackerSkip.textContent = '🔄 Nuevo ciclo';
+    } else {
+      trackerSkip.textContent = 'Saltar semana →';
+    }
+    // Completion message
+    var existingMsg = trackerBar.querySelector('.tracker-complete-msg');
+    if (existingMsg) existingMsg.remove();
+    if (trackerState.cycleComplete) {
+      var msg = document.createElement('div');
+      msg.className = 'tracker-complete-msg';
+      msg.textContent = '🎉 Ciclo de 6 semanas completo. ¡Bien hecho!';
+      trackerBar.appendChild(msg);
+    }
+    // Update day buttons
+    renderDayButtons();
+    // Update nutrition progress bar
+    renderNutritionProgress();
+  }
+
+  function renderNutritionProgress() {
+    var card = document.getElementById('nutri-progress-card');
+    if (!card) return;
+    var completed = Math.min(trackerState.totalWeeksCompleted || 0, NUTRI_TARGET_WEEKS);
+    var pct = Math.round((completed / NUTRI_TARGET_WEEKS) * 100);
+    var left = Math.max(0, NUTRI_TARGET_WEEKS - completed);
+    var weeksEl = document.getElementById('nutri-progress-weeks');
+    var targetEl = document.getElementById('nutri-progress-target');
+    var barEl = document.getElementById('nutri-progress-bar');
+    var footerEl = document.getElementById('nutri-progress-footer');
+    if (weeksEl) weeksEl.textContent = completed;
+    if (targetEl) targetEl.textContent = NUTRI_TARGET_WEEKS;
+    if (barEl) barEl.style.width = pct + '%';
+    if (completed >= NUTRI_TARGET_WEEKS) {
+      card.classList.add('complete');
+      if (footerEl) footerEl.innerHTML = '🎉 <strong>¡Meta alcanzada!</strong> Continúa con mantenimiento.';
+    } else {
+      card.classList.remove('complete');
+      if (footerEl) footerEl.innerHTML = '<strong>' + pct + '%</strong> hacia la meta · quedan <strong>' + left + '</strong> ' + (left === 1 ? 'semana' : 'semanas');
+    }
+  }
+
+  function advanceWeek() {
+    trackerState.daysCompleted = [false, false, false, false];
+    if (trackerState.totalWeeksCompleted < NUTRI_TARGET_WEEKS) trackerState.totalWeeksCompleted++;
+    trackerState.weekInBlock++;
+    if (trackerState.weekInBlock >= totalWeeksInBlock()) {
+      // Advance to next block
+      trackerState.weekInBlock = 0;
+      trackerState.blockIdx++;
+      if (trackerState.blockIdx >= CYCLE.length) {
+        trackerState.cycleComplete = true;
+        trackerState.blockIdx = CYCLE.length - 1;
+      }
+    }
+    saveTracker(trackerState);
+    renderTracker();
+    showToast(trackerState.cycleComplete ? '🎉 Ciclo completo' : '✓ Semana avanzada — ' + currentBlockInfo().label + ' Sem ' + (trackerState.weekInBlock + 1));
+  }
+
+  function completeDay(dayIdx) {
+    if (trackerState.cycleComplete) return;
+    trackerState.daysCompleted[dayIdx] = true;
+    saveTracker(trackerState);
+    renderTracker();
+    // Check if all 4 days done
+    if (trackerState.daysCompleted.every(function(d) { return d; })) {
+      setTimeout(function() { advanceWeek(); }, 600);
+    }
+  }
+
+  function resetCycle() {
+    var preservedTotal = trackerState.totalWeeksCompleted || 0;
+    trackerState = defaultState();
+    trackerState.totalWeeksCompleted = preservedTotal;
+    saveTracker(trackerState);
+    renderTracker();
+    showToast('Ciclo reiniciado — Semana 1 Hipertrofia');
+  }
+
+  trackerSkip.addEventListener('click', function() {
+    if (trackerState.cycleComplete) {
+      if (confirm('¿Iniciar un nuevo ciclo de 6 semanas desde cero?')) {
+        resetCycle();
+      }
+    } else {
+      if (confirm('¿Saltar esta semana y avanzar a la siguiente?')) {
+        advanceWeek();
+      }
+    }
+  });
+
+  // Toast notification
+  function showToast(text) {
+    var existing = document.querySelector('.tracker-toast');
+    if (existing) existing.remove();
+    var toast = document.createElement('div');
+    toast.className = 'tracker-toast';
+    toast.textContent = text;
+    toast.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1F2A44;color:white;padding:10px 20px;border-radius:8px;font-size:0.88rem;z-index:9999;animation:fadeIn 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.2);';
+    document.body.appendChild(toast);
+    setTimeout(function() { toast.remove(); }, 3000);
+  }
+
+  // Day completion buttons (injected into DOM)
+  function renderDayButtons() {
+    var blocks = document.querySelectorAll('.block');
+    blocks.forEach(function(block) {
+      var blockId = block.id; // hipertrofia, fuerza, descarga
+      var days = block.querySelectorAll('.day');
+      days.forEach(function(day, i) {
+        var existing = day.querySelector('.day-complete-btn');
+        if (existing) existing.remove();
+
+        var btn = document.createElement('button');
+        btn.className = 'day-complete-btn';
+        btn.dataset.dayIdx = i;
+
+        // Only show active state if this block matches current tracker block
+        var blockKey = blockId === 'hipertrofia' ? 'hiper' : (blockId === 'fuerza' ? 'fuerza' : 'desc');
+        var isCurrentBlock = currentBlockInfo().block === blockKey;
+
+        if (trackerState.cycleComplete) {
+          btn.textContent = '🎉 Ciclo completo';
+          btn.classList.add('done');
+          btn.disabled = true;
+        } else if (!isCurrentBlock) {
+          btn.textContent = '✓ ' + DAY_NAMES[i];
+          btn.style.opacity = '0.4';
+          btn.disabled = true;
+          btn.title = 'Este bloque no es el actual';
+        } else if (trackerState.daysCompleted[i]) {
+          btn.textContent = '✓ ' + DAY_NAMES[i] + ' completado';
+          btn.classList.add('done');
+          btn.disabled = true;
+        } else {
+          btn.textContent = '☐ Marcar ' + DAY_NAMES[i] + ' como completado';
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            completeDay(i);
+          });
+        }
+
+        day.appendChild(btn);
+      });
+    });
+  }
+
+  renderTracker();
+
+  // ---- Tabs (Entrenamiento / Nutrición) ----
+  function initTabs() {
+    var tabButtons = document.querySelectorAll('.tab[data-tab]');
+    if (tabButtons.length === 0) return;
+    var panels = {
+      entrenamiento: document.getElementById('tab-entrenamiento'),
+      nutricion: document.getElementById('tab-nutricion')
+    };
+    function setActive(name, persist) {
+      tabButtons.forEach(function(btn) {
+        var isActive = btn.dataset.tab === name;
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        btn.tabIndex = isActive ? 0 : -1;
+      });
+      Object.keys(panels).forEach(function(key) {
+        if (panels[key]) panels[key].classList.toggle('active', key === name);
+      });
+      if (persist) {
+        try { localStorage.setItem('activeTab', name); } catch (e) {}
+      }
+    }
+    tabButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setActive(btn.dataset.tab, true);
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      });
+      btn.addEventListener('keydown', function(e) {
+        if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+        e.preventDefault();
+        var buttons = Array.prototype.slice.call(tabButtons);
+        var idx = buttons.indexOf(btn);
+        var dir = e.key === 'ArrowRight' ? 1 : -1;
+        var next = buttons[(idx + dir + buttons.length) % buttons.length];
+        next.focus();
+        setActive(next.dataset.tab, true);
+      });
+    });
+    var initial = 'entrenamiento';
+    var hash = window.location.hash.replace('#', '');
+    if (hash === 'nutricion') {
+      initial = 'nutricion';
+    } else if (!hash) {
+      try {
+        var stored = localStorage.getItem('activeTab');
+        if (stored === 'nutricion') initial = 'nutricion';
+      } catch (e) {}
+    }
+    setActive(initial, false);
+    window.addEventListener('hashchange', function() {
+      var h = window.location.hash.replace('#', '');
+      if (h === 'nutricion') {
+        setActive('nutricion', true);
+      } else if (h && document.getElementById(h)) {
+        setActive('entrenamiento', true);
+      }
+    });
+  }
+  initTabs();
+
+  // ---- Nutrition day-mode toggle ----
+  function initNutritionToggle() {
+    var buttons = document.querySelectorAll('.day-mode-toggle button[data-mode]');
+    if (buttons.length === 0) return;
+    var carbGrams = document.getElementById('carb-grams');
+    var carbKcal = document.getElementById('carb-kcal');
+    var totalKcal = document.getElementById('total-kcal');
+    var totalCarbs = document.getElementById('total-carbs');
+    var badge = document.getElementById('day-mode-badge');
+    var restNote = document.getElementById('rest-day-note');
+    function setMode(mode) {
+      buttons.forEach(function(b) {
+        b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false');
+      });
+      var isRest = mode === 'descanso';
+      if (carbGrams) carbGrams.textContent = isRest ? '230' : '270';
+      if (carbKcal) carbKcal.textContent = isRest ? '920 kcal · 41 %' : '1080 kcal · 45 %';
+      if (totalKcal) totalKcal.textContent = isRest ? '2250 kcal/día' : '2400 kcal/día';
+      if (totalCarbs) totalCarbs.textContent = isRest ? '230' : '270';
+      if (badge) badge.textContent = isRest ? 'Día descanso' : 'Día entreno';
+      if (restNote) restNote.classList.toggle('visible', isRest);
+      document.body.classList.toggle('hide-boosts', isRest);
+    }
+    buttons.forEach(function(b) {
+      b.addEventListener('click', function() { setMode(b.dataset.mode); });
+    });
+  }
+  initNutritionToggle();
+
+  // ---- Mobile meal collapsibles ----
+  function initMealCollapsibles() {
+    var sections = document.querySelectorAll('.meal-section');
+    if (!sections.length) return;
+    sections.forEach(function(sec) {
+      var header = sec.querySelector('.meal-header');
+      if (!header || header.querySelector('.meal-chevron')) return;
+      var chev = document.createElement('span');
+      chev.className = 'meal-chevron';
+      chev.textContent = '\u25BE';
+      chev.setAttribute('aria-hidden', 'true');
+      header.appendChild(chev);
+      header.setAttribute('role', 'button');
+      header.setAttribute('tabindex', '0');
+      header.addEventListener('click', function() {
+        if (!isMobile.matches) return;
+        var collapsed = sec.classList.toggle('collapsed');
+        header.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      });
+      header.addEventListener('keydown', function(e) {
+        if (!isMobile.matches) return;
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); header.click(); }
+      });
+    });
+    function applyMealMobileState() {
+      var mobileNow = isMobile.matches;
+      sections.forEach(function(sec) {
+        var header = sec.querySelector('.meal-header');
+        if (mobileNow) {
+          sec.classList.add('collapsed');
+          if (header) header.setAttribute('aria-expanded', 'false');
+        } else {
+          sec.classList.remove('collapsed');
+          if (header) header.removeAttribute('aria-expanded');
+        }
+      });
+    }
+    applyMealMobileState();
+    if (isMobile.addEventListener) isMobile.addEventListener('change', applyMealMobileState);
+  }
+  initMealCollapsibles();
+})();
+</script>
+</body>
+</html>
