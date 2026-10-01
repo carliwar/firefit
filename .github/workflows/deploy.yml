@@ -23,6 +23,7 @@ jobs:
         run: |
           mkdir -p dist
           cp Plan_Entrenamiento_UL_6_Semanas.html dist/index.html
+          cp -R firegym dist/firegym
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
