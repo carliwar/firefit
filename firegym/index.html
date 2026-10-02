@@ -592,7 +592,7 @@
     </div>
 
     <div class="day hiper" data-type="pecho-espalda">
-      <h3><span class="accent"></span>Día 4 — <span id="thursday-day-focus">PECHO · ESPALDA · BÍCEPS</span><span class="time-label" title="Incluye calentamiento y enfriamiento">⏱ ~80 min</span><button class="info-btn" data-tooltip="tt-hiper-4" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 4 — <span id="thursday-day-focus">PECHO · ESPALDA · BÍCEPS</span><span class="time-label" id="thursday-time" title="Incluye calentamiento y enfriamiento">⏱ ~80 min</span><button class="info-btn" data-tooltip="tt-hiper-4" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-hiper-4"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>Aproximaciones solo en el 1er ejercicio de cada músculo. No cuentan como efectivas.</li><li>Progresión: +1 rep o +2.5 kg/semana. Al tope del rango, sube peso.</li><li>Descanso: 2-3 min compuestos grandes · 90 s aislamiento.</li><li>Calentamiento: botón 🔥 antes de empezar.</li><li>Déficit ~350 kcal · proteína 170 g.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
@@ -604,6 +604,7 @@
           <tr><td class="num">5</td><td class="exercise">Remo con mancuerna a una mano</td><td class="muted">Remo en máquina unilateral</td><td>Dorsal, romboides</td><td class="aprox">—</td><td class="sets">3 × 8-10/lado</td><td class="rest">2 min</td><td>Codo pegado al torso</td></tr>
           <tr><td class="num">6</td><td class="exercise">Pull-over en polea</td><td class="muted">Jalón al pecho agarre supino</td><td>Dorsal ancho</td><td class="aprox">—</td><td class="sets">3 × 10-12</td><td class="rest">90 s</td><td>Brazos casi rectos, estiramiento arriba</td></tr>
           <tr id="weekly-arm-row"><td class="num">7</td><td class="exercise" id="weekly-arm-exercise">Curl predicador en máquina</td><td class="muted" id="weekly-arm-alt">Curl bayesiano en polea</td><td id="weekly-arm-muscles">Bíceps braquial</td><td class="aprox">—</td><td class="sets">3 × 10-12</td><td class="rest">90 s</td><td id="weekly-arm-note">Semanas 1 y 3</td></tr>
+          <tr id="weekly-arm-second-row" hidden><td class="num">8</td><td class="exercise">Extensión overhead de tríceps en polea</td><td class="muted">Extensión overhead con cuerda</td><td>Tríceps (cabeza larga)</td><td class="aprox">—</td><td class="sets">3 × 10-12</td><td class="rest">90 s</td><td>Semana 4 · estiramiento controlado</td></tr>
           <tr><td class="num" id="weekly-core-number">8</td><td class="exercise">Crunch inverso en banco declinado</td><td class="muted">Plancha lateral (3 × 30-45 s/lado)</td><td>Core (recto abdominal inferior)</td><td class="aprox">—</td><td class="sets">3 × 10-15</td><td class="rest">60-90 s</td><td>Despega la pelvis, sin impulso</td></tr>
         </tbody>
       </table></div>
@@ -1923,9 +1924,11 @@
   function renderWeeklyArmExercise(info) {
     var exercise = document.getElementById('weekly-arm-exercise');
     var armRow = document.getElementById('weekly-arm-row');
+    var secondArmRow = document.getElementById('weekly-arm-second-row');
     var coreNumber = document.getElementById('weekly-core-number');
     var dayFocus = document.getElementById('thursday-day-focus');
     var scheduleFocus = document.getElementById('thursday-schedule-label');
+    var thursdayTime = document.getElementById('thursday-time');
     var alternative = document.getElementById('weekly-arm-alt');
     var muscles = document.getElementById('weekly-arm-muscles');
     var note = document.getElementById('weekly-arm-note');
@@ -1936,20 +1939,23 @@
 
     var isHypertrophy = info.block === 'hiper';
     var addsBiceps = isHypertrophy && trackerState.weekInBlock % 2 === 0;
+    var addsSecondTriceps = isHypertrophy && trackerState.weekInBlock === 3;
     var focusLabel = !isHypertrophy ? 'PECHO · ESPALDA' : (addsBiceps ? 'PECHO · ESPALDA · BÍCEPS' : 'PECHO · ESPALDA · TRÍCEPS');
     var scheduleLabel = !isHypertrophy ? 'Pecho · Espalda' : (addsBiceps ? 'Pecho · Espalda · Bíceps' : 'Pecho · Espalda · Tríceps');
     dayFocus.textContent = focusLabel;
     scheduleFocus.textContent = scheduleLabel;
     armRow.hidden = !isHypertrophy;
-    coreNumber.textContent = isHypertrophy ? '8' : '7';
+    secondArmRow.hidden = !addsSecondTriceps;
+    coreNumber.textContent = isHypertrophy ? (addsSecondTriceps ? '9' : '8') : '7';
+    thursdayTime.textContent = addsSecondTriceps ? '⏱ ~90 min' : (isHypertrophy ? '⏱ ~80 min' : '⏱ ~35 min');
     exercise.textContent = addsBiceps ? 'Curl predicador en máquina' : 'Extensión de tríceps con cuerda';
     alternative.textContent = addsBiceps ? 'Curl bayesiano en polea' : 'Extensión unilateral en polea';
     muscles.textContent = addsBiceps ? 'Bíceps braquial' : 'Tríceps';
     note.textContent = addsBiceps ? 'Semanas 1 y 3' : (isHypertrophy ? 'Semanas 2 y 4' : 'Sin ejercicio extra de brazos');
     bicepsVolume.textContent = isHypertrophy && addsBiceps ? '12' : '9';
-    tricepsVolume.textContent = isHypertrophy && !addsBiceps ? '12' : '9';
+    tricepsVolume.textContent = isHypertrophy && !addsBiceps ? (addsSecondTriceps ? '15' : '12') : '9';
     volumeLabel.textContent = isHypertrophy
-      ? '(hipertrofia · semana ' + (trackerState.weekInBlock + 1) + '/4: ' + (addsBiceps ? 'bíceps +3 directas' : 'tríceps +3 directas') + ')'
+      ? '(hipertrofia · semana ' + (trackerState.weekInBlock + 1) + '/4: ' + (addsBiceps ? 'bíceps +3 directas' : (addsSecondTriceps ? 'tríceps +6 directas' : 'tríceps +3 directas')) + ')'
       : '(descarga · sin ejercicio extra de brazos)';
   }
 
