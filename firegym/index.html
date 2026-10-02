@@ -514,7 +514,7 @@
     <div class="day-pill upper"><div class="dow">Lun</div><div class="activity">Pecho · Espalda · Bíceps</div></div>
     <div class="day-pill lower"><div class="dow">Mar</div><div class="activity">Pierna A</div></div>
     <div class="day-pill upper"><div class="dow">Mié</div><div class="activity">Hombro · Trapecio · Tríceps</div></div>
-    <div class="day-pill upper"><div class="dow">Jue</div><div class="activity">Pecho · Espalda</div></div>
+    <div class="day-pill upper"><div class="dow">Jue</div><div class="activity" id="thursday-schedule-label">Pecho · Espalda · Bíceps</div></div>
     <div class="day-pill lower"><div class="dow">Vie</div><div class="activity">Pierna B</div></div>
   </div>
   <p style="color: var(--muted); font-size: 0.9rem; font-style: italic;">Sábado y domingo: descanso. Pecho y espalda quedan separados ~72 h.</p>
@@ -592,7 +592,7 @@
     </div>
 
     <div class="day hiper" data-type="pecho-espalda">
-      <h3><span class="accent"></span>Día 4 — PECHO · ESPALDA<span class="time-label" title="Incluye calentamiento y enfriamiento">⏱ ~80 min</span><button class="info-btn" data-tooltip="tt-hiper-4" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 4 — <span id="thursday-day-focus">PECHO · ESPALDA · BÍCEPS</span><span class="time-label" title="Incluye calentamiento y enfriamiento">⏱ ~80 min</span><button class="info-btn" data-tooltip="tt-hiper-4" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-hiper-4"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>Aproximaciones solo en el 1er ejercicio de cada músculo. No cuentan como efectivas.</li><li>Progresión: +1 rep o +2.5 kg/semana. Al tope del rango, sube peso.</li><li>Descanso: 2-3 min compuestos grandes · 90 s aislamiento.</li><li>Calentamiento: botón 🔥 antes de empezar.</li><li>Déficit ~350 kcal · proteína 170 g.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
@@ -1924,6 +1924,8 @@
     var exercise = document.getElementById('weekly-arm-exercise');
     var armRow = document.getElementById('weekly-arm-row');
     var coreNumber = document.getElementById('weekly-core-number');
+    var dayFocus = document.getElementById('thursday-day-focus');
+    var scheduleFocus = document.getElementById('thursday-schedule-label');
     var alternative = document.getElementById('weekly-arm-alt');
     var muscles = document.getElementById('weekly-arm-muscles');
     var note = document.getElementById('weekly-arm-note');
@@ -1934,6 +1936,10 @@
 
     var isHypertrophy = info.block === 'hiper';
     var addsBiceps = isHypertrophy && trackerState.weekInBlock % 2 === 0;
+    var focusLabel = !isHypertrophy ? 'PECHO · ESPALDA' : (addsBiceps ? 'PECHO · ESPALDA · BÍCEPS' : 'PECHO · ESPALDA · TRÍCEPS');
+    var scheduleLabel = !isHypertrophy ? 'Pecho · Espalda' : (addsBiceps ? 'Pecho · Espalda · Bíceps' : 'Pecho · Espalda · Tríceps');
+    dayFocus.textContent = focusLabel;
+    scheduleFocus.textContent = scheduleLabel;
     armRow.hidden = !isHypertrophy;
     coreNumber.textContent = isHypertrophy ? '8' : '7';
     exercise.textContent = addsBiceps ? 'Curl predicador en máquina' : 'Extensión de tríceps con cuerda';
