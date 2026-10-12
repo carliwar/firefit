@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Plan integral de 6 semanas: entrenamiento Upper/Lower 4 días + nutrición en definición (2400 kcal, 170 g proteína, 24 opciones de comida)." />
-<title>Plan de Entrenamiento y Nutrición · Ciclo 6 Semanas · U/L 4 días</title>
+<meta name="description" content="Plan integral de 6 semanas: entrenamiento Upper/Lower 5 días + nutrición en definición (2400 kcal, 170 g proteína, 24 opciones de comida)." />
+<title>Plan de Entrenamiento y Nutrición · Ciclo 6 Semanas · U/L 5 días</title>
 <style>
   :root {
     --primary: #1F2A44; --muted: #6B7280; --text: #1F2937;
@@ -430,6 +430,7 @@
     <div class="tracker-dot" data-day="1"></div>
     <div class="tracker-dot" data-day="2"></div>
     <div class="tracker-dot" data-day="3"></div>
+    <div class="tracker-dot" data-day="4"></div>
   </div>
   <button class="tracker-skip" id="tracker-skip">Saltar semana →</button>
 </div>
@@ -446,11 +447,11 @@
   <div id="tab-entrenamiento" class="tab-panel active" role="tabpanel" aria-labelledby="tab-btn-entrenamiento">
   <div class="cover">
     <h1>PLAN DE ENTRENAMIENTO Y NUTRICIÓN</h1>
-    <div class="subtitle">Ciclo de 6 Semanas · Upper / Lower (4 días) + Fase de definición</div>
+    <div class="subtitle">Ciclo de 6 Semanas · Upper / Lower (5 días) + Fase de definición</div>
     <div class="meta">
       <span>🎯 Recomposición corporal sostenida</span>
       <span>⚽ Fútbol 2x / semana</span>
-      <span>📅 4 días de gimnasio</span>
+      <span>📅 5 días de gimnasio</span>
     </div>
     <div style="margin-top: 24px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
       <span style="background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 600;">🏋️ Entrenamiento</span>
@@ -466,19 +467,20 @@
 
   <h2 class="section-title" id="distribucion">📅 Distribución semanal</h2>
   <div class="week-dist">
-    <div class="day-pill upper"><div class="dow">Lun</div><div class="activity">Upper A</div></div>
-    <div class="day-pill lower"><div class="dow">Mar</div><div class="activity">Lower A</div></div>
-    <div class="day-pill off"><div class="dow">Mié</div><div class="activity">Descanso</div></div>
-    <div class="day-pill upper"><div class="dow">Jue</div><div class="activity">Upper B</div></div>
+    <div class="day-pill upper"><div class="dow">Lun</div><div class="activity">Push</div></div>
+    <div class="day-pill upper"><div class="dow">Mar</div><div class="activity">Pull</div></div>
+    <div class="day-pill lower"><div class="dow">Mié</div><div class="activity">Lower A</div></div>
+    <div class="day-pill upper"><div class="dow">Jue</div><div class="activity">Upper mixto</div></div>
     <div class="day-pill lower"><div class="dow">Vie</div><div class="activity">Lower B</div></div>
   </div>
-  <p style="color: var(--muted); font-size: 0.9rem; font-style: italic;">Miércoles queda como descanso entre Lower A y Upper B.</p>
+  <p style="color: var(--muted); font-size: 0.9rem; font-style: italic;">Entrena de lunes a viernes; sábado y domingo quedan para recuperación.</p>
 
   <details class="split-details" id="logica-ab">
-    <summary class="split-summary"><span>🔀 Lógica de la división A / B</span><span class="split-chevron" aria-hidden="true">⌄</span></summary>
+    <summary class="split-summary"><span>🔀 Organización Push / Pull / Upper mixto</span><span class="split-chevron" aria-hidden="true">⌄</span></summary>
   <div class="ab-grid">
-    <div class="ab-card"><div class="ab-label">Upper A</div><div class="ab-title">Horizontal + Fuerza</div><div class="ab-desc">Press banca, remo Pendlay, press militar</div></div>
-    <div class="ab-card"><div class="ab-label">Upper B</div><div class="ab-title">Vertical + Variación</div><div class="ab-desc">Press inclinado, dominadas/jalón, hombro mancuernas</div></div>
+    <div class="ab-card"><div class="ab-label">Día 1 · Push</div><div class="ab-title">Pecho, hombros y tríceps</div><div class="ab-desc">Press banca, press militar y accesorios de empuje</div></div>
+    <div class="ab-card"><div class="ab-label">Día 2 · Pull</div><div class="ab-title">Espalda y bíceps</div><div class="ab-desc">Remo, dominadas o jalón y accesorios de tirón</div></div>
+    <div class="ab-card"><div class="ab-label">Día 4 · Upper mixto</div><div class="ab-title">Ángulos complementarios</div><div class="ab-desc">Press inclinado, tirón vertical y accesorios restantes</div></div>
     <div class="ab-card"><div class="ab-label">Lower A</div><div class="ab-title">Dominante cuádriceps</div><div class="ab-desc">Sentadilla trasera, prensa, extensión</div></div>
     <div class="ab-card"><div class="ab-label">Lower B</div><div class="ab-title">Dominante cadera / femoral</div><div class="ab-desc">Peso muerto rumano, hip thrust, búlgaras</div></div>
   </div>
@@ -489,28 +491,39 @@
     <div class="block-content">
 
     <div class="day hiper">
-      <h3><span class="accent"></span>Día 1 — UPPER A <span class="small-label">(horizontal / fuerza)</span><button class="info-btn" data-tooltip="tt-hiper-1" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 1 — UPPER A · PUSH<button class="info-btn" data-tooltip="tt-hiper-1" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-hiper-1"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li><li>Respeta 48h entre Lower y partido.</li><li>Déficit 200-300 kcal · proteína 1.8-2.2 g/kg.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
         <tbody>
           <tr><td class="num">1</td><td class="exercise">Press banca plano con barra</td><td class="muted">Press banca con mancuernas</td><td>Pectoral, deltoide ant., tríceps</td><td class="aprox">1 × 6 al 50% + 1 × 3 al 75%</td><td class="sets">2 × 6-8</td><td class="rest">2-3 min</td><td>Codos ~75°, bajada controlada</td></tr>
-          <tr><td class="num">2</td><td class="exercise">T-row máquina (chest-supported)</td><td class="muted">T-bar row landmine</td><td>Dorsal, romboides, trapecio medio</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Pecho apoyado, ROM completo, RIR 1-2</td></tr>
-          <tr><td class="num">3</td><td class="exercise">Press militar de pie con barra</td><td class="muted">Press hombro con mancuernas sentado</td><td>Deltoide ant./medio, tríceps</td><td class="aprox">1 × 6 al 50% + 1 × 3 al 75%</td><td class="sets">2 × 6-8</td><td class="rest">2-3 min</td><td>Core firme, glúteos apretados</td></tr>
-          <tr class="ss-start"><td class="num">4</td><td class="exercise">Remo en polea baja agarre estrecho</td><td class="muted">Remo con mancuerna a una mano</td><td>Dorsal medio, romboides</td><td class="aprox">—</td><td class="sets">2 × 10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codo al ombligo</td></tr>
-          <tr class="ss-end"><td class="num">5</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td>Deltoide medio</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Codo ligeramente flexionado</td></tr>
-          <tr class="ss-start"><td class="num">6</td><td class="exercise">Curl con barra Z</td><td class="muted">Curl con mancuernas</td><td>Bíceps braquial</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codos fijos, sin balanceo</td></tr>
-          <tr class="ss-end"><td class="num">7</td><td class="exercise">Fondos en paralelas</td><td class="muted">Press francés con barra Z</td><td>Tríceps, pectoral inferior</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Torso vertical = más tríceps</td></tr>
-          <tr><td class="num">8</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td>Deltoide post., manguito</td><td class="aprox">—</td><td class="sets">2 × 12</td><td class="rest">60-90 s</td><td>Salud del hombro</td></tr>
-          <tr class="ss-start"><td class="num">9</td><td class="exercise">Curl inclinado con mancuernas</td><td class="muted">Curl spider en banco inclinado</td><td>Bíceps (cabeza larga)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Brazos detrás del torso, estiramiento máximo</td></tr>
-          <tr class="ss-end"><td class="num">10</td><td class="exercise">Extensión overhead con cuerda en polea</td><td class="muted">Press francés con mancuernas (overhead)</td><td>Tríceps (cabeza larga)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Codos pegados a la cabeza, estiramiento profundo</td></tr>
-          <tr><td class="num">11</td><td class="exercise">Hanging leg raise (piernas colgado)</td><td class="muted">Captain's chair knee raise</td><td>Core (recto abdominal, flexores cadera)</td><td class="aprox">—</td><td class="sets">2 × 8-12</td><td class="rest">60-90 s</td><td>Sin balanceo, control en bajada</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Press militar de pie con barra</td><td class="muted">Press hombro con mancuernas sentado</td><td>Deltoide ant./medio, tríceps</td><td class="aprox">1 × 6 al 50% + 1 × 3 al 75%</td><td class="sets">2 × 6-8</td><td class="rest">2-3 min</td><td>Core firme, glúteos apretados</td></tr>
+          <tr class="ss-start"><td class="num">3</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td>Deltoide medio</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codo ligeramente flexionado</td></tr>
+          <tr class="ss-end"><td class="num">4</td><td class="exercise">Fondos en paralelas</td><td class="muted">Press francés con barra Z</td><td>Tríceps, pectoral inferior</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Torso vertical = más tríceps</td></tr>
+          <tr class="ss-start"><td class="num">5</td><td class="exercise">Extensión overhead con cuerda en polea</td><td class="muted">Press francés con mancuernas (overhead)</td><td>Tríceps (cabeza larga)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codos pegados a la cabeza, estiramiento profundo</td></tr>
+          <tr class="ss-end"><td class="num">6</td><td class="exercise">Hanging leg raise (piernas colgado)</td><td class="muted">Captain's chair knee raise</td><td>Core (recto abdominal, flexores cadera)</td><td class="aprox">—</td><td class="sets">2 × 8-12</td><td class="rest">60-90 s</td><td>Sin balanceo, control en bajada</td></tr>
         </tbody>
       </table></div>
     </div>
 
     <div class="day hiper">
-      <h3><span class="accent"></span>Día 2 — LOWER A <span class="small-label">(dominante cuádriceps)</span><button class="info-btn" data-tooltip="tt-hiper-2" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 2 — UPPER B · PULL<button class="info-btn" data-tooltip="tt-hiper-pull" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-hiper-pull"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">T-row máquina (chest-supported)</td><td class="muted">T-bar row landmine</td><td>Dorsal, romboides, trapecio medio</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Pecho apoyado, ROM completo, RIR 1-2</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Dominadas (asistidas si hace falta)</td><td class="muted">Jalón al pecho agarre prono</td><td>Dorsal ancho, bíceps, romboides</td><td class="aprox">1 × 5 sin lastre</td><td class="sets">2 × 6-10</td><td class="rest">2-3 min</td><td>Sin balanceo</td></tr>
+          <tr class="ss-start"><td class="num">3</td><td class="exercise">Remo en polea baja agarre estrecho</td><td class="muted">Remo con mancuerna a una mano</td><td>Dorsal medio, romboides</td><td class="aprox">—</td><td class="sets">2 × 10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codo al ombligo</td></tr>
+          <tr class="ss-end"><td class="num">4</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td>Deltoide post., manguito</td><td class="aprox">—</td><td class="sets">2 × 12</td><td class="rest">60-90 s</td><td>Salud del hombro</td></tr>
+          <tr class="ss-start"><td class="num">5</td><td class="exercise">Curl con barra Z</td><td class="muted">Curl con mancuernas</td><td>Bíceps braquial</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codos fijos, sin balanceo</td></tr>
+          <tr class="ss-end"><td class="num">6</td><td class="exercise">Curl inclinado con mancuernas</td><td class="muted">Curl spider en banco inclinado</td><td>Bíceps (cabeza larga)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Brazos detrás del torso, estiramiento máximo</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day hiper">
+      <h3><span class="accent"></span>Día 3 — LOWER A <span class="small-label">(dominante cuádriceps)</span><button class="info-btn" data-tooltip="tt-hiper-2" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-hiper-2"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li><li>Respeta 48h entre Lower y partido.</li><li>Déficit 200-300 kcal · proteína 1.8-2.2 g/kg.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
@@ -527,22 +540,19 @@
     </div>
 
     <div class="day hiper">
-      <h3><span class="accent"></span>Día 4 — UPPER B <span class="small-label">(vertical / variación)</span><button class="info-btn" data-tooltip="tt-hiper-4" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 4 — UPPER C · MIXTO<button class="info-btn" data-tooltip="tt-hiper-4" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-hiper-4"><h5>📝 Notas clave — Hipertrofia</h5><ul><li>RIR 1-2 en series efectivas. Última rep dura pero limpia.</li><li>La aproximación NO cuenta como serie efectiva.</li><li>Progresión: +1 rep o +2.5 kg/semana en el principal.</li><li>Calentamiento: 5-8 min cardio + movilidad.</li><li>Respeta 48h entre Lower y partido.</li><li>Déficit 200-300 kcal · proteína 1.8-2.2 g/kg.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
         <tbody>
           <tr><td class="num">1</td><td class="exercise">Press inclinado con mancuernas (30°)</td><td class="muted">Press inclinado con barra</td><td>Pectoral clavicular, deltoide ant.</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 6-10</td><td class="rest">2-3 min</td><td>No bloquear codos arriba</td></tr>
-          <tr><td class="num">2</td><td class="exercise">Dominadas (asistidas si hace falta)</td><td class="muted">Jalón al pecho agarre prono</td><td>Dorsal ancho, bíceps, romboides</td><td class="aprox">1 × 5 sin lastre</td><td class="sets">2 × 6-10</td><td class="rest">2-3 min</td><td>Sin balanceo</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Jalón al pecho agarre supino</td><td class="muted">Pull-over en polea</td><td>Dorsal ancho, bíceps</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Agarre supino = más bíceps</td></tr>
           <tr><td class="num">3</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press Arnold</td><td>Deltoide ant./medio</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 8-10</td><td class="rest">2 min</td><td>Bajada controlada</td></tr>
-          <tr class="ss-start"><td class="num">4</td><td class="exercise">Jalón al pecho agarre supino</td><td class="muted">Pull-over en polea</td><td>Dorsal ancho, bíceps</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Agarre supino = más bíceps</td></tr>
-          <tr class="ss-end"><td class="num">5</td><td class="exercise">Aperturas en polea (cruce)</td><td class="muted">Pec deck</td><td>Pectoral (estiramiento)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Foco en estiramiento</td></tr>
-          <tr class="ss-start"><td class="num">6</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea con cuerda</td><td>Braquial, braquiorradial</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Tempo controlado</td></tr>
-          <tr class="ss-end"><td class="num">7</td><td class="exercise">Extensión tríceps en polea (cuerda)</td><td class="muted">Press francés en polea baja</td><td>Tríceps</td><td class="aprox">—</td><td class="sets">2 × 10</td><td class="rest">90 s</td><td>Codos pegados al torso</td></tr>
-          <tr><td class="num">8</td><td class="exercise">Pájaros con mancuernas (inclinado)</td><td class="muted">Reverse pec deck</td><td>Deltoide posterior</td><td class="aprox">—</td><td class="sets">2 × 12</td><td class="rest">60-90 s</td><td>Sin trapecio</td></tr>
-          <tr class="ss-start"><td class="num">9</td><td class="exercise">Cable rope hammer curl (polea con cuerda)</td><td class="muted">Curl Zottman con mancuernas</td><td>Braquial, braquiorradial, antebrazo</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Tensión constante, codos fijos</td></tr>
-          <tr class="ss-end"><td class="num">10</td><td class="exercise">Pushdown unilateral en polea (cuerda)</td><td class="muted">Patada de tríceps con mancuerna</td><td>Tríceps (cabeza lateral)</td><td class="aprox">—</td><td class="sets">2 × 10-12/lado</td><td class="rest">60-90 s</td><td>Unilateral, contracción máxima abajo</td></tr>
-          <tr><td class="num">11</td><td class="exercise">Ab wheel rollout (rueda abdominal)</td><td class="muted">Cable crunch arrodillado</td><td>Core (anti-extensión, recto abdominal)</td><td class="aprox">—</td><td class="sets">2 × 6-10</td><td class="rest">90 s</td><td>Cadera neutra, no arquear lumbar</td></tr>
+          <tr class="ss-start"><td class="num">4</td><td class="exercise">Aperturas en polea (cruce)</td><td class="muted">Pec deck</td><td>Pectoral (estiramiento)</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Foco en estiramiento</td></tr>
+          <tr class="ss-end"><td class="num">5</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea con cuerda</td><td>Braquial, braquiorradial</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Tempo controlado</td></tr>
+          <tr class="ss-start"><td class="num">6</td><td class="exercise">Extensión tríceps en polea (cuerda)</td><td class="muted">Press francés en polea baja</td><td>Tríceps</td><td class="aprox">—</td><td class="sets">2 × 10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Codos pegados al torso</td></tr>
+          <tr class="ss-end"><td class="num">7</td><td class="exercise">Pájaros con mancuernas (inclinado)</td><td class="muted">Reverse pec deck</td><td>Deltoide posterior</td><td class="aprox">—</td><td class="sets">2 × 12</td><td class="rest">60-90 s</td><td>Sin trapecio</td></tr>
+          <tr><td class="num">8</td><td class="exercise">Ab wheel rollout (rueda abdominal)</td><td class="muted">Cable crunch arrodillado</td><td>Core (anti-extensión, recto abdominal)</td><td class="aprox">—</td><td class="sets">2 × 6-10</td><td class="rest">90 s</td><td>Cadera neutra, no arquear lumbar</td></tr>
         </tbody>
       </table></div>
     </div>
@@ -579,29 +589,40 @@
   </details>
 
   <details class="block block-details" id="fuerza">
-    <summary class="block-header fuerza"><div class="block-heading"><h2>🟧 Bloque 2 — Fuerza</h2><div class="block-meta">Semanas 4 – 5 · 2-3 aprox + 3 efectivas × 4-6 reps · RIR 1-2 · Aproximaciones progresivas obligatorias</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
+    <summary class="block-header fuerza"><div class="block-heading"><h2>🟧 Bloque 2 — Fuerza</h2><div class="block-meta">Semanas 4 – 5 · 2-3 aprox · Uppers: 2 efectivas × 4-6 reps · Lower mantiene su esquema · RIR 1-2</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
     <div class="block-content">
 
     <div class="day fuerza">
-      <h3><span class="accent"></span>Día 1 — UPPER A<button class="info-btn" data-tooltip="tt-fuerza-1" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 1 — UPPER A · PUSH<button class="info-btn" data-tooltip="tt-fuerza-1" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-fuerza-1"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas obligatorias en compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Calentamiento de hombro/manguito antes de presses.</li><li>Si partido competitivo, reduce intensidad o salta.</li><li>Spotter o seguros en banca y sentadilla pesada.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
         <tbody>
-          <tr><td class="num">1</td><td class="exercise">Press banca plano con barra</td><td class="muted">Press banca con mancuernas</td><td>Pectoral, deltoide ant., tríceps</td><td class="aprox">Vacío × 8 → 40% × 5 → 60% × 3 → 80% × 2</td><td class="sets">3 × 4-5</td><td class="rest">3-5 min</td><td>Pausa breve en el pecho. Spotter obligatorio.</td></tr>
-          <tr><td class="num">2</td><td class="exercise">T-row máquina (chest-supported)</td><td class="muted">Remo en máquina con apoyo de pecho</td><td>Dorsal, romboides, trapecio</td><td class="aprox">40% × 6 → 70% × 3</td><td class="sets">3 × 4-5</td><td class="rest">3 min</td><td>Pecho apoyado, RIR 1-2, ROM completo</td></tr>
-          <tr><td class="num">3</td><td class="exercise">Press militar de pie con barra</td><td class="muted">Press hombro con mancuernas</td><td>Deltoide, tríceps</td><td class="aprox">Vacío × 6 → 50% × 4 → 75% × 2</td><td class="sets">3 × 4-5</td><td class="rest">3 min</td><td>Core ultra firme</td></tr>
-          <tr><td class="num">4</td><td class="exercise">Remo con mancuerna a una mano</td><td class="muted">Remo en máquina unilateral</td><td>Dorsal, romboides</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6/lado</td><td class="rest">2 min</td><td>Carga pesada, codo pegado al torso</td></tr>
-          <tr><td class="num">5</td><td class="exercise">Press cerrado con barra</td><td class="muted">Press francés con barra Z</td><td>Tríceps, pectoral interno</td><td class="aprox">1 × 6 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2 min</td><td>Manos a la anchura de hombros</td></tr>
-          <tr class="ss-start"><td class="num">6</td><td class="exercise">Curl con barra Z</td><td class="muted">Curl con barra recta</td><td>Bíceps</td><td class="aprox">—</td><td class="sets">3 × 5-6</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Técnica impecable</td></tr>
-          <tr class="ss-end"><td class="num">7</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td>Deltoide post., manguito</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">60-90 s</td><td>Mantener salud del hombro</td></tr>
-          <tr><td class="num">8</td><td class="exercise">Hanging leg raise (piernas colgado)</td><td class="muted">Hanging knee raise lastrado</td><td>Core (recto abdominal, flexores cadera)</td><td class="aprox">—</td><td class="sets">2 × 6-8</td><td class="rest">60-90 s</td><td>Lastra si llegas a 8 reps limpias</td></tr>
+          <tr><td class="num">1</td><td class="exercise">Press banca plano con barra</td><td class="muted">Press banca con mancuernas</td><td>Pectoral, deltoide ant., tríceps</td><td class="aprox">Vacío × 8 → 40% × 5 → 60% × 3 → 80% × 2</td><td class="sets">2 × 4-5</td><td class="rest">3-5 min</td><td>Pausa breve en el pecho. Spotter obligatorio.</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Press militar de pie con barra</td><td class="muted">Press hombro con mancuernas</td><td>Deltoide, tríceps</td><td class="aprox">Vacío × 6 → 50% × 4 → 75% × 2</td><td class="sets">2 × 4-5</td><td class="rest">3 min</td><td>Core ultra firme</td></tr>
+          <tr class="ss-start"><td class="num">3</td><td class="exercise">Press cerrado con barra</td><td class="muted">Press francés con barra Z</td><td>Tríceps, pectoral interno</td><td class="aprox">1 × 6 al 60%</td><td class="sets">2 × 5-6</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Manos a la anchura de hombros</td></tr>
+          <tr class="ss-end"><td class="num">4</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td>Deltoide medio</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Salud articular</td></tr>
         </tbody>
       </table></div>
     </div>
 
     <div class="day fuerza">
-      <h3><span class="accent"></span>Día 2 — LOWER A<button class="info-btn" data-tooltip="tt-fuerza-2" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 2 — UPPER B · PULL<button class="info-btn" data-tooltip="tt-fuerza-pull" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-fuerza-pull"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en series efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas en los compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Evita balancearte en los curls.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">T-row máquina (chest-supported)</td><td class="muted">Remo en máquina con apoyo de pecho</td><td>Dorsal, romboides, trapecio</td><td class="aprox">40% × 6 → 70% × 3</td><td class="sets">2 × 4-5</td><td class="rest">3 min</td><td>Pecho apoyado, RIR 1-2, ROM completo</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Remo con mancuerna a una mano</td><td class="muted">Remo en máquina unilateral</td><td>Dorsal, romboides</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 5-6/lado</td><td class="rest">2 min</td><td>Carga pesada, codo pegado al torso</td></tr>
+          <tr class="ss-start"><td class="num">3</td><td class="exercise">Curl con barra Z</td><td class="muted">Curl con barra recta</td><td>Bíceps</td><td class="aprox">—</td><td class="sets">2 × 5-6</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Técnica impecable</td></tr>
+          <tr class="ss-end"><td class="num">4</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td>Deltoide post., manguito</td><td class="aprox">—</td><td class="sets">2 × 10-12</td><td class="rest">60-90 s</td><td>Mantener salud del hombro</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Hanging leg raise (piernas colgado)</td><td class="muted">Hanging knee raise lastrado</td><td>Core (recto abdominal, flexores cadera)</td><td class="aprox">—</td><td class="sets">2 × 6-8</td><td class="rest">60-90 s</td><td>Lastra si llegas a 8 reps limpias</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day fuerza">
+      <h3><span class="accent"></span>Día 3 — LOWER A<button class="info-btn" data-tooltip="tt-fuerza-2" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-fuerza-2"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas obligatorias en compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Calentamiento de hombro/manguito antes de presses.</li><li>Si partido competitivo, reduce intensidad o salta.</li><li>Spotter o seguros en banca y sentadilla pesada.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
@@ -617,19 +638,18 @@
     </div>
 
     <div class="day fuerza">
-      <h3><span class="accent"></span>Día 4 — UPPER B<button class="info-btn" data-tooltip="tt-fuerza-4" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 4 — UPPER C · MIXTO<button class="info-btn" data-tooltip="tt-fuerza-4" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-fuerza-4"><h5>📝 Notas clave — Fuerza</h5><ul><li>RIR 1-2 en efectivas. Si fallas reps, baja 5-10%.</li><li>Aproximaciones progresivas obligatorias en compuestos.</li><li>Excéntrica controlada ~2 s, concéntrica explosiva.</li><li>Calentamiento de hombro/manguito antes de presses.</li><li>Si partido competitivo, reduce intensidad o salta.</li><li>Spotter o seguros en banca y sentadilla pesada.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Aproximación</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
         <tbody>
-          <tr><td class="num">1</td><td class="exercise">Press inclinado con barra (30°)</td><td class="muted">Press inclinado con mancuernas</td><td>Pectoral clavicular, deltoide ant.</td><td class="aprox">Vacío × 6 → 50% × 4 → 75% × 2</td><td class="sets">3 × 4-5</td><td class="rest">3-5 min</td><td>Pausa breve en el pecho</td></tr>
-          <tr><td class="num">2</td><td class="exercise">Dominadas lastradas</td><td class="muted">Jalón pesado al pecho</td><td>Dorsal, bíceps</td><td class="aprox">1 × 5 sin lastre → 1 × 3 con 50% lastre</td><td class="sets">3 × 3-5</td><td class="rest">3 min</td><td>Lastre en cinturón</td></tr>
-          <tr><td class="num">3</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press Arnold</td><td>Deltoide</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2-3 min</td><td>Bajada controlada</td></tr>
-          <tr><td class="num">4</td><td class="exercise">Remo en polea baja agarre estrecho</td><td class="muted">Remo en máquina (neutro)</td><td>Dorsal medio, romboides</td><td class="aprox">1 × 8 al 60%</td><td class="sets">3 × 5-6</td><td class="rest">2 min</td><td>Aprieta escápulas al final</td></tr>
-          <tr><td class="num">5</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea</td><td>Braquial, antebrazo</td><td class="aprox">—</td><td class="sets">3 × 6</td><td class="rest">90 s</td><td>Tempo controlado, carga pesada</td></tr>
-          <tr><td class="num">6</td><td class="exercise">Press francés con barra Z</td><td class="muted">Extensión tríceps en polea</td><td>Tríceps</td><td class="aprox">—</td><td class="sets">3 × 5-6</td><td class="rest">2 min</td><td>Carga pesada, codos fijos</td></tr>
-          <tr class="ss-start"><td class="num">7</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td>Deltoide medio</td><td class="aprox">—</td><td class="sets">2 × 8-10</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Salud articular</td></tr>
-          <tr class="ss-end"><td class="num">8</td><td class="exercise">Ab wheel rollout (rueda abdominal)</td><td class="muted">Cable crunch arrodillado</td><td>Core (anti-extensión)</td><td class="aprox">—</td><td class="sets">2 × 6-8</td><td class="rest">90 s</td><td>Sin arquear lumbar, control total</td></tr>
+          <tr><td class="num">1</td><td class="exercise">Press inclinado con barra (30°)</td><td class="muted">Press inclinado con mancuernas</td><td>Pectoral clavicular, deltoide ant.</td><td class="aprox">Vacío × 6 → 50% × 4 → 75% × 2</td><td class="sets">2 × 4-5</td><td class="rest">3-5 min</td><td>Pausa breve en el pecho</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Dominadas lastradas</td><td class="muted">Jalón pesado al pecho</td><td>Dorsal, bíceps</td><td class="aprox">1 × 5 sin lastre → 1 × 3 con 50% lastre</td><td class="sets">2 × 3-5</td><td class="rest">3 min</td><td>Lastre en cinturón</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press Arnold</td><td>Deltoide</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 5-6</td><td class="rest">2-3 min</td><td>Bajada controlada</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Remo en polea baja agarre estrecho</td><td class="muted">Remo en máquina (neutro)</td><td>Dorsal medio, romboides</td><td class="aprox">1 × 8 al 60%</td><td class="sets">2 × 5-6</td><td class="rest">2 min</td><td>Aprieta escápulas al final</td></tr>
+          <tr class="ss-start"><td class="num">5</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea</td><td>Braquial, antebrazo</td><td class="aprox">—</td><td class="sets">2 × 6</td><td class="rest"><span class="ss-arrow">→ SS</span></td><td>Tempo controlado, carga pesada</td></tr>
+          <tr class="ss-end"><td class="num">6</td><td class="exercise">Press francés con barra Z</td><td class="muted">Extensión tríceps en polea</td><td>Tríceps</td><td class="aprox">—</td><td class="sets">2 × 5-6</td><td class="rest">2 min</td><td>Carga pesada, codos fijos</td></tr>
+          <tr><td class="num">7</td><td class="exercise">Ab wheel rollout (rueda abdominal)</td><td class="muted">Cable crunch arrodillado</td><td>Core (anti-extensión)</td><td class="aprox">—</td><td class="sets">2 × 6-8</td><td class="rest">90 s</td><td>Sin arquear lumbar, control total</td></tr>
         </tbody>
       </table></div>
     </div>
@@ -671,23 +691,34 @@
     <div class="block-content">
 
     <div class="day desc">
-      <h3><span class="accent"></span>Día 1 — UPPER A<button class="info-btn" data-tooltip="tt-desc-1" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 1 — UPPER A · PUSH<button class="info-btn" data-tooltip="tt-desc-1" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-desc-1"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>NO progreses. Esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos 60-90 s.</li><li>Aprovecha para dormir 8+ h, movilidad, foam roller.</li><li>Si tienes molestias, esta semana es la oportunidad.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
         <tbody>
           <tr><td class="num">1</td><td class="exercise">Press banca con mancuernas</td><td class="muted">Press en máquina</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>60-65% del peso habitual</td></tr>
-          <tr><td class="num">2</td><td class="exercise">Remo en máquina (neutro)</td><td class="muted">Remo en polea baja</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Carga moderada</td></tr>
-          <tr><td class="num">3</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press en máquina</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Ligero</td></tr>
-          <tr><td class="num">4</td><td class="exercise">Curl con mancuernas alternado</td><td class="muted">Curl en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Foco en contracción</td></tr>
-          <tr><td class="num">5</td><td class="exercise">Extensión tríceps en polea (cuerda)</td><td class="muted">Patada de tríceps</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Sin fatigar</td></tr>
-          <tr><td class="num">6</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Salud articular</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Press hombro con mancuernas sentado</td><td class="muted">Press en máquina</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Ligero</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Extensión tríceps en polea (cuerda)</td><td class="muted">Patada de tríceps</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Sin fatigar</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Peso muy ligero</td></tr>
         </tbody>
       </table></div>
     </div>
 
     <div class="day desc">
-      <h3><span class="accent"></span>Día 2 — LOWER A<button class="info-btn" data-tooltip="tt-desc-2" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 2 — UPPER B · PULL<button class="info-btn" data-tooltip="tt-desc-pull" aria-label="Notas del bloque">i</button></h3>
+      <div class="tooltip-box" id="tt-desc-pull"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>No progreses; esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos de 60-90 s.</li></ul></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td class="num">1</td><td class="exercise">Remo en máquina (neutro)</td><td class="muted">Remo en polea baja</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Carga moderada</td></tr>
+          <tr><td class="num">2</td><td class="exercise">Curl con mancuernas alternado</td><td class="muted">Curl en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Foco en contracción</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Face pull en polea</td><td class="muted">Pájaros con mancuernas</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Salud articular</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day desc">
+      <h3><span class="accent"></span>Día 3 — LOWER A<button class="info-btn" data-tooltip="tt-desc-2" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-desc-2"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>NO progreses. Esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos 60-90 s.</li><li>Aprovecha para dormir 8+ h, movilidad, foam roller.</li><li>Si tienes molestias, esta semana es la oportunidad.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
@@ -702,17 +733,16 @@
     </div>
 
     <div class="day desc">
-      <h3><span class="accent"></span>Día 4 — UPPER B<button class="info-btn" data-tooltip="tt-desc-4" aria-label="Notas del bloque">i</button></h3>
+      <h3><span class="accent"></span>Día 4 — UPPER C · MIXTO<button class="info-btn" data-tooltip="tt-desc-4" aria-label="Notas del bloque">i</button></h3>
       <div class="tooltip-box" id="tt-desc-4"><h5>📝 Notas clave — Descarga</h5><ul><li>RIR 3-4. Sin esfuerzo es perfecto.</li><li>NO progreses. Esta semana es para recuperar.</li><li>Cargas al 60-65% del peso habitual.</li><li>Descansos cortos 60-90 s.</li><li>Aprovecha para dormir 8+ h, movilidad, foam roller.</li><li>Si tienes molestias, esta semana es la oportunidad.</li></ul></div>
       <div class="table-wrap"><table>
         <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
         <tbody>
           <tr><td class="num">1</td><td class="exercise">Press inclinado con mancuernas</td><td class="muted">Press inclinado en máquina</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Carga ligera</td></tr>
           <tr><td class="num">2</td><td class="exercise">Jalón al pecho prono</td><td class="muted">Dominadas sin lastre</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Sin lastre, sensación</td></tr>
-          <tr><td class="num">3</td><td class="exercise">Elevaciones laterales con mancuernas</td><td class="muted">Elevaciones en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Peso muy ligero</td></tr>
-          <tr><td class="num">4</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Suave</td></tr>
-          <tr><td class="num">5</td><td class="exercise">Press francés con mancuernas</td><td class="muted">Extensión overhead</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Sin fatigar</td></tr>
-          <tr><td class="num">6</td><td class="exercise">Pájaros con mancuernas</td><td class="muted">Reverse pec deck</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Salud articular</td></tr>
+          <tr><td class="num">3</td><td class="exercise">Curl martillo con mancuernas</td><td class="muted">Curl martillo en polea</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Suave</td></tr>
+          <tr><td class="num">4</td><td class="exercise">Press francés con mancuernas</td><td class="muted">Extensión overhead</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Sin fatigar</td></tr>
+          <tr><td class="num">5</td><td class="exercise">Pájaros con mancuernas</td><td class="muted">Reverse pec deck</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Salud articular</td></tr>
         </tbody>
       </table></div>
     </div>
@@ -758,11 +788,11 @@
       <li><strong>Fatiga acumulada:</strong> si tienes sueño malo, dolores o falta de motivación 3+ días, adelanta la descarga.</li>
       <li><strong>Calentamiento siempre:</strong> 5-8 min cardio ligero + movilidad + aproximaciones.</li>
       <li><strong>Hidratación:</strong> 35-40 ml por kg, más electrolitos los días de partido.</li>
-      <li><strong>Frecuencia muscular:</strong> 2x/semana (Upper A + B; Lower A + B).</li>
+      <li><strong>Frecuencia muscular:</strong> 3 sesiones Upper (Push, Pull, mixto) y 2 Lower por semana.</li>
     </ul>
   </div>
 
-  <footer>Plan de Entrenamiento · Ciclo 6 Semanas · Upper / Lower 4 días · Toca una fila para ver el detalle del ejercicio</footer>
+  <footer>Plan de Entrenamiento · Ciclo 6 Semanas · Upper / Lower 5 días · Toca una fila para ver el detalle del ejercicio</footer>
   </div><!-- /#tab-entrenamiento -->
 
   <div id="tab-nutricion" class="tab-panel" role="tabpanel" aria-labelledby="tab-btn-nutricion">
@@ -1432,6 +1462,7 @@
     var t = text.toUpperCase();
     if (t.indexOf('UPPER A') >= 0) return 'upper-a';
     if (t.indexOf('UPPER B') >= 0) return 'upper-b';
+    if (t.indexOf('UPPER C') >= 0) return 'upper-b';
     if (t.indexOf('LOWER A') >= 0) return 'lower-a';
     if (t.indexOf('LOWER B') >= 0) return 'lower-b';
     return null;
@@ -1829,8 +1860,8 @@
     { block: 'fuerza', label: '🟧 Fuerza', weeks: 2 },
     { block: 'desc', label: '🟩 Descarga', weeks: 1 }
   ];
-  var DAYS_PER_WEEK = 4;
-  var DAY_NAMES = ['Upper A', 'Lower A', 'Upper B', 'Lower B'];
+  var DAYS_PER_WEEK = 5;
+  var DAY_NAMES = ['Push', 'Pull', 'Lower A', 'Upper mixto', 'Lower B'];
   var STORAGE_KEY = 'plan6w:tracker';
   var NUTRI_TARGET_WEEKS = 10;
 
@@ -1849,10 +1880,19 @@
   }
 
   function defaultState() {
-    return { blockIdx: 0, weekInBlock: 0, daysCompleted: [false, false, false, false], cycleComplete: false, totalWeeksCompleted: 0 };
+    return { blockIdx: 0, weekInBlock: 0, daysCompleted: [false, false, false, false, false], cycleComplete: false, totalWeeksCompleted: 0 };
   }
 
   var trackerState = loadTracker() || defaultState();
+  if (!Array.isArray(trackerState.daysCompleted)) {
+    trackerState.daysCompleted = defaultState().daysCompleted;
+  } else if (trackerState.daysCompleted.length === 4) {
+    var previousDays = trackerState.daysCompleted;
+    trackerState.daysCompleted = [previousDays[0], false, previousDays[1], previousDays[2], previousDays[3]];
+  } else if (trackerState.daysCompleted.length !== DAYS_PER_WEEK) {
+    trackerState.daysCompleted = trackerState.daysCompleted.slice(0, DAYS_PER_WEEK);
+    while (trackerState.daysCompleted.length < DAYS_PER_WEEK) trackerState.daysCompleted.push(false);
+  }
   if (typeof trackerState.totalWeeksCompleted !== 'number') trackerState.totalWeeksCompleted = 0;
 
   function currentBlockInfo() {
@@ -1941,7 +1981,7 @@
   }
 
   function advanceWeek() {
-    trackerState.daysCompleted = [false, false, false, false];
+    trackerState.daysCompleted = [false, false, false, false, false];
     if (trackerState.totalWeeksCompleted < NUTRI_TARGET_WEEKS) trackerState.totalWeeksCompleted++;
     trackerState.weekInBlock++;
     if (trackerState.weekInBlock >= totalWeeksInBlock()) {
