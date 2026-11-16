@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Plan in-Flaco: rutina Full Body de 3 días para empezar a entrenar en casa. 6 semanas con barra, mancuernas y kettlebell." />
+<title>Plan in-Flaco · Full Body 3 días</title>
+<style>
+  :root {
+    --primary: #1F2A44; --muted: #6B7280; --text: #1F2937;
+    --bg: #FAFAFA; --card: #FFFFFF; --border: #E5E7EB; --row-alt: #F9FAFB;
+    --hiper: #3B82F6; --hiper-soft: #DBEAFE;
+    --fuerza: #F97316; --fuerza-soft: #FFEDD5;
+    --desc: #10B981; --desc-soft: #D1FAE5;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; margin: 0; padding: 0; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 32px 24px 80px; }
+  .cover { background: linear-gradient(135deg, #1F2A44 0%, #2D3B5F 100%); color: white; padding: 64px 40px; border-radius: 16px; text-align: center; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(31, 42, 68, 0.15); }
+  .cover h1 { font-size: 2.6rem; margin: 0 0 8px; letter-spacing: 1px; }
+  .cover .subtitle { font-size: 1.2rem; opacity: 0.85; margin-bottom: 32px; font-weight: 300; }
+  .cover .meta { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; font-size: 0.95rem; opacity: 0.9; }
+  .cycle-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
+  .cycle-card { background: var(--card); border-radius: 12px; padding: 20px; border: 1px solid var(--border); border-top: 4px solid var(--primary); box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-decoration: none; color: inherit; display: block; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .cycle-card:hover, .cycle-card:focus { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); outline: none; }
+  .cycle-card.hiper { border-top-color: var(--hiper); }
+  .cycle-card.fuerza { border-top-color: var(--fuerza); }
+  .cycle-card.desc { border-top-color: var(--desc); }
+  .cycle-card .label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; }
+  .cycle-card .title { font-size: 1.3rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+  .cycle-card .desc-text { font-size: 0.92rem; }
+  .cycle-card .go { font-size: 0.78rem; color: var(--muted); margin-top: 10px; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; }
+  .block-details { margin-bottom: 56px; }
+  .block-header { padding: 24px 28px; border-radius: 12px; color: white; margin-bottom: 24px; }
+  .block-header.hiper { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+  .block-header.fuerza { background: linear-gradient(135deg, #F97316, #EA580C); }
+  .block-header.desc { background: linear-gradient(135deg, #10B981, #059669); }
+  .block-details > summary.block-header { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; margin-bottom: 0; }
+  .block-details > summary.block-header::-webkit-details-marker { display: none; }
+  .block-details[open] > summary.block-header { margin-bottom: 24px; }
+  .block-heading { flex: 1; }
+  .block-chevron { flex: 0 0 auto; font-size: 1.35rem; transition: transform 0.2s ease; }
+  .block-details:not([open]) .block-chevron { transform: rotate(-90deg); }
+  .block-header h2 { margin: 0 0 6px; font-size: 1.8rem; }
+  .block-header .block-meta { opacity: 0.95; font-size: 0.95rem; }
+  .day { background: var(--card); border-radius: 12px; margin-bottom: 24px; border: 1px solid var(--border); overflow: visible; box-shadow: 0 1px 4px rgba(0,0,0,0.03); position: relative; }
+  .day h3 { margin: 0; padding: 16px 24px; font-size: 1.15rem; background: var(--row-alt); border-bottom: 1px solid var(--border); color: var(--primary); display: flex; align-items: center; gap: 10px; position: relative; border-radius: 12px 12px 0 0; }
+  .day h3 .accent { width: 6px; height: 22px; border-radius: 3px; background: var(--primary); }
+  .day h3 .small-label { color: var(--muted); font-weight: 400; font-size: 0.85rem; margin-left: 4px; }
+  .day h3 .routine-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); height: 28px; min-width: 28px; border-radius: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 6px; flex-shrink: 0; font-family: inherit; font-size: 0.78rem; font-weight: 600; padding: 0 10px; }
+  .day h3 .warmup-btn { margin-left: auto; }
+  .day h3 .warmup-btn:hover { background: #F97316; color: white; border-color: #F97316; }
+  .day h3 .cooldown-btn:hover { background: var(--hiper); color: white; border-color: var(--hiper); }
+  .day h3 .routine-btn svg { width: 14px; height: 14px; }
+  .day h3 .collapse-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; display: none; align-items: center; justify-content: center; flex-shrink: 0; font-family: inherit; padding: 0; transition: transform 0.25s ease; }
+  .day h3 .collapse-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+  .day h3 .collapse-btn svg { width: 14px; height: 14px; }
+  .day.collapsed h3 .collapse-btn { transform: rotate(-90deg); }
+  .day.collapsed .table-wrap { display: none; }
+  .day.collapsed h3 { border-bottom: none; border-radius: 12px; }
+  .day.hiper h3 .accent { background: var(--hiper); }
+  .day.fuerza h3 .accent { background: var(--fuerza); }
+  .day.desc h3 .accent { background: var(--desc); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 0 0 12px 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 700px; }
+  thead th { text-align: left; padding: 12px 14px; font-weight: 600; color: white; background: var(--primary); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1px solid rgba(255,255,255,0.08); white-space: nowrap; }
+  .day.hiper thead th { background: var(--hiper); }
+  .day.fuerza thead th { background: var(--fuerza); }
+  .day.desc thead th { background: var(--desc); }
+  thead th:last-child { border-right: none; }
+  tbody td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr { cursor: pointer; transition: background 0.1s ease; }
+  tbody tr:focus-visible { outline: 2px solid var(--primary); outline-offset: -2px; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:nth-child(even) { background: var(--row-alt); }
+  tbody tr:hover { background: #EFF6FF; }
+  .day.fuerza tbody tr:hover { background: #FFF7ED; }
+  .day.desc tbody tr:hover { background: #ECFDF5; }
+  td.num { font-weight: 700; color: var(--muted); width: 32px; text-align: center; }
+  td.exercise { font-weight: 600; }
+  td.muted { color: var(--muted); font-style: italic; }
+  td.sets { font-weight: 600; color: var(--primary); white-space: nowrap; }
+  td.rest { white-space: nowrap; color: var(--muted); }
+  .notes { background: var(--card); border-radius: 12px; padding: 20px 24px; margin-top: 16px; border-left: 4px solid var(--primary); }
+  .notes.hiper { border-left-color: var(--hiper); background: var(--hiper-soft); }
+  .notes.fuerza { border-left-color: var(--fuerza); background: var(--fuerza-soft); }
+  .notes.desc { border-left-color: var(--desc); background: var(--desc-soft); }
+  .notes h4 { margin: 0 0 10px; color: var(--primary); font-size: 1.05rem; }
+  .notes ul { margin: 0; padding-left: 22px; }
+  .notes li { margin-bottom: 6px; font-size: 0.92rem; }
+  .week-dist { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+  .day-pill { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 10px; padding: 14px 8px; text-align: center; font-size: 0.85rem; }
+  .day-pill .dow { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .day-pill .activity { font-weight: 700; color: var(--primary); }
+  .ab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .ab-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; }
+  .ab-card .ab-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  .ab-card .ab-title { font-weight: 700; color: var(--primary); margin: 4px 0; font-size: 1.05rem; }
+  .ab-card .ab-desc { font-size: 0.88rem; }
+  h2.section-title { font-size: 1.4rem; color: var(--primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .split-details { margin-bottom: 32px; }
+  .split-summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; font-size: 1.4rem; color: var(--primary); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); font-weight: 700; }
+  .split-summary::-webkit-details-marker { display: none; }
+  .split-details[open] > .split-summary { margin-bottom: 16px; }
+  .split-chevron { font-size: 1.2rem; transition: transform 0.2s ease; }
+  .split-details:not([open]) .split-chevron { transform: rotate(-90deg); }
+  footer { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--border); }
+
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); z-index: 1000; padding: 20px; overflow-y: auto; align-items: flex-start; justify-content: center; }
+  .modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
+  .modal { background: white; border-radius: 16px; max-width: 560px; width: 100%; padding: 28px 28px 24px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin: auto; }
+  .modal-close { position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 1.8rem; cursor: pointer; color: var(--muted); line-height: 1; padding: 4px 10px; border-radius: 6px; font-family: inherit; }
+  .modal-close:hover { background: var(--row-alt); color: var(--text); }
+  .modal-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.06); border: none; font-size: 2rem; cursor: pointer; color: var(--primary); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1; transition: background 0.15s; }
+  .modal-nav:hover { background: rgba(0,0,0,0.12); }
+  .modal-prev { left: -44px; }
+  .modal-next { right: -44px; }
+  .modal-counter { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 12px; letter-spacing: 0.5px; }
+  @media (max-width: 700px) {
+    .modal-prev { left: 6px; top: auto; bottom: 10px; transform: none; }
+    .modal-next { right: 6px; top: auto; bottom: 10px; transform: none; }
+  }
+  .modal h3 { margin: 0 0 6px; color: var(--primary); padding-right: 40px; font-size: 1.35rem; }
+  .modal .modal-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 18px; font-style: italic; }
+  .modal-field { margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+  .modal-field:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .modal-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 4px; font-weight: 600; }
+  .modal-value { font-size: 0.98rem; color: var(--text); }
+  .modal-videos { display: flex; gap: 10px; margin-top: 4px; flex-wrap: wrap; }
+  .modal-video-btn { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; background: #FF0000; color: white; border-radius: 8px; text-decoration: none; font-size: 0.85rem; font-weight: 600; transition: background 0.15s ease, transform 0.15s ease; line-height: 1.2; }
+  .modal-video-btn:hover { background: #CC0000; transform: translateY(-1px); }
+  .modal-video-btn.alt { background: #4B5563; }
+  .modal-video-btn.alt:hover { background: #374151; }
+  .modal-video-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .modal-video-btn .vid-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; }
+  .modal-video-btn .vid-label { font-size: 0.7rem; opacity: 0.85; font-weight: 400; }
+  .modal-video-btn .vid-name { font-weight: 600; font-size: 0.85rem; }
+  .routine-exercise { border-top: 2px solid var(--border); padding-top: 18px; margin-top: 18px; }
+  .routine-exercise:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+  .routine-exercise-header { font-weight: 700; color: var(--primary); font-size: 1.05rem; margin-bottom: 12px; }
+
+  /* FAB */
+  .fab { position: fixed; bottom: 24px; right: 24px; padding: 0 18px; height: 48px; border-radius: 24px; background: var(--primary); color: white; border: none; cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,0.3); font-size: 0.9rem; font-weight: 600; display: none; align-items: center; gap: 6px; z-index: 500; font-family: inherit; transition: transform 0.15s ease; }
+  .fab.show { display: inline-flex; animation: fabIn 0.25s ease; }
+  .fab:hover { transform: translateY(-2px); }
+  @keyframes fabIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Tracker */
+  .tracker-bar { position: sticky; top: 0; z-index: 900; background: var(--card); border-bottom: 1px solid var(--border); padding: 10px 20px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .tracker-bar .tracker-block { font-weight: 700; font-size: 0.9rem; }
+  .tracker-bar .tracker-block.hiper { color: var(--hiper); }
+  .tracker-bar .tracker-block.fuerza { color: var(--fuerza); }
+  .tracker-bar .tracker-block.desc { color: var(--desc); }
+  .tracker-bar .tracker-week, .tracker-bar .tracker-next { font-size: 0.85rem; color: var(--muted); }
+  .tracker-dots { display: flex; gap: 6px; align-items: center; }
+  .tracker-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border); background: transparent; transition: background 0.2s, border-color 0.2s; }
+  .tracker-dot.filled { background: var(--hiper); border-color: var(--hiper); }
+  .tracker-bar.fuerza .tracker-dot.filled { background: var(--fuerza); border-color: var(--fuerza); }
+  .tracker-bar.desc .tracker-dot.filled { background: var(--desc); border-color: var(--desc); }
+  .tracker-actions { margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  .tracker-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-family: inherit; transition: background 0.15s, color 0.15s; }
+  .tracker-btn:hover { background: var(--row-alt); color: var(--text); }
+  .tracker-btn.primary { background: var(--primary); color: white; border-color: var(--primary); }
+  .tracker-btn.primary:hover { background: #2D3B5F; color: white; }
+  .tracker-btn[hidden] { display: none; }
+  .tracker-complete-msg { width: 100%; text-align: center; font-size: 0.85rem; color: var(--desc); font-weight: 600; padding: 4px 0 0; animation: fadeIn 0.3s ease; }
+
+  @media print {
+    body { background: white; }
+    .container { padding: 0; max-width: 100%; }
+    .cover { box-shadow: none; page-break-after: always; }
+    .day { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+    tbody tr:hover { background: inherit; }
+    .fab, .modal-overlay, .routine-btn, .collapse-btn, .tracker-bar { display: none !important; }
+    .table-wrap { overflow: visible; }
+    table { min-width: 0; }
+  }
+  @media (max-width: 720px) {
+    .container { padding: 20px 14px 80px; }
+    .cover { padding: 40px 24px; }
+    .cover h1 { font-size: 1.8rem; }
+    .cover .meta { gap: 12px; flex-direction: column; }
+    .block-header { padding: 18px 20px; }
+    .block-header h2 { font-size: 1.4rem; }
+    .day h3 { padding: 14px 16px; font-size: 1rem; flex-wrap: wrap; }
+    .day h3 .small-label { display: block; flex-basis: 100%; margin: 4px 0 0 16px; order: 3; }
+    .day h3 .routine-btn { order: 2; }
+    .day h3 .collapse-btn { display: inline-flex; order: 4; }
+    table { font-size: 0.82rem; min-width: 600px; }
+    thead th, tbody td { padding: 9px 10px; }
+    .modal { padding: 22px 20px; border-radius: 12px; }
+    .modal h3 { font-size: 1.15rem; }
+    .fab { bottom: 16px; right: 16px; }
+    .tracker-bar { padding: 8px 14px; gap: 8px; }
+    .tracker-bar .tracker-block { font-size: 0.82rem; }
+    .tracker-bar .tracker-week, .tracker-bar .tracker-next { font-size: 0.78rem; }
+    .tracker-dot { width: 12px; height: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Tracker Bar -->
+<div class="tracker-bar hiper" id="tracker-bar">
+  <span class="tracker-block hiper" id="tracker-block-label">🟦 Adaptación</span>
+  <span class="tracker-week" id="tracker-week-label">Sem 1/2</span>
+  <div class="tracker-dots" id="tracker-dots" aria-label="Sesiones de la semana">
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+    <div class="tracker-dot"></div>
+  </div>
+  <span class="tracker-next" id="tracker-next"></span>
+  <div class="tracker-actions">
+    <button class="tracker-btn primary" id="tracker-mark" type="button"></button>
+    <button class="tracker-btn" id="tracker-skip" type="button">Saltar semana →</button>
+  </div>
+</div>
+
+<div class="container" id="top">
+  <div class="cover">
+    <h1>PLAN IN-FLACO</h1>
+    <div class="subtitle">Full Body · 3 días por semana · 6 semanas</div>
+    <div class="meta">
+      <span>🎯 Crear el hábito de entrenar</span>
+      <span>🏠 En casa: barra, mancuernas y kettlebell</span>
+      <span>📅 Lunes, miércoles y viernes</span>
+    </div>
+  </div>
+
+  <div class="cycle-summary">
+    <a href="#adaptacion" class="cycle-card hiper"><div class="label">Semanas 1 – 2</div><div class="title">🟦 Adaptación</div><div class="desc-text">2 series × 10-12 repeticiones · peso ligero</div><div class="go">Ver fase →</div></a>
+    <a href="#construccion" class="cycle-card fuerza"><div class="label">Semanas 3 – 5</div><div class="title">🟧 Construcción</div><div class="desc-text">3 series × 8-12 repeticiones · sube el peso poco a poco</div><div class="go">Ver fase →</div></a>
+    <a href="#descarga" class="cycle-card desc"><div class="label">Semana 6</div><div class="title">🟩 Descarga</div><div class="desc-text">2 series × 8-10 repeticiones · peso más ligero</div><div class="go">Ver fase →</div></a>
+  </div>
+
+  <h2 class="section-title" id="distribucion">📅 Distribución semanal</h2>
+  <div class="week-dist">
+    <div class="day-pill"><div class="dow">Lun</div><div class="activity">Full Body</div></div>
+    <div class="day-pill"><div class="dow">Mié</div><div class="activity">Full Body</div></div>
+    <div class="day-pill"><div class="dow">Vie</div><div class="activity">Full Body</div></div>
+  </div>
+  <p style="color: var(--muted); font-size: 0.9rem; font-style: italic;">Semanas 1, 3 y 5: Sesión A – B – A. Semanas 2, 4 y 6: Sesión B – A – B. El resto de los días descansas. Cada sesión dura unos 45 minutos con calentamiento y estiramiento.</p>
+
+  <details class="split-details" id="logica-ab">
+    <summary class="split-summary"><span>🔀 Qué trabaja cada sesión</span><span class="split-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="ab-grid">
+      <div class="ab-card"><div class="ab-label">Sesión A</div><div class="ab-title">Sentadilla, empuje y remo</div><div class="ab-desc">Piernas, pecho, espalda, glúteos, bíceps y abdomen</div></div>
+      <div class="ab-card"><div class="ab-label">Sesión B</div><div class="ab-title">Cadera, hombros y remo</div><div class="ab-desc">Parte trasera de la pierna, hombros, espalda, pecho y abdomen</div></div>
+    </div>
+  </details>
+
+  <details class="block block-details" id="adaptacion">
+    <summary class="block-header hiper"><div class="block-heading"><h2>🟦 Fase 1 — Adaptación</h2><div class="block-meta">Semanas 1 – 2 · 2 series × 10-12 repeticiones · peso ligero</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="block-content">
+
+    <div class="day hiper">
+      <h3><span class="accent"></span>Sesión A <span class="small-label">(sentadilla, empuje y remo)</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr tabindex="0"><td class="num">1</td><td class="exercise">Sentadilla goblet con kettlebell o mancuerna</td><td class="muted">Sentadilla al banco con mancuerna</td><td>Piernas y glúteos</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Sostén el peso contra el pecho. Baja despacio con la espalda recta.</td></tr>
+          <tr tabindex="0"><td class="num">2</td><td class="exercise">Press de pecho con mancuernas en banco</td><td class="muted">Flexiones con las manos en el banco</td><td>Pecho, hombros y tríceps</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Baja hasta que los codos queden a la altura del pecho.</td></tr>
+          <tr tabindex="0"><td class="num">3</td><td class="exercise">Remo con una mancuerna apoyado en el banco</td><td class="muted">Remo inclinado con mancuernas</td><td>Espalda y bíceps</td><td class="sets">2 × 10-12 por lado</td><td class="rest">60-90 s</td><td>Lleva el codo hacia la cadera. No gires el cuerpo.</td></tr>
+          <tr tabindex="0"><td class="num">4</td><td class="exercise">Puente de glúteos en el suelo</td><td class="muted">Puente con una mancuerna sobre la cadera</td><td>Glúteos</td><td class="sets">2 × 12</td><td class="rest">60 s</td><td>Aprieta los glúteos arriba y cuenta 1 segundo.</td></tr>
+          <tr tabindex="0"><td class="num">5</td><td class="exercise">Curl de bíceps con mancuernas</td><td class="muted">Curl con la barra</td><td>Bíceps</td><td class="sets">2 × 10-12</td><td class="rest">60 s</td><td>Codos pegados al cuerpo. No balancees el torso.</td></tr>
+          <tr tabindex="0"><td class="num">6</td><td class="exercise">Plancha</td><td class="muted">Plancha apoyando las rodillas</td><td>Abdomen</td><td class="sets">2 × 20-30 s</td><td class="rest">60 s</td><td>Cuerpo recto. No dejes caer la cadera.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day hiper">
+      <h3><span class="accent"></span>Sesión B <span class="small-label">(cadera, hombros y remo)</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr tabindex="0"><td class="num">1</td><td class="exercise">Peso muerto rumano con mancuernas</td><td class="muted">Peso muerto rumano con kettlebell</td><td>Parte trasera de la pierna, glúteos y espalda baja</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Lleva la cadera hacia atrás con la espalda recta. Las mancuernas rozan las piernas.</td></tr>
+          <tr tabindex="0"><td class="num">2</td><td class="exercise">Press de hombros con mancuernas sentado</td><td class="muted">Press de hombros de pie</td><td>Hombros y tríceps</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Sube sin arquear la espalda.</td></tr>
+          <tr tabindex="0"><td class="num">3</td><td class="exercise">Remo inclinado con mancuernas</td><td class="muted">Remo con una mancuerna apoyado en el banco</td><td>Espalda</td><td class="sets">2 × 10-12</td><td class="rest">90 s</td><td>Pecho hacia adelante. Junta los omóplatos al subir.</td></tr>
+          <tr tabindex="0"><td class="num">4</td><td class="exercise">Estocada estática con mancuernas</td><td class="muted">Estocada estática sin peso</td><td>Piernas y glúteos</td><td class="sets">2 × 8-10 por pierna</td><td class="rest">90 s</td><td>La rodilla de atrás baja casi hasta el suelo. Apóyate en algo si pierdes el equilibrio.</td></tr>
+          <tr tabindex="0"><td class="num">5</td><td class="exercise">Flexiones con las manos en el banco</td><td class="muted">Press de pecho con mancuernas</td><td>Pecho y tríceps</td><td class="sets">2 × 8-12</td><td class="rest">60-90 s</td><td>Cuerpo recto de la cabeza a los talones.</td></tr>
+          <tr tabindex="0"><td class="num">6</td><td class="exercise">Bicho muerto (dead bug)</td><td class="muted">Plancha</td><td>Abdomen</td><td class="sets">2 × 8 por lado</td><td class="rest">60 s</td><td>Mantén la espalda baja pegada al suelo.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="notes hiper">
+      <h4>📝 Notas de la fase</h4>
+      <ul>
+        <li>Lo importante es venir los 3 días. El peso es lo de menos.</li>
+        <li>Usa un peso ligero. Al terminar cada serie debes sentir que podrías hacer 2-3 repeticiones más.</li>
+        <li>Baja cada repetición despacio (2-3 segundos).</li>
+        <li>Mira el video de cada ejercicio antes de empezar.</li>
+        <li>Si algo duele (no es lo mismo que cansancio), para y usa la alternativa.</li>
+      </ul>
+    </div>
+    </div>
+  </details>
+
+  <details class="block block-details" id="construccion">
+    <summary class="block-header fuerza"><div class="block-heading"><h2>🟧 Fase 2 — Construcción</h2><div class="block-meta">Semanas 3 – 5 · 3 series × 8-12 repeticiones · sube el peso poco a poco</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="block-content">
+
+    <div class="day fuerza">
+      <h3><span class="accent"></span>Sesión A <span class="small-label">(sentadilla, empuje y remo)</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr tabindex="0"><td class="num">1</td><td class="exercise">Sentadilla con barra en el stand</td><td class="muted">Sentadilla goblet con kettlebell o mancuerna</td><td>Piernas y glúteos</td><td class="sets">3 × 8-10</td><td class="rest">2 min</td><td>Pon los seguros a la altura justa. Baja hasta que los muslos queden paralelos al suelo.</td></tr>
+          <tr tabindex="0"><td class="num">2</td><td class="exercise">Press de pecho con mancuernas en banco</td><td class="muted">Flexiones con las manos en el banco</td><td>Pecho, hombros y tríceps</td><td class="sets">3 × 8-12</td><td class="rest">90 s</td><td>Controla la bajada. Sube el peso cuando hagas todas las repeticiones con buena técnica.</td></tr>
+          <tr tabindex="0"><td class="num">3</td><td class="exercise">Remo con una mancuerna apoyado en el banco</td><td class="muted">Remo inclinado con mancuernas</td><td>Espalda y bíceps</td><td class="sets">3 × 8-12 por lado</td><td class="rest">90 s</td><td>Lleva el codo hacia la cadera. No gires el cuerpo.</td></tr>
+          <tr tabindex="0"><td class="num">4</td><td class="exercise">Puente de glúteos con una mancuerna en la cadera</td><td class="muted">Puente de glúteos en el suelo</td><td>Glúteos</td><td class="sets">3 × 10-12</td><td class="rest">90 s</td><td>Aprieta los glúteos arriba y cuenta 1 segundo.</td></tr>
+          <tr tabindex="0"><td class="num">5</td><td class="exercise">Curl de bíceps con mancuernas</td><td class="muted">Curl con la barra</td><td>Bíceps</td><td class="sets">3 × 8-12</td><td class="rest">60-90 s</td><td>Codos pegados al cuerpo. No balancees el torso.</td></tr>
+          <tr tabindex="0"><td class="num">6</td><td class="exercise">Plancha</td><td class="muted">Plancha apoyando las rodillas</td><td>Abdomen</td><td class="sets">3 × 30-40 s</td><td class="rest">60 s</td><td>Cuerpo recto. No dejes caer la cadera.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day fuerza">
+      <h3><span class="accent"></span>Sesión B <span class="small-label">(cadera, hombros y remo)</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr tabindex="0"><td class="num">1</td><td class="exercise">Peso muerto rumano con barra</td><td class="muted">Peso muerto rumano con mancuernas</td><td>Parte trasera de la pierna, glúteos y espalda baja</td><td class="sets">3 × 8-10</td><td class="rest">2 min</td><td>Cadera hacia atrás, espalda recta. La barra baja pegada a las piernas.</td></tr>
+          <tr tabindex="0"><td class="num">2</td><td class="exercise">Press de hombros con mancuernas sentado</td><td class="muted">Press de hombros de pie</td><td>Hombros y tríceps</td><td class="sets">3 × 8-10</td><td class="rest">90 s</td><td>Sube sin arquear la espalda.</td></tr>
+          <tr tabindex="0"><td class="num">3</td><td class="exercise">Remo inclinado con barra</td><td class="muted">Remo inclinado con mancuernas</td><td>Espalda</td><td class="sets">3 × 8-10</td><td class="rest">90 s</td><td>Pecho hacia adelante. Lleva la barra hacia el abdomen.</td></tr>
+          <tr tabindex="0"><td class="num">4</td><td class="exercise">Estocada estática con mancuernas</td><td class="muted">Estocada estática sin peso</td><td>Piernas y glúteos</td><td class="sets">3 × 8-10 por pierna</td><td class="rest">90 s</td><td>La rodilla de atrás baja casi hasta el suelo.</td></tr>
+          <tr tabindex="0"><td class="num">5</td><td class="exercise">Flexiones en el suelo</td><td class="muted">Flexiones con las manos en el banco</td><td>Pecho y tríceps</td><td class="sets">3 × 8-12</td><td class="rest">90 s</td><td>Cuerpo recto de la cabeza a los talones.</td></tr>
+          <tr tabindex="0"><td class="num">6</td><td class="exercise">Bicho muerto (dead bug)</td><td class="muted">Plancha</td><td>Abdomen</td><td class="sets">3 × 8 por lado</td><td class="rest">60 s</td><td>Mantén la espalda baja pegada al suelo.</td></tr>
+          <tr tabindex="0"><td class="num">7</td><td class="exercise">Kettlebell swing</td><td class="muted">Peso muerto con kettlebell</td><td>Glúteos y espalda baja</td><td class="sets">2 × 10</td><td class="rest">90 s</td><td>Empuja con la cadera, no con los brazos. Si dudas de la técnica, usa la alternativa.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="notes fuerza">
+      <h4>📝 Notas de la fase</h4>
+      <ul>
+        <li>Cuando hagas todas las series y repeticiones con buena técnica, sube el peso la semana siguiente con el disco más pequeño (2.5 kg).</li>
+        <li>Pon los seguros del stand en toda sentadilla con barra.</li>
+        <li>Si la barra te queda ligera, baja más despacio o haz una pausa de 1 segundo abajo.</li>
+        <li>En el kettlebell swing la fuerza sale de la cadera, no de los brazos.</li>
+        <li>Si algo duele (no es lo mismo que cansancio), para y usa la alternativa.</li>
+      </ul>
+    </div>
+    </div>
+  </details>
+
+  <details class="block block-details" id="descarga">
+    <summary class="block-header desc"><div class="block-heading"><h2>🟩 Fase 3 — Descarga</h2><div class="block-meta">Semana 6 · 2 series × 8-10 repeticiones · peso más ligero</div></div><span class="block-chevron" aria-hidden="true">⌄</span></summary>
+    <div class="block-content">
+
+    <div class="day desc">
+      <h3><span class="accent"></span>Sesión A <span class="small-label">(sentadilla, empuje y remo)</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr tabindex="0"><td class="num">1</td><td class="exercise">Sentadilla con barra en el stand</td><td class="muted">Sentadilla goblet con kettlebell o mancuerna</td><td>Piernas y glúteos</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Usa el 60-65% del peso de la semana 5.</td></tr>
+          <tr tabindex="0"><td class="num">2</td><td class="exercise">Press de pecho con mancuernas en banco</td><td class="muted">Flexiones con las manos en el banco</td><td>Pecho, hombros y tríceps</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Peso ligero. Termina con energía.</td></tr>
+          <tr tabindex="0"><td class="num">3</td><td class="exercise">Remo con una mancuerna apoyado en el banco</td><td class="muted">Remo inclinado con mancuernas</td><td>Espalda y bíceps</td><td class="sets">2 × 8-10 por lado</td><td class="rest">60-90 s</td><td>Lleva el codo hacia la cadera.</td></tr>
+          <tr tabindex="0"><td class="num">4</td><td class="exercise">Puente de glúteos con una mancuerna en la cadera</td><td class="muted">Puente de glúteos en el suelo</td><td>Glúteos</td><td class="sets">2 × 10</td><td class="rest">60 s</td><td>Aprieta los glúteos arriba y cuenta 1 segundo.</td></tr>
+          <tr tabindex="0"><td class="num">5</td><td class="exercise">Plancha</td><td class="muted">Plancha apoyando las rodillas</td><td>Abdomen</td><td class="sets">2 × 30 s</td><td class="rest">60 s</td><td>Cuerpo recto.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="day desc">
+      <h3><span class="accent"></span>Sesión B <span class="small-label">(cadera, hombros y remo)</span></h3>
+      <div class="table-wrap"><table>
+        <thead><tr><th>#</th><th>Ejercicio</th><th>Alternativa</th><th>Músculos</th><th>Series × Reps</th><th>Descanso</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr tabindex="0"><td class="num">1</td><td class="exercise">Peso muerto rumano con barra</td><td class="muted">Peso muerto rumano con mancuernas</td><td>Parte trasera de la pierna, glúteos y espalda baja</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Usa el 60-65% del peso de la semana 5.</td></tr>
+          <tr tabindex="0"><td class="num">2</td><td class="exercise">Press de hombros con mancuernas sentado</td><td class="muted">Press de hombros de pie</td><td>Hombros y tríceps</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Peso ligero. Sube sin arquear la espalda.</td></tr>
+          <tr tabindex="0"><td class="num">3</td><td class="exercise">Remo inclinado con barra</td><td class="muted">Remo inclinado con mancuernas</td><td>Espalda</td><td class="sets">2 × 8-10</td><td class="rest">90 s</td><td>Pecho hacia adelante.</td></tr>
+          <tr tabindex="0"><td class="num">4</td><td class="exercise">Estocada estática con mancuernas</td><td class="muted">Estocada estática sin peso</td><td>Piernas y glúteos</td><td class="sets">2 × 8 por pierna</td><td class="rest">90 s</td><td>Baja despacio y con control.</td></tr>
+          <tr tabindex="0"><td class="num">5</td><td class="exercise">Flexiones en el suelo</td><td class="muted">Flexiones con las manos en el banco</td><td>Pecho y tríceps</td><td class="sets">2 × 8-10</td><td class="rest">60-90 s</td><td>Cuerpo recto de la cabeza a los talones.</td></tr>
+          <tr tabindex="0"><td class="num">6</td><td class="exercise">Bicho muerto (dead bug)</td><td class="muted">Plancha</td><td>Abdomen</td><td class="sets">2 × 8 por lado</td><td class="rest">60 s</td><td>Mantén la espalda baja pegada al suelo.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <div class="notes desc">
+      <h4>📝 Notas de la fase</h4>
+      <ul>
+        <li>Esta semana es de recuperación: usa el 60-65% del peso de la semana 5.</li>
+        <li>Haz menos series y termina cada sesión con energía.</li>
+        <li>Después puedes repetir el plan desde la semana 1 con un poco más de peso.</li>
+      </ul>
+    </div>
+    </div>
+  </details>
+
+  <footer>Plan in-Flaco · Full Body 3 días por semana · 6 semanas</footer>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" aria-label="Cerrar">&times;</button>
+    <button class="modal-nav modal-prev" aria-label="Anterior">&lsaquo;</button>
+    <button class="modal-nav modal-next" aria-label="Siguiente">&rsaquo;</button>
+    <div id="modal-body"></div>
+    <div class="modal-counter" id="modal-counter"></div>
+  </div>
+</div>
+
+<!-- FAB volver al índice -->
+<button class="fab" id="fab" aria-label="Volver al índice"><span>↑</span> <span>Índice</span></button>
+
+<script>
+(function() {
+  var modal = document.getElementById('modal');
+  var modalBody = document.getElementById('modal-body');
+  var modalClose = modal.querySelector('.modal-close');
+  var modalPrev = modal.querySelector('.modal-prev');
+  var modalNext = modal.querySelector('.modal-next');
+  var modalCounter = document.getElementById('modal-counter');
+  var currentRow = null;
+  var currentRows = [];
+  var lastFocused = null;
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, function(c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  var YT_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2c-.3-1-1.1-1.8-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6c-1 .3-1.8 1.1-2.1 2.1C0 8.1 0 12 0 12s0 3.9.5 5.8c.3 1 1.1 1.8 2.1 2.1 1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6c1-.3 1.8-1.1 2.1-2.1.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>';
+  var FLAME_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/></svg>';
+  var CHEVRON_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>';
+
+  var WARMUP = {
+    title: '🔥 Calentamiento',
+    subtitle: 'Antes de entrenar · unos 5 minutos',
+    exercises: [
+      { name: 'Marcha en el lugar o jumping jacks suaves', amount: '1 × 2 min', notes: 'Sube el pulso poco a poco. Debes poder hablar.' },
+      { name: 'Círculos de hombros', amount: '1 × 10 hacia adelante y 10 hacia atrás', notes: 'Círculos grandes y lentos.' },
+      { name: 'Zancada con giro de tronco', amount: '1 × 5 por lado', notes: 'Da un paso largo, baja y gira el pecho hacia la pierna de adelante.' },
+      { name: 'Sentadilla con el peso del cuerpo', amount: '1 × 10', notes: 'Baja despacio con la espalda recta.' },
+      { name: 'Puente de glúteos', amount: '1 × 10', notes: 'Aprieta los glúteos arriba y cuenta 1 segundo.' }
+    ]
+  };
+
+  var COOLDOWN = {
+    title: '🧘 Enfriamiento y estiramiento',
+    subtitle: 'Después de entrenar · unos 5 minutos',
+    exercises: [
+      { name: 'Estiramiento de pecho en la pared', amount: '1 × 30 s por lado', notes: 'Apoya el brazo en la pared y gira el cuerpo hacia el otro lado.' },
+      { name: 'Postura del niño', amount: '1 × 30 s', notes: 'Siéntate sobre los talones y estira los brazos al frente. Respira profundo.' },
+      { name: 'Estiramiento de cuádriceps de pie', amount: '1 × 30 s por pierna', notes: 'Lleva el talón hacia el glúteo. Rodillas juntas.' },
+      { name: 'Estiramiento de la parte trasera de la pierna sentado', amount: '1 × 30 s por pierna', notes: 'Estira una pierna y baja el pecho hacia la rodilla sin redondear la espalda.' },
+      { name: 'Estiramiento de cadera en zancada baja', amount: '1 × 30 s por lado', notes: 'Rodilla de atrás en el suelo. Empuja la cadera hacia adelante.' },
+      { name: 'Respiración lenta', amount: '5 respiraciones', notes: 'Inhala por la nariz y suelta el aire despacio por la boca.' }
+    ]
+  };
+
+  function ytSearchUrl(query) {
+    return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(query + ' tutorial técnica');
+  }
+
+  function videoButton(name, isAlt) {
+    var label = isAlt ? 'Alternativa' : 'Principal';
+    var cls = isAlt ? 'modal-video-btn alt' : 'modal-video-btn';
+    return '<a class="' + cls + '" href="' + ytSearchUrl(name) + '" target="_blank" rel="noopener noreferrer">' + YT_ICON + '<span class="vid-text"><span class="vid-label">' + label + ' · YouTube</span><span class="vid-name">' + escapeHtml(name) + '</span></span></a>';
+  }
+
+  function showModal(html) {
+    if (!modal.classList.contains('open')) lastFocused = document.activeElement;
+    modalBody.innerHTML = html;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+    updateModalNav();
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    currentRow = null;
+    currentRows = [];
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+    lastFocused = null;
+  }
+
+  function openModal(row) {
+    var cells = row.querySelectorAll('td');
+    var headers = row.closest('table').querySelectorAll('thead th');
+    if (cells.length === 0) return;
+    var exerciseName = cells[1] ? cells[1].textContent.trim() : 'Ejercicio';
+    var altName = cells[2] ? cells[2].textContent.trim() : '';
+    var num = cells[0] ? cells[0].textContent.trim() : '';
+    var html = '<h3 id="modal-title">' + (num ? num + '. ' : '') + escapeHtml(exerciseName) + '</h3>';
+    html += '<div class="modal-sub">Toca fuera del recuadro o cierra para volver</div>';
+    var videos = videoButton(exerciseName, false);
+    if (altName) videos += videoButton(altName, true);
+    html += '<div class="modal-field"><div class="modal-label">Tutoriales</div><div class="modal-videos">' + videos + '</div></div>';
+    for (var i = 2; i < cells.length; i++) {
+      var label = headers[i] ? headers[i].textContent.trim() : '';
+      var value = cells[i].textContent.trim();
+      if (!value) continue;
+      html += '<div class="modal-field"><div class="modal-label">' + escapeHtml(label) + '</div><div class="modal-value">' + escapeHtml(value) + '</div></div>';
+    }
+    showModal(html);
+  }
+
+  function openRoutineModal(data) {
+    currentRow = null;
+    currentRows = [];
+    var html = '<h3 id="modal-title">' + escapeHtml(data.title) + '</h3>';
+    html += '<div class="modal-sub">' + escapeHtml(data.subtitle) + '</div>';
+    data.exercises.forEach(function(ex, i) {
+      html += '<div class="routine-exercise">';
+      html += '<div class="routine-exercise-header">' + (i + 1) + '. ' + escapeHtml(ex.name) + '</div>';
+      html += '<div class="modal-field"><div class="modal-label">Tutorial</div><div class="modal-videos">' + videoButton(ex.name, false) + '</div></div>';
+      html += '<div class="modal-field"><div class="modal-label">Cantidad</div><div class="modal-value">' + escapeHtml(ex.amount) + '</div></div>';
+      html += '<div class="modal-field"><div class="modal-label">Notas</div><div class="modal-value">' + escapeHtml(ex.notes) + '</div></div>';
+      html += '</div>';
+    });
+    showModal(html);
+  }
+
+  function updateModalNav() {
+    var idx = currentRows.indexOf(currentRow);
+    if (idx < 0 || currentRows.length <= 1) {
+      modalPrev.style.display = 'none';
+      modalNext.style.display = 'none';
+      modalCounter.style.display = 'none';
+      return;
+    }
+    modalPrev.style.display = idx > 0 ? '' : 'none';
+    modalNext.style.display = idx < currentRows.length - 1 ? '' : 'none';
+    modalCounter.style.display = '';
+    modalCounter.textContent = (idx + 1) + ' / ' + currentRows.length;
+  }
+
+  function navigateModal(dir) {
+    var idx = currentRows.indexOf(currentRow);
+    var nextIdx = idx + dir;
+    if (idx < 0 || nextIdx < 0 || nextIdx >= currentRows.length) return;
+    currentRow = currentRows[nextIdx];
+    openModal(currentRow);
+  }
+
+  modalPrev.addEventListener('click', function(e) { e.stopPropagation(); navigateModal(-1); });
+  modalNext.addEventListener('click', function(e) { e.stopPropagation(); navigateModal(1); });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e) { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e) {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft') navigateModal(-1);
+    if (e.key === 'ArrowRight') navigateModal(1);
+  });
+
+  var touchStartX = 0;
+  var touchStartY = 0;
+  var SWIPE_THRESHOLD = 50;
+  modal.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+  modal.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].screenX - touchStartX;
+    var dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+      navigateModal(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  document.querySelectorAll('.day tbody tr').forEach(function(row) {
+    function open() {
+      currentRows = Array.prototype.slice.call(row.closest('tbody').querySelectorAll('tr'));
+      currentRow = row;
+      openModal(row);
+    }
+    row.addEventListener('click', open);
+    row.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+
+  // Botones de calentamiento, enfriamiento y colapso en cada día
+  var isMobile = window.matchMedia('(max-width: 720px)');
+
+  function routineButton(className, label, innerHtml, data) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'routine-btn ' + className;
+    btn.setAttribute('aria-label', label);
+    btn.innerHTML = innerHtml;
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      openRoutineModal(data);
+    });
+    return btn;
+  }
+
+  document.querySelectorAll('.day').forEach(function(day) {
+    var h3 = day.querySelector('h3');
+    h3.appendChild(routineButton('warmup-btn', 'Calentamiento', FLAME_ICON, WARMUP));
+    h3.appendChild(routineButton('cooldown-btn', 'Enfriamiento y estiramiento', '🧘', COOLDOWN));
+
+    var cbtn = document.createElement('button');
+    cbtn.type = 'button';
+    cbtn.className = 'collapse-btn';
+    cbtn.setAttribute('aria-label', 'Expandir o colapsar');
+    cbtn.innerHTML = CHEVRON_ICON;
+    cbtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      day.classList.toggle('collapsed');
+    });
+    h3.appendChild(cbtn);
+  });
+
+  function applyMobileCollapse() {
+    document.querySelectorAll('.day').forEach(function(d) { d.classList.toggle('collapsed', isMobile.matches); });
+  }
+  applyMobileCollapse();
+  if (isMobile.addEventListener) isMobile.addEventListener('change', applyMobileCollapse);
+
+  var fab = document.getElementById('fab');
+  fab.addEventListener('click', function() {
+    document.getElementById('distribucion').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  window.addEventListener('scroll', function() {
+    fab.classList.toggle('show', window.scrollY > 600);
+  });
+
+  // ===== TRACKER DE PROGRESO =====
+  var CYCLE = [
+    { block: 'hiper', id: 'adaptacion', label: '🟦 Adaptación', weeks: 2 },
+    { block: 'fuerza', id: 'construccion', label: '🟧 Construcción', weeks: 3 },
+    { block: 'desc', id: 'descarga', label: '🟩 Descarga', weeks: 1 }
+  ];
+  var SESSIONS_PER_WEEK = 3;
+  var WEEK_PATTERNS = [['A', 'B', 'A'], ['B', 'A', 'B']];
+  var STORAGE_KEY = 'flaco:tracker';
+
+  var trackerBar = document.getElementById('tracker-bar');
+  var trackerBlockLabel = document.getElementById('tracker-block-label');
+  var trackerWeekLabel = document.getElementById('tracker-week-label');
+  var trackerDots = document.getElementById('tracker-dots');
+  var trackerNext = document.getElementById('tracker-next');
+  var trackerMark = document.getElementById('tracker-mark');
+  var trackerSkip = document.getElementById('tracker-skip');
+
+  function defaultState() {
+    return { blockIdx: 0, weekInBlock: 0, daysCompleted: [false, false, false], cycleComplete: false, totalWeeksCompleted: 0 };
+  }
+
+  function loadTracker() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      var valid = saved && Array.isArray(saved.daysCompleted) && saved.daysCompleted.length === SESSIONS_PER_WEEK &&
+        CYCLE[saved.blockIdx] && typeof saved.weekInBlock === 'number' && typeof saved.totalWeeksCompleted === 'number';
+      return valid ? saved : defaultState();
+    } catch (e) {
+      return defaultState();
+    }
+  }
+
+  function saveTracker() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(trackerState)); } catch (e) { /* localStorage no disponible */ }
+  }
+
+  var trackerState = loadTracker();
+
+  function currentBlockInfo() {
+    return CYCLE[trackerState.blockIdx];
+  }
+
+  function nextSessionLetter() {
+    var idx = trackerState.daysCompleted.indexOf(false);
+    if (idx < 0) return '';
+    return WEEK_PATTERNS[trackerState.totalWeeksCompleted % 2][idx];
+  }
+
+  function expandCurrentBlock() {
+    var currentId = currentBlockInfo().id;
+    document.querySelectorAll('.block-details').forEach(function(block) {
+      block.open = block.id === currentId;
+    });
+  }
+  expandCurrentBlock();
+
+  document.querySelectorAll('.cycle-card').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target && target.tagName === 'DETAILS') target.open = true;
+    });
+  });
+
+  function renderTracker() {
+    var info = currentBlockInfo();
+    trackerBar.className = 'tracker-bar ' + info.block;
+    trackerBlockLabel.textContent = info.label;
+    trackerBlockLabel.className = 'tracker-block ' + info.block;
+    trackerWeekLabel.textContent = trackerState.cycleComplete ? '' : 'Sem ' + (trackerState.weekInBlock + 1) + '/' + info.weeks;
+    var dots = trackerDots.querySelectorAll('.tracker-dot');
+    for (var i = 0; i < dots.length; i++) {
+      dots[i].classList.toggle('filled', !!trackerState.daysCompleted[i]);
+    }
+    var letter = nextSessionLetter();
+    trackerNext.textContent = trackerState.cycleComplete || !letter ? '' : 'Hoy: Sesión ' + letter;
+    trackerMark.hidden = trackerState.cycleComplete;
+    trackerMark.textContent = '✓ Marcar sesión ' + letter;
+    trackerSkip.textContent = trackerState.cycleComplete ? '🔄 Empezar de nuevo' : 'Saltar semana →';
+    var existingMsg = trackerBar.querySelector('.tracker-complete-msg');
+    if (existingMsg) existingMsg.remove();
+    if (trackerState.cycleComplete) {
+      var msg = document.createElement('div');
+      msg.className = 'tracker-complete-msg';
+      msg.textContent = '🎉 Plan completo. ¡Bien hecho!';
+      trackerBar.appendChild(msg);
+    }
+  }
+
+  function showToast(text) {
+    var existing = document.querySelector('.tracker-toast');
+    if (existing) existing.remove();
+    var toast = document.createElement('div');
+    toast.className = 'tracker-toast';
+    toast.setAttribute('role', 'status');
+    toast.textContent = text;
+    toast.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1F2A44;color:white;padding:10px 20px;border-radius:8px;font-size:0.88rem;z-index:9999;animation:fadeIn 0.3s ease;box-shadow:0 4px 12px rgba(0,0,0,0.2);';
+    document.body.appendChild(toast);
+    setTimeout(function() { toast.remove(); }, 3000);
+  }
+
+  function advanceWeek() {
+    trackerState.daysCompleted = [false, false, false];
+    trackerState.totalWeeksCompleted++;
+    trackerState.weekInBlock++;
+    if (trackerState.weekInBlock >= currentBlockInfo().weeks) {
+      trackerState.weekInBlock = 0;
+      trackerState.blockIdx++;
+      if (trackerState.blockIdx >= CYCLE.length) {
+        trackerState.cycleComplete = true;
+        trackerState.blockIdx = CYCLE.length - 1;
+      }
+    }
+    saveTracker();
+    renderTracker();
+    expandCurrentBlock();
+    showToast(trackerState.cycleComplete ? '🎉 Plan completo' : '✓ Semana avanzada — ' + currentBlockInfo().label + ' Sem ' + (trackerState.weekInBlock + 1));
+  }
+
+  function completeSession() {
+    var idx = trackerState.daysCompleted.indexOf(false);
+    if (trackerState.cycleComplete || idx < 0) return;
+    trackerState.daysCompleted[idx] = true;
+    saveTracker();
+    renderTracker();
+    if (trackerState.daysCompleted.every(Boolean)) {
+      setTimeout(advanceWeek, 600);
+    }
+  }
+
+  function resetPlan() {
+    trackerState = defaultState();
+    saveTracker();
+    renderTracker();
+    expandCurrentBlock();
+    showToast('Plan reiniciado — Semana 1 Adaptación');
+  }
+
+  trackerMark.addEventListener('click', completeSession);
+  trackerSkip.addEventListener('click', function() {
+    if (trackerState.cycleComplete) {
+      if (confirm('¿Empezar el plan de nuevo desde la semana 1?')) resetPlan();
+    } else if (confirm('¿Saltar esta semana y avanzar a la siguiente?')) {
+      advanceWeek();
+    }
+  });
+
+  renderTracker();
+})();
+</script>
+</body>
+</html>
